@@ -1,0 +1,601 @@
+@prefix : <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+
+<http://www.omg.org/techprocess/ab/SpecificationMetadata/> rdf:type owl:Ontology ;
+                                                            owl:versionIRI <http://www.omg.org/techprocess/ab/20140801/SpecificationMetadata/> ;
+                                                            owl:imports <http://www.w3.org/2004/02/skos/core> ;
+                                                            dct:license sm:MITLicense ;
+                                                            dct:source "http://www.omg.org/cgi-bin/doc?pp"^^xsd:anyURI ;
+                                                            sm:addressForComments "http://www.omg.org/issues/"^^xsd:anyURI ;
+                                                            sm:contentLanguage "http://www.w3.org/standards/techs/owl#w3c_all"^^xsd:anyURI ;
+                                                            sm:copyright """Copyright (c) 2012-2014 Adaptive
+Copyright (c) 2012-2014 Object Management Group, Inc.
+Copyright (c) 2012-2014 Thematix Partners LLC"""^^xsd:string ;
+                                                            sm:dependsOn "http://purl.org/dc/terms/"^^xsd:anyURI ,
+                                                                         "http://www.w3.org/2004/02/skos/core.rdf"^^xsd:anyURI ;
+                                                            sm:filename "SpecificationMetadata.rdf"^^xsd:string ;
+                                                            sm:isNormative "true"^^xsd:boolean ;
+                                                            sm:keyword "specification metadata"^^xsd:string ;
+                                                            sm:priorVersion "http://www.omg.org/techprocess/ab/20130301/SpecificationMetadata.owl"^^xsd:anyURI ,
+                                                                            "http://www.omg.org/techprocess/ab/20130701/SpecificationMetadata/"^^xsd:anyURI ;
+                                                            sm:publicationDate "2014-08-18T18:00:00"^^xsd:dateTime ;
+                                                            sm:relatedSpecification "http://www.metadata-standards.org/24706/index.html"^^xsd:anyURI ;
+                                                            sm:responsibleTaskForce "http://www.omg.org/news/about/ab.htm"^^xsd:anyURI ;
+                                                            sm:specificationAbbreviation "SM"^^xsd:string ;
+                                                            sm:specificationAbstract """This ontology provides a set of basic metadata annotations for use in describing Object Management Group (OMG) specifications, standards, and documents.  It was recommended for use by the OMG Architecture Board (AB) in OMG standard ontologies, vocabularies and other models at the March 2013 Reston meeting. 
+
+The annotations defined herein extend properties defined in the Dublin Core Metadata Terms Vocabulary and in the W3C Simple Knowledge Organization System (SKOS) Vocabulary, and have been customized to support the OMG specification development process.  Note that any of the original properties provided in Dublin Core and SKOS can be used in addition to the terms provided herein.  However, any Dublin Core terms that are not explicitly defined as OWL annotation properties below must be so declared in the ontologies that use them."""^^xsd:string ;
+                                                            sm:specificationTitle "Specification Metadata (SM) Ontology"^^xsd:string ;
+                                                            sm:specificationURL "http://www.omg.org/techprocess/ab/SpecificationMetadata/"^^xsd:anyURI ;
+                                                            sm:specificationVersionStatus "OMG Architecture Board Recommendation"^^xsd:string ;
+                                                            sm:specificationVersionURL "http://www.omg.org/techprocess/ab/20140801/SpecificationMetadata/"^^xsd:anyURI ;
+                                                            sm:topicArea "analysis and design"^^xsd:string ;
+                                                            rdfs:label "Specification Metadata (SM) Vocabulary" ;
+                                                            skos:changeNote """The ontology was revised in August 2014 to:
+(1) clean up the metadata about this ontology to reflect current usage
+(2) add support for OMG issue resolution detail to facilitate change management and automated specification generation
+(3) modify the approach to inclusion of licensing information in model metadata to reference an individual of type dct:LicenseDocument, contained in this metadata ontology, rather than requiring the text to be repeated in any ontology published by the OMG"""^^xsd:string ,
+                                                                            """The ontology was revised in July, 2013, as follows:
+   (1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing and specifically for the Financial Industry Business Ontology (FIBO) and other forthcoming OMG ontology specifications  
+   (2) to introduce the use of version-independent IRIs for all definitions internally as opposed to version-specific IRIs
+   (3) to change the file suffix from .owl to .rdf to increase usability in RDF tools
+   (4) to extend the file-level metadata to allow for cases such as FIBO, where the specification includes family, specification, spcification version, module, and ontology level detail that should be documented via annotations (e.g., family level of FIBO, specification level of Foundations, module level such as Utilities, and ontology level including annotation vocabulary, business types, and relations) 
+   (5) to make other minor corrections in the metadata and definitions for clarification purposes"""^^xsd:string ;
+                                                            skos:historyNote """Revisions are managed per the process outlined in the Policies and Procedures for OMG standards, with the intent to maintain backwards compatibility to the degree possible.
+  
+The RDF/XML serialized OWL corresponding to the ODM/OWL model has been checked for syntactic errors and logical consistency with Protege 4 (http://protege.stanford.edu/), HermiT 1.3.8 (http://www.hermit-reasoner.com/) and Pellet 2.2 (http://clarkparsia.com/pellet/)."""^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/abstract
+dct:abstract rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+dct:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/format
+dct:format rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/hasVersion
+dct:hasVersion rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+dct:identifier rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dct:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/references
+dct:references rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+dct:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dct:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/subject
+dct:subject rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dct:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/type
+dct:type rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/addressForComments
+sm:addressForComments rdf:type owl:AnnotationProperty ;
+                      rdfs:label "addressForComments" ;
+                      skos:definition "a link to a mailing list or web page where questions, discussion, and issues can be raised"^^xsd:string ;
+                      rdfs:range xsd:anyURI ;
+                      rdfs:domain sm:SpecificationVersion .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/affectsModelElement
+sm:affectsModelElement rdf:type owl:AnnotationProperty ;
+                       rdfs:label "affects model element" ;
+                       rdfs:domain sm:IssueResolution .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/author
+sm:author rdf:type owl:AnnotationProperty ;
+          rdfs:label "author" ;
+          skos:definition "Author identifies an individual or organization that originated the model or specification (range can be a dct:Agent or string)."^^xsd:string ;
+          rdfs:subPropertyOf dct:creator .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/contentLanguage
+sm:contentLanguage rdf:type owl:AnnotationProperty ;
+                   rdfs:label "content language" ;
+                   skos:definition "a link to the core language and/or specification of the model/electronic file, for example, UML, OWL, SysML, BPMN, including linking to the version of the language in question"^^xsd:string ;
+                   rdfs:subPropertyOf dct:type ;
+                   rdfs:range xsd:anyURI .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/contentType
+sm:contentType rdf:type owl:AnnotationProperty ;
+               rdfs:label "content type" ;
+               skos:definition "indicates the content type, for example, MOF metamodel, UML profile, UML model, SBVR or RDF vocabulary, OWL or CL ontology"^^xsd:string ;
+               rdfs:range sm:TypeOfContent .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/contributor
+sm:contributor rdf:type owl:AnnotationProperty ;
+               rdfs:label "contributor" ;
+               skos:definition "an organization or individual that has made a significant contribution to the specification"^^xsd:string ;
+               rdfs:subPropertyOf dct:contributor .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/copyright
+sm:copyright rdf:type owl:AnnotationProperty ;
+             rdfs:label "copyright" ;
+             skos:definition "copyright statement for the specification version, content, or model/electronic file"^^xsd:string ;
+             rdfs:subPropertyOf dct:rights ;
+             rdfs:range xsd:string .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/dependsOn
+sm:dependsOn rdf:type owl:AnnotationProperty ;
+             rdfs:label "depends on" ;
+             skos:definition "a bibliographic reference for and/or URL of any electronic files or documents (e.g., document version URL if applicable) on which this specification or model depends; if the model contains multiple modules, then dependencies should reflect those of the model in question"^^xsd:string ;
+             rdfs:subPropertyOf rdfs:seeAlso .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/directSource
+sm:directSource rdf:type owl:AnnotationProperty ;
+                rdfs:label "direct source" ;
+                skos:definition "reference used as a primary, direct source for content in developing this specification or model (range can be a string, URI, or BibliographicCitation)"^^xsd:string ;
+                rdfs:subPropertyOf dct:source .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/documentNumber
+sm:documentNumber rdf:type owl:AnnotationProperty ;
+                  rdfs:label "document number" ;
+                  skos:definition "OMG document number (for the document or file this metadata is associated with); note that a single OMG document number may be associated with many files, for example in the case of an archive containing all of the ontologies associated with a given FIBO specification"^^xsd:string ;
+                  rdfs:subPropertyOf dct:identifier ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/documentURL
+sm:documentURL rdf:type owl:AnnotationProperty ;
+               rdfs:label "URL for the document" ;
+               skos:definition "document URL (for the specific document or model file this metadata is associated with)"^^xsd:string ;
+               rdfs:range xsd:anyURI .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/editor
+sm:editor rdf:type owl:AnnotationProperty ;
+          rdfs:label "editor" ;
+          skos:definition "an editor of the specification, which may include the primary contact organization, or RTF/FTF co-chair (organization), depending on where the specification is in the process"^^xsd:string ;
+          rdfs:subPropertyOf sm:contributor .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/familyAbbreviation
+sm:familyAbbreviation rdf:type owl:AnnotationProperty ;
+                      rdfs:label "specification family abbreviation or acronym" ;
+                      skos:definition "abbreviation or acronym for the specification family"^^xsd:string ;
+                      rdfs:subPropertyOf skos:altLabel ;
+                      rdfs:range xsd:string ;
+                      rdfs:domain sm:SpecificationFamily .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/familyAbstract
+sm:familyAbstract rdf:type owl:AnnotationProperty ;
+                  rdfs:label "family abstract" ;
+                  skos:definition "a short textual description of the family of specifications"^^xsd:string ;
+                  rdfs:subPropertyOf dct:abstract ;
+                  rdfs:range xsd:string ;
+                  rdfs:domain sm:SpecificationFamily .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/familyTitle
+sm:familyTitle rdf:type owl:AnnotationProperty ;
+               rdfs:label "specification family title" ;
+               skos:definition "specification family title (for example, Financial Industry Business Ontology)"^^xsd:string ;
+               rdfs:subPropertyOf dct:title ,
+                                  skos:prefLabel ;
+               rdfs:range xsd:string ;
+               rdfs:domain sm:SpecificationFamily .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/familyURL
+sm:familyURL rdf:type owl:AnnotationProperty ;
+             rdfs:label "specification family URL" ;
+             skos:definition "URL where the specification family is published"^^xsd:string ;
+             rdfs:range xsd:anyURI ;
+             rdfs:domain sm:SpecificationFamily .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/fileAbbreviation
+sm:fileAbbreviation rdf:type owl:AnnotationProperty ;
+                    rdfs:label "file-level abbreviation or acronym" ;
+                    skos:definition "abbreviation or acronym for the file, such as a namespace prefix, if distinct from that of the specification"^^xsd:string ;
+                    rdfs:subPropertyOf skos:altLabel ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/fileAbstract
+sm:fileAbstract rdf:type owl:AnnotationProperty ;
+                rdfs:label "file-level abstract" ;
+                skos:definition "a short textual description of the model or file"^^xsd:string ;
+                rdfs:subPropertyOf dct:abstract ;
+                rdfs:range xsd:string .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/fileVersion
+sm:fileVersion rdf:type owl:AnnotationProperty ;
+               rdfs:label "file version" ;
+               skos:definition "file version, if distinct from the specification or module version"^^xsd:string ;
+               rdfs:subPropertyOf dct:hasVersion ;
+               rdfs:range xsd:string .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/filename
+sm:filename rdf:type owl:AnnotationProperty ;
+            rdfs:label "electronic file name" ;
+            skos:definition "name of the electronic document or file this metadata is associated with"^^xsd:string ;
+            rdfs:range xsd:string .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/formalVersion
+sm:formalVersion rdf:type owl:AnnotationProperty ;
+                 rdfs:label "formal version" ;
+                 skos:definition "a link to the latest published formal specification (document)"^^xsd:string ;
+                 rdfs:subPropertyOf dct:hasVersion ;
+                 rdfs:range xsd:anyURI ;
+                 rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/format
+sm:format rdf:type owl:AnnotationProperty ;
+          rdfs:label "format" ;
+          skos:definition """serialization format for the file in terms of its MIME Type, such as xmi, rdf/xml, owl/xml, etc.
+"""^^xsd:string ;
+          rdfs:subPropertyOf dct:format ;
+          rdfs:range sm:MediaType .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/informativeReference
+sm:informativeReference rdf:type owl:AnnotationProperty ;
+                        rdfs:label "informative reference" ;
+                        skos:definition "informative reference, standard, or document"^^xsd:string ;
+                        rdfs:subPropertyOf dct:references ;
+                        rdfs:range sm:Specification ;
+                        rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/isNormative
+sm:isNormative rdf:type owl:AnnotationProperty ;
+               rdfs:label "is normative" ;
+               skos:definition "boolean value indicating whether or not the file is a normative component of a specification"^^xsd:string ;
+               rdfs:range xsd:boolean .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/keyword
+sm:keyword rdf:type owl:AnnotationProperty ;
+           rdfs:label "keyword" ;
+           skos:definition "keyword relevant to the specification"^^xsd:string ;
+           skos:editorialNote "may appear more than once, as appropriate"^^xsd:string ;
+           rdfs:subPropertyOf dct:subject ;
+           rdfs:range xsd:string ;
+           rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/moduleAbbreviation
+sm:moduleAbbreviation rdf:type owl:AnnotationProperty ;
+                      rdfs:label "module abbreviation or acronym" ;
+                      skos:definition "abbreviation or acronym for the module, if distinct from that of the specification"^^xsd:string ;
+                      rdfs:subPropertyOf skos:altLabel ;
+                      rdfs:range xsd:string ;
+                      rdfs:domain sm:Module .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/moduleAbstract
+sm:moduleAbstract rdf:type owl:AnnotationProperty ;
+                  rdfs:label "module abstract" ;
+                  skos:definition "a short textual description of the module"^^xsd:string ;
+                  rdfs:subPropertyOf dct:abstract ;
+                  rdfs:range xsd:string ;
+                  rdfs:domain sm:Module .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/moduleName
+sm:moduleName rdf:type owl:AnnotationProperty ;
+              rdfs:label "module name" ;
+              skos:definition "module name, if distinct from the specification title"^^xsd:string ;
+              rdfs:subPropertyOf dct:title ;
+              rdfs:range xsd:string ;
+              rdfs:domain sm:Module .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/moduleShortTitle
+sm:moduleShortTitle rdf:type owl:AnnotationProperty ;
+                    rdfs:label "module short title" ;
+                    skos:definition "a short title for the component or module"^^xsd:string ;
+                    rdfs:subPropertyOf dct:title ,
+                                       skos:prefLabel ;
+                    rdfs:range xsd:string ;
+                    rdfs:domain sm:Module .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/moduleVersion
+sm:moduleVersion rdf:type owl:AnnotationProperty ;
+                 rdfs:label "module version" ;
+                 skos:definition "module version, if distinct from the specification version"^^xsd:string ;
+                 rdfs:subPropertyOf dct:hasVersion ;
+                 rdfs:range xsd:string ;
+                 rdfs:domain sm:Module .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/normativeReference
+sm:normativeReference rdf:type owl:AnnotationProperty ;
+                      rdfs:label "normative reference" ;
+                      skos:definition "a normative reference or standard for the specification"^^xsd:string ;
+                      rdfs:subPropertyOf dct:references ;
+                      rdfs:range sm:Specification ;
+                      rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/priorSpecificationVersion
+sm:priorSpecificationVersion rdf:type owl:AnnotationProperty ;
+                             rdfs:label "prior specification version" ;
+                             skos:definition "a link to the immediately preceding OMG formal specification version"^^xsd:string ;
+                             rdfs:subPropertyOf dct:hasVersion ;
+                             rdfs:range xsd:anyURI ;
+                             rdfs:domain sm:SpecificationVersion .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/priorVersion
+sm:priorVersion rdf:type owl:AnnotationProperty ;
+                rdfs:label "prior version" ;
+                skos:definition "a link to the immediately preceding version at the file level"^^xsd:string ;
+                rdfs:subPropertyOf dct:hasVersion ;
+                rdfs:range xsd:string .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/publicationDate
+sm:publicationDate rdf:type owl:AnnotationProperty ;
+                   rdfs:label "publication date" ;
+                   skos:definition "the date this version of the specification was published"^^xsd:string ;
+                   rdfs:subPropertyOf dct:issued ;
+                   rdfs:range xsd:dateTime ;
+                   rdfs:domain sm:SpecificationVersion .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/relatedSpecification
+sm:relatedSpecification rdf:type owl:AnnotationProperty ;
+                        rdfs:label "related specification" ;
+                        skos:definition "specification or standard (range can be xsd:string, xsd:anyURI, or BibliographicCitation)"^^xsd:string ;
+                        rdfs:subPropertyOf dct:references ;
+                        rdfs:range sm:Specification ;
+                        rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/responsibleTaskForce
+sm:responsibleTaskForce rdf:type owl:AnnotationProperty ;
+                        rdfs:label "responsible task force" ;
+                        skos:definition "task force or working group responsible for the original RFP/RFC and specification adoption"^^xsd:string ;
+                        rdfs:range xsd:anyURI ;
+                        rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/revisedBy
+sm:revisedBy rdf:type owl:AnnotationProperty ;
+             rdfs:label "revised by" ;
+             skos:definition "task force or working group responsible for this revision of the specification"^^xsd:string .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/shortTitle
+sm:shortTitle rdf:type owl:AnnotationProperty ;
+              rdfs:label "short name for the specification or module" ;
+              skos:definition "a short, commonly used, or preferred name, for a given specification or module"^^xsd:string ;
+              rdfs:subPropertyOf dct:title ,
+                                 skos:prefLabel ;
+              rdfs:range xsd:string ;
+              rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/specificationAbbreviation
+sm:specificationAbbreviation rdf:type owl:AnnotationProperty ;
+                             rdfs:label "specification abbreviation or acronym" ;
+                             skos:definition "official abbreviation or acronym for the specification and related electronic files"^^xsd:string ;
+                             rdfs:subPropertyOf skos:altLabel ;
+                             rdfs:range xsd:string ;
+                             rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/specificationAbstract
+sm:specificationAbstract rdf:type owl:AnnotationProperty ;
+                         rdfs:label "specification abstract" ;
+                         skos:definition "a short textual description for the specification"^^xsd:string ;
+                         rdfs:subPropertyOf dct:abstract ;
+                         rdfs:range xsd:string ;
+                         rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/specificationTitle
+sm:specificationTitle rdf:type owl:AnnotationProperty ;
+                      rdfs:label "specification name or title" ;
+                      skos:definition "the full (complete) formal title of the specification, without abbreviations"^^xsd:string ;
+                      rdfs:subPropertyOf dct:title ;
+                      rdfs:range xsd:string ;
+                      rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/specificationURL
+sm:specificationURL rdf:type owl:AnnotationProperty ;
+                    rdfs:label "specification URL" ;
+                    skos:definition "URL for the specification directory on the OMG web site"^^xsd:string ;
+                    rdfs:range xsd:anyURI ;
+                    rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/specificationVersionStatus
+sm:specificationVersionStatus rdf:type owl:AnnotationProperty ;
+                              rdfs:label "specification version status" ;
+                              skos:definition "status of this version of the specification from a process perspective, including whether or not it has been formally adopted or superseded by a newer version"^^xsd:string ;
+                              rdfs:subPropertyOf skos:note ;
+                              rdfs:range xsd:string ;
+                              rdfs:domain sm:SpecificationVersion .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/specificationVersionURL
+sm:specificationVersionURL rdf:type owl:AnnotationProperty ;
+                           rdfs:label "specification version URL" ;
+                           skos:definition "explicit URI where the specification version is published"^^xsd:string ;
+                           rdfs:range xsd:anyURI ;
+                           rdfs:domain sm:SpecificationVersion .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/submitter
+sm:submitter rdf:type owl:AnnotationProperty ;
+             rdfs:label "submitter" ;
+             skos:definition "a contributor that is an OMG member, identified member of the submission team, and filed the requisite LOI, responsible for the content of the specification or model"^^xsd:string ;
+             rdfs:subPropertyOf sm:contributor ;
+             rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/taskForceReport
+sm:taskForceReport rdf:type owl:AnnotationProperty ;
+                   rdfs:label "task force report" ;
+                   skos:definition "a link to the FTF or RTF report, if applicable"^^xsd:string ;
+                   rdfs:range xsd:anyURI ;
+                   rdfs:domain sm:SpecificationVersion .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/technologyArea
+sm:technologyArea rdf:type owl:AnnotationProperty ;
+                  rdfs:label "technology area" ;
+                  skos:definition "technology area relevant to the specification, for example, analysis and design, business process modeling, information exchange and interoperability, middleware, etc."^^xsd:string ;
+                  skos:editorialNote "may appear more than once, as appropriate"^^xsd:string ;
+                  rdfs:subPropertyOf dct:subject ;
+                  rdfs:range xsd:string ;
+                  rdfs:domain sm:Specification .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/thisVersion
+sm:thisVersion rdf:type owl:AnnotationProperty ;
+               rdfs:label "this version" ;
+               skos:definition "the version identifier for this version of the specification"^^xsd:string ;
+               rdfs:subPropertyOf dct:hasVersion ;
+               rdfs:range xsd:string ;
+               rdfs:domain sm:SpecificationVersion .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/topicArea
+sm:topicArea rdf:type owl:AnnotationProperty ;
+             rdfs:label "topic area" ;
+             skos:definition "topic or area of interest that this particular specification relates to, for example, real time, robotics"^^xsd:string ;
+             skos:editorialNote "may appear more than once, as appropriate"^^xsd:string ;
+             rdfs:subPropertyOf dct:subject ;
+             rdfs:range xsd:string ;
+             rdfs:domain sm:Specification .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+skos:changeNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+skos:editorialNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+skos:historyNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/hasDescription
+sm:hasDescription rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "has description" .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/hasIssueReference
+sm:hasIssueReference rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:anyURI ;
+                     rdfs:label "has issue reference" .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/isIdentifiedBy
+sm:isIdentifiedBy rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "is identified by" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/MITLicense
+sm:MITLicense rdf:type owl:NamedIndividual ;
+              dct:rights """The MIT License:  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""^^xsd:string ,
+                         "http://opensource.org/licenses/mit-license.php"^^xsd:anyURI ;
+              rdfs:label "The MIT License" ;
+              skos:definition "license document representing the actual text of the MIT License"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

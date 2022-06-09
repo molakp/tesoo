@@ -1,0 +1,139 @@
+@prefix : <http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/Agents/> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fibo-fnd-utl-av: <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/> .
+@prefix fibo-fnd-utl-bt: <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/BusinessFacingTypes/> .
+@prefix fibo-fnd-aap-agt: <http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/Agents/> .
+@base <http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/Agents/> .
+
+<http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/Agents/> rdf:type owl:Ontology ;
+                                                                 owl:versionIRI <http://www.omg.org/spec/EDMC-FIBO/FND/20141101/AgentsAndPeople/Agents/> ;
+                                                                 dct:license "http://www.omg.org/techprocess/ab/SpecificationMetadata/MITLicense"^^xsd:anyURI ;
+                                                                 sm:contentLanguage "http://www.omg.org/spec/ODM/"^^xsd:anyURI ,
+                                                                                    "http://www.w3.org/standards/techs/owl#w3c_all"^^xsd:anyURI ;
+                                                                 sm:copyright """Copyright (c) 2013-2014 EDM Council, Inc.
+Copyright (c) 2013-2014 Object Management Group, Inc."""^^xsd:string ;
+                                                                 sm:dependsOn "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/"^^xsd:anyURI ,
+                                                                              "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/BusinessFacingTypes/"^^xsd:anyURI ;
+                                                                 sm:fileAbbreviation "fibo-fnd-aap-agt"^^xsd:string ;
+                                                                 sm:fileAbstract "This ontology defines the concept of autonomous agent for use in other FIBO ontology elements. As defined here, autonomous agent corresponds to what is often referred to as \"agent\" in software and other systems. It is defined as any entity which is able to act on its own part, and embraces all such things, including people, animals, software agents organizations and all forms of legal persons, although not all of these concepts are elaborated in FIBO as not all are relevant to financial services."^^xsd:string ;
+                                                                 sm:filename "Agents.rdf"^^xsd:string ;
+                                                                 rdfs:label "Agents Ontology" ;
+                                                                 rdfs:seeAlso "http://www.omg.org/spec/EDMC-FIBO/AboutTheEDMC-FIBOFamily/"^^xsd:anyURI ,
+                                                                              "http://www.omg.org/spec/EDMC-FIBO/FND/AboutFND/"^^xsd:anyURI ,
+                                                                              "http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/AboutAgentsAndPeople/"^^xsd:anyURI ;
+                                                                 skos:changeNote "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/AgentsAndPeople/Agents.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in http://www.omg.org/spec/EDMC-FIBO/FND/1.0/AboutFND-1.0/."^^xsd:string ,
+                                                                                 """The http://www.omg.org/spec/EDMC-FIBO/Foundations/20130601/AgentsAndPeople/Agents.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:
+   (1) to use slash style URI/IRIs (also called 303 URIs, vs. hash style) as required to support server side processing 
+   (2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs
+   (3) to change the file suffix from .owl to .rdf to increase usability in RDF tools
+   (4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure
+   (5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations."""^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/explanatoryNote
+fibo-fnd-utl-av:explanatoryNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/contentLanguage
+sm:contentLanguage rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/copyright
+sm:copyright rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/dependsOn
+sm:dependsOn rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/directSource
+sm:directSource rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/fileAbbreviation
+sm:fileAbbreviation rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/fileAbstract
+sm:fileAbstract rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/filename
+sm:filename rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/relatedSpecification
+sm:relatedSpecification rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+skos:changeNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/BusinessFacingTypes/text
+fibo-fnd-utl-bt:text rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/Agents/hasName
+fibo-fnd-aap-agt:hasName rdf:type owl:DatatypeProperty ;
+                         rdfs:range fibo-fnd-utl-bt:text ;
+                         rdfs:label "has name" ;
+                         skos:definition "that by which some thing is known; may apply to anything"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/Agents/AutonomousAgent
+fibo-fnd-aap-agt:AutonomousAgent rdf:type owl:Class ;
+                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                   owl:onProperty fibo-fnd-aap-agt:hasName ;
+                                                   owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                   owl:onDataRange fibo-fnd-utl-bt:text
+                                                 ] ;
+                                 fibo-fnd-utl-av:explanatoryNote """Agents, then, can be software agents, hardware agents, firmware agents, robotic agents, human agents, and so on.  While software developers naturally think of IT systems as being constructed of only software agents, a combination of agent mechanisms might in fact be used from shop-floor manufacturing to warfare systems.  The definition incorporated herein must be sufficiently general to account for these and other uses, such as for describing people and organizations who participate in broader processes and systems, for FIBO, other OMG standards and usage, and in general.
+
+Whether or not you restrict your view of agents to the software variety, most agree that agents deployed for IT systems are not useful without the following three important properties:
+
+(1) Autonomous - an agent is capable of acting without direct external intervention.  Agents have some degree of control over their internal state and can act based on their own experiences. They can also possess their own set of internal responsibilities and processing that enable them to act without any external choreography.  When an agent acts on behalf of (or as a proxy for) some person or thing, its autonomy is expected to embody the goals and policies of the entity that it represents.
+
+(2) Interactive - an agent communicates with the environment and other agents. Agents are interactive entities because they are capable of exchanging rich forms of messages with other entities in their environment.  These messages can support requests for services and other kinds of resources, as well as event detection and notification.  They can be synchronous or asynchronous in nature.  The interaction can also be conversational in nature, such as negotiating contracts, marketplace-style bidding, or simply making a query.
+
+(3) Adaptive - an agent is capable of responding to other agents and/or its environment. Agents can react to messages and events and then respond appropriately.  Agents can be designed to make difficult decisions and even modify their behavior based on their experiences.  They can learn and evolve."""^^xsd:string ,
+                                                                 "Note that this does not necessarily imply that an agent is free to act as it sees fit, without constraint. Rather, an autonomous thing in the sense meant here is something which may or may not be subject to controls and constraints but is self-actualizing in its behavior in response to any such constraints. Autonomous things may include human beings, organizations, software agents, robots and animals."^^xsd:string ;
+                                 sm:directSource "http://www.omg.org/techprocess/meetings/schedule/AMP.html"^^xsd:anyURI ;
+                                 sm:relatedSpecification "http://www.omg.org/spec/SoaML/"^^xsd:anyURI ;
+                                 rdfs:label "autonomous agent" ;
+                                 rdfs:seeAlso "http://www.jamesodell.com/WhatIsAnAgent.pdf"^^xsd:anyURI ,
+                                              "http://www.jamesodell.com/WhyShouldWeCareAboutAgents.pdf"^^xsd:anyURI ;
+                                 skos:definition "An agent is an autonomous individual that can adapt to and interact with its environment."^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

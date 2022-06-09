@@ -1,0 +1,140 @@
+@prefix : <http://www.semanticweb.org/TESOO#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/TESOO> .
+
+<http://www.semanticweb.org/TESOO> rdf:type owl:Ontology ;
+                                    owl:imports <http://www.omg.org/spec/EDMC-FIBO/FND/20141101/AgentsAndPeople/Agents/> ,
+                                                <http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/Locations/> ,
+                                                <http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/VirtualPlaces/> ,
+                                                <http://xmlns.com/foaf/0.1/> ;
+                                    <http://purl.org/dc/elements/1.1/creator> "Silvestro Stefano Frisullo"@en ;
+                                    <http://purl.org/dc/elements/1.1/date> "June 2022"@en ;
+                                    <http://purl.org/dc/elements/1.1/description> "Ontology for The Elder Scrolls Online"@en ;
+                                    <http://purl.org/dc/elements/1.1/title> "TESOO: The Elder Scrolls Online Ontology"@en ;
+                                    <http://purl.org/dc/terms/license> "http://opensource.org/licenses/mit-license.php/" ;
+                                    :vann:preferredNamespacePrefix "http://www.tesoo.com"@en ,
+                                                                   "tesoo"@en ;
+                                    rdfs:label "TESOO"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/TESOO#definition
+:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/TESOO#vann:preferredNamespacePrefix
+:vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/TESOO#vann:preferredNamespaceUri
+:vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/TESOO#Aldmeri_Dominion
+:Aldmeri_Dominion rdf:type owl:Class ;
+                  rdfs:subClassOf :zone ;
+                  :definition "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Aldmeri_Dominion. [Accessed: June 2022]."@en ,
+                              "Zone controlled by Aldmeri Dominion Alliance"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Daggerfall_Covenant
+:Daggerfall_Covenant rdf:type owl:Class ;
+                     rdfs:subClassOf :zone ;
+                     <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Daggerfall_Covenant. [Accessed: June 2022]."@en ;
+                     :definition "Zones controlled by Daggerfall Covenant"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Ebonheart_Pact
+:Ebonheart_Pact rdf:type owl:Class ;
+                rdfs:subClassOf :zone ;
+                <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Zone\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022]."""@en ;
+                :definition "Zones controlled by Ebonheart Pact"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Faction
+:Faction rdf:type owl:Class ;
+         rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+         <http://purl.org/dc/elements/1.1/description> "Factions determine the the character allegiance and starting area in Elder Scrolls Online."@en ;
+         <http://purl.org/dc/terms/bibliographicCitation> "Eso Wiki, \"Factions\", 2022. [Online]. Available: https://elderscrollsonline.wiki.fextralife.com/Factions. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#character
+:character rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+
+
+###  http://www.semanticweb.org/TESOO#city
+:city rdf:type owl:Class ;
+      rdfs:subClassOf :place ;
+      <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"ESO:Cities\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Cities. [Accessed: June 2022]."@en ;
+      <http://purl.org/dc/terms/source> "ESO:Cities"@en ;
+      :definition "A populated city in the game"@en ;
+      rdfs:label "city"@en .
+
+
+###  http://www.semanticweb.org/TESOO#npc
+:npc rdf:type owl:Class ;
+     rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> ;
+     <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:NPCs\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:NPCs. [Accessed: June 2022]."@en ;
+     :definition "Any Non Playable Character in ESO"@en ;
+     rdfs:label "npc"@en .
+
+
+###  http://www.semanticweb.org/TESOO#place
+:place rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.omg.org/spec/EDMC-FIBO/FND/Places/VirtualPlaces/VirtualLocation> ;
+       <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Places\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Places [Accessed: 07- June- 2022]."@en ;
+       :definition "a place in ESO"@en ;
+       rdfs:label "place"@en .
+
+
+###  http://www.semanticweb.org/TESOO#zone
+:zone rdf:type owl:Class ;
+      rdfs:subClassOf :place ;
+      <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Zones\", 2022. [Online]. Available:
+ https://en.uesp.net/wiki/Online:Zones. [Accessed: June 2022]."""@en ;
+      <http://purl.org/dc/terms/source> "Online:Zone"@en ;
+      :definition "Zones are playable areas of the world in Elder Scrolls Online. Unlike recent single-player entries in the series, the world is not one continuous map, and is divided into several separate regions which cross the borders of the traditional Imperial provinces."@en ;
+      rdfs:label "Zone"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

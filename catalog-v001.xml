@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://xmlns.com/foaf/0.1/" uri="http://xmlns.com/foaf/spec/20140114.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/VirtualPlaces/" uri="https://www.omg.org/spec/EDMC-FIBO/FND/Places/VirtualPlaces/"/>
+    <uri id="Imports Wizard Entry" name="http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/Locations/" uri="https://www.omg.org/spec/EDMC-FIBO/FND/Places/Locations/"/>
+    <uri id="Imports Wizard Entry" name="http://www.omg.org/spec/EDMC-FIBO/FND/20141101/AgentsAndPeople/Agents/" uri="https://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/Agents/"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>
