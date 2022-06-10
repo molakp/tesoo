@@ -67,11 +67,36 @@ tesoo:vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/TESOO#belongs_to_organization
+tesoo:belongs_to_organization rdf:type owl:ObjectProperty ;
+                              owl:inverseOf tesoo:organization_has_member ;
+                              rdfs:domain [ rdf:type owl:Class ;
+                                            owl:unionOf ( tesoo:character
+                                                          tesoo:npc
+                                                        )
+                                          ] ;
+                              rdfs:range <http://xmlns.com/foaf/0.1/Organization> .
+
+
+###  http://www.semanticweb.org/TESOO#city_ruled_by
+tesoo:city_ruled_by rdf:type owl:ObjectProperty ;
+                    owl:inverseOf tesoo:npc_rules_city ;
+                    rdfs:domain tesoo:City ;
+                    rdfs:range tesoo:npc .
+
+
 ###  http://www.semanticweb.org/TESOO#contains_place
 tesoo:contains_place rdf:type owl:ObjectProperty ;
                      owl:inverseOf tesoo:is_located ;
                      rdfs:domain tesoo:zone ;
                      rdfs:range tesoo:specific_place .
+
+
+###  http://www.semanticweb.org/TESOO#dungeon_kill_to_complete
+tesoo:dungeon_kill_to_complete rdf:type owl:ObjectProperty ;
+                               owl:inverseOf tesoo:npc_killed_to_complete_dungeon ;
+                               rdfs:domain tesoo:specific_place ;
+                               rdfs:range tesoo:npc .
 
 
 ###  http://www.semanticweb.org/TESOO#faction_controls
@@ -131,13 +156,37 @@ tesoo:is_quest_giver rdf:type owl:ObjectProperty ;
                      rdfs:range tesoo:Quest .
 
 
+###  http://www.semanticweb.org/TESOO#npc_killed_to_complete_dungeon
+tesoo:npc_killed_to_complete_dungeon rdf:type owl:ObjectProperty ;
+                                     rdfs:domain tesoo:npc ;
+                                     rdfs:range tesoo:specific_place .
+
+
 ###  http://www.semanticweb.org/TESOO#npc_located_in
 tesoo:npc_located_in rdf:type owl:ObjectProperty ;
                      rdfs:domain tesoo:npc ;
                      rdfs:range <http://purl.org/net/VideoGameOntology#PlayingArea> ;
-                     owl:propertyChainAxiom ( tesoo:npc_located_in
+                     owl:propertyChainAxiom ( tesoo:npc_killed_to_complete_dungeon
+                                            ) ,
+                                            ( tesoo:npc_located_in
                                               tesoo:is_located
                                             ) .
+
+
+###  http://www.semanticweb.org/TESOO#npc_rules_city
+tesoo:npc_rules_city rdf:type owl:ObjectProperty ;
+                     rdfs:domain tesoo:npc ;
+                     rdfs:range tesoo:City .
+
+
+###  http://www.semanticweb.org/TESOO#organization_has_member
+tesoo:organization_has_member rdf:type owl:ObjectProperty ;
+                              rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+                              rdfs:range [ rdf:type owl:Class ;
+                                           owl:unionOf ( tesoo:character
+                                                         tesoo:npc
+                                                       )
+                                         ] .
 
 
 ###  http://www.semanticweb.org/TESOO#quest_located_in
@@ -160,6 +209,12 @@ tesoo:zone_controlled_by rdf:type owl:ObjectProperty ;
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://www.semanticweb.org/TESOO#dungeon_completition_type
+tesoo:dungeon_completition_type rdf:type owl:DatatypeProperty ;
+                                rdfs:domain tesoo:specific_place ;
+                                rdfs:range xsd:string .
+
 
 ###  http://www.semanticweb.org/TESOO#has_XP_Gain
 tesoo:has_XP_Gain rdf:type owl:DatatypeProperty ;
@@ -195,6 +250,12 @@ tesoo:has_race rdf:type owl:DatatypeProperty ;
 tesoo:has_reward rdf:type owl:DatatypeProperty ;
                  rdfs:domain tesoo:Quest ;
                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/TESOO#place_is_dungeon
+tesoo:place_is_dungeon rdf:type owl:DatatypeProperty ;
+                       rdfs:domain tesoo:specific_place ;
+                       rdfs:range xsd:boolean .
 
 
 ###  http://www.semanticweb.org/TESOO#quest_solo_only
@@ -260,6 +321,12 @@ tesoo:City rdf:type owl:Class ;
            rdfs:label "city"@en .
 
 
+###  http://www.semanticweb.org/TESOO#Covert_group
+tesoo:Covert_group rdf:type owl:Class ;
+                   rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+                   owl:disjointWith tesoo:Faction .
+
+
 ###  http://www.semanticweb.org/TESOO#Crypt
 tesoo:Crypt rdf:type owl:Class ;
             rdfs:subClassOf tesoo:specific_place ;
@@ -277,6 +344,13 @@ tesoo:Ebonheart_Pact rdf:type owl:Class ;
                      <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Zone\", 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022]."""@en ;
                      tesoo:definition "Zones controlled by Ebonheart Pact"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Elven_Ruin
+tesoo:Elven_Ruin rdf:type owl:Class ;
+                 rdfs:subClassOf tesoo:Ruins ;
+                 <http://purl.org/dc/elements/1.1/description> "Ruins of the Elfes"@en ;
+                 <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Elven Ruins\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Ruins. [Accessed: June 2022]."@en .
 
 
 ###  http://www.semanticweb.org/TESOO#Faction
@@ -343,6 +417,12 @@ tesoo:Quest rdf:type owl:Class ;
                                 ] ;
             <http://purl.org/dc/elements/1.1/description> "Quests are sorted by where they are assigned or by which faction assigns them. Every zone has a main storyline running through it, as well as dozens of smaller side quests. You can only have 25 quests active at any one time."@en ;
             <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Quests\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Quests. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Ruins
+tesoo:Ruins rdf:type owl:Class ;
+            rdfs:subClassOf tesoo:specific_place ;
+            <http://purl.org/dc/elements/1.1/description> "Ruins of a forgotten or comtemporary civilization"@en .
 
 
 ###  http://www.semanticweb.org/TESOO#Strongholds
@@ -448,11 +528,18 @@ tesoo:zone rdf:type owl:Class ;
 
 
 ###  http://www.w3.org/2000/10/swap/pim/contact#foaf:Person
-<http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> rdf:type owl:Class .
+<http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> rdf:type owl:Class ;
+                                                         owl:disjointUnionOf ( tesoo:character
+                                                                               tesoo:npc
+                                                                               tesoo:player
+                                                                             ) .
 
 
 ###  http://xmlns.com/foaf/0.1/Organization
-<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class .
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         owl:disjointUnionOf ( tesoo:Covert_group
+                                                               tesoo:Faction
+                                                             ) .
 
 
 #################################################################
@@ -470,6 +557,27 @@ tesoo:Auridon rdf:type owl:NamedIndividual ;
               <http://purl.org/dc/elements/1.1/description> "Auridon is the second-largest island in the Summerset Isles and the location of Firsthold, one of the largest Aldmeri cities in the world. It is renowned for its unique architecture and magnificent gardens."@en ;
               <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Auridon\", 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#Bewan
+tesoo:Bewan rdf:type owl:NamedIndividual ,
+                     tesoo:Elven_Ruin ;
+            tesoo:is_located tesoo:Auridon ;
+            tesoo:dungeon_completition_type "Explore and clear Bewan."^^xsd:string ;
+            tesoo:place_is_dungeon "true"^^xsd:boolean ;
+            <http://purl.org/dc/elements/1.1/description> "Bewan is an elven ruin on the western coast of Auridon, just southwest of the town of Dawnbreak containing Sea Viper soldiers. Some of the soldiers are acting drunk. Parts of the ruin are flooded with shallow water."@en ;
+            <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Bewan\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Bewan [Accessed: June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Camandar
+tesoo:Camandar rdf:type owl:NamedIndividual ,
+                        tesoo:Hostile ;
+               tesoo:npc_killed_to_complete_dungeon tesoo:Bewan ;
+               tesoo:has_gender "Male"^^xsd:string ;
+               tesoo:has_health "146590"^^xsd:int ;
+               tesoo:has_race "Maormer"^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/description> "Camandar is the Maormer leader of the Sea Vipers found in the ruins of Bewan. He has a chance to drop Sea Greaves of the Veiled Heritance, a unique item in the Armor of the Veiled Heritance item set."@en ;
+               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Camandar\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Camandar [Accessed: June- 2022]."@en .
 
 
 ###  http://www.semanticweb.org/TESOO#Coldharbour
@@ -494,6 +602,20 @@ tesoo:Grahtwood rdf:type owl:NamedIndividual ;
 https://en.uesp.net/wiki/Online:Grahtwood. [Accessed: June 2022]."""@en .
 
 
+###  http://www.semanticweb.org/TESOO#High_Kinlady_Estre
+tesoo:High_Kinlady_Estre rdf:type owl:NamedIndividual ,
+                                  tesoo:Friendly ;
+                         tesoo:belongs_to_organization tesoo:Veiled_Heritance ;
+                         tesoo:npc_located_in tesoo:Auridon ;
+                         tesoo:npc_rules_city tesoo:Skywatch ;
+                         tesoo:has_gender "Female"^^xsd:string ;
+                         tesoo:has_race "High Elf"^^xsd:string ;
+                         <http://purl.org/dc/elements/1.1/description> """High Kinlady Estre is the Altmer High Kinlady of Skywatch, wife of Prince Naemon of Summerset Isle, sister-in-law of Queen Ayrenn, and the leader of the Veiled Heritance under the guise of the Veiled Queen.
+
+Initially, before starting the quest Ensuring Security, she is found inside the manor in Vulkhel Guard, talking to her husband. Talking to her here, she says, \"You have the pleasure of speaking with High Kinlady Estre, scion of royal Aldmeri blood. I must apologize, but my escort and I were just in the middle of a conversation. If you'll excuse us?\""""@en ;
+                         <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:High Kinlady Estre\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:High_Kinlady_Estre [Accessed: June- 2022]."@en .
+
+
 ###  http://www.semanticweb.org/TESOO#Hooded_Figure
 tesoo:Hooded_Figure rdf:type owl:NamedIndividual ,
                              tesoo:Friendly ;
@@ -503,6 +625,14 @@ tesoo:Hooded_Figure rdf:type owl:NamedIndividual ,
                     tesoo:has_race "Breton" ;
                     <http://purl.org/dc/elements/1.1/description> "The Hooded Figure is a Breton who is in the employ of a mysterious contact known as \"the Benefactor\". In reality, she is deceiving you to hand you over to the Worm Cult."@en ;
                     <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Hooded Figure\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Hooded_Figure [Accessed: June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Skywatch
+tesoo:Skywatch rdf:type owl:NamedIndividual ,
+                        tesoo:City ;
+               tesoo:is_located tesoo:Auridon ;
+               <http://purl.org/dc/elements/1.1/description> "Skywatch is a city at the eastern side of Auridon. The city is built around an ancient ruin and is a very prominent port for the Aldmeri Dominion. It is ruled by High Kinlady Estre. The Festival of Defiance is currently ongoing, and Skywatch Celebrants fill every nook and cranny of Skywatch's public areas. Royal Bodyguards stand watch by the stairwells. Dominion Guard stand vigilant, keeping the peace."@en ;
+               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Skywatch\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Skywatch [Accessed: June- 2022]."@en .
 
 
 ###  http://www.semanticweb.org/TESOO#Soul_Shriven_in_Coldharbour__Quest
@@ -583,6 +713,14 @@ tesoo:The_Wailing_Prison rdf:type owl:NamedIndividual ,
 https://en.uesp.net/wiki/Online:The_Wailing_Prison [Accessed:June- 2022]."""@en .
 
 
+###  http://www.semanticweb.org/TESOO#Veiled_Heritance
+tesoo:Veiled_Heritance rdf:type owl:NamedIndividual ,
+                                tesoo:Covert_group ;
+                       <http://purl.org/dc/elements/1.1/description> "The Veiled Heritance is a covert group of Altmeri nationalists seeking to depose Queen Ayrenn and appoint their own regent, the Veiled Queen, High Kinlady Estre — Ayrenn's sister-in-law and her brother Naemon's wife. One of their main bases is known as The Veiled Keep, and is located under their training grounds on Errinorne Isle in central Auridon."@en ;
+                       <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Veiled Heritance\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Veiled_Heritance [Accessed:June- 2022]."""@en .
+
+
 ###  http://www.semanticweb.org/TESOO#Vulkhel_Guard
 tesoo:Vulkhel_Guard rdf:type owl:NamedIndividual ,
                              tesoo:City ;
@@ -644,6 +782,14 @@ tesoo:Daggerfall_Covenant <http://purl.org/dc/terms/bibliographicCitation> "Uesp
                 tesoo:Justice_Neutral
                 tesoo:Neutral
                 tesoo:None
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( tesoo:character
+                tesoo:npc
+                tesoo:player
               )
 ] .
 
