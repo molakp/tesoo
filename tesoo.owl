@@ -62,35 +62,12 @@
 
 
 #################################################################
-#    Datatypes
-#################################################################
-
-###  http://www.semanticweb.org/TESOO#Gender
-:Gender rdf:type rdfs:Datatype ;
-        <http://purl.org/dc/elements/1.1/description> "Gender of a npc or character"@en ;
-        owl:equivalentClass xsd:string .
-
-
-###  http://www.semanticweb.org/TESOO#Health
-:Health rdf:type rdfs:Datatype ;
-        <http://purl.org/dc/elements/1.1/description> "Health of a npc or character"@en ;
-        owl:equivalentClass xsd:int .
-
-
-###  http://www.semanticweb.org/TESOO#race
-:race rdf:type rdfs:Datatype ;
-      <http://purl.org/dc/elements/1.1/description> "Race of a npc or character"@en ;
-      owl:equivalentClass xsd:string .
-
-
-#################################################################
 #    Object Properties
 #################################################################
 
 ###  http://www.semanticweb.org/TESOO#contains_place
 :contains_place rdf:type owl:ObjectProperty ;
                 owl:inverseOf :is_located ;
-                rdf:type owl:AsymmetricProperty ;
                 rdfs:domain :zone ;
                 rdfs:range :specific_place .
 
@@ -125,8 +102,7 @@
 
 
 ###  http://www.semanticweb.org/TESOO#is_located
-:is_located rdf:type owl:ObjectProperty ,
-                     owl:AsymmetricProperty ;
+:is_located rdf:type owl:ObjectProperty ;
             rdfs:domain :specific_place ;
             rdfs:range :zone .
 
@@ -134,6 +110,7 @@
 ###  http://www.semanticweb.org/TESOO#is_location_of_npc
 :is_location_of_npc rdf:type owl:ObjectProperty ;
                     owl:inverseOf :npc_located_in ;
+                    rdf:type owl:TransitiveProperty ;
                     rdfs:domain :specific_place ;
                     rdfs:range :npc .
 
@@ -173,6 +150,12 @@
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/TESOO#has_XP_Gain
+:has_XP_Gain rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Quest ;
+             rdfs:range xsd:string .
+
+
 ###  http://www.semanticweb.org/TESOO#has_gender
 :has_gender rdf:type owl:DatatypeProperty ;
             rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
@@ -185,10 +168,29 @@
             rdfs:range xsd:int .
 
 
+###  http://www.semanticweb.org/TESOO#has_quest_id
+:has_quest_id rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Quest ;
+              rdfs:range xsd:int .
+
+
 ###  http://www.semanticweb.org/TESOO#has_race
 :has_race rdf:type owl:DatatypeProperty ;
           rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/TESOO#has_reward
+:has_reward rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Quest ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/TESOO#quest_solo_only
+:quest_solo_only rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Quest ;
+                 rdfs:range xsd:boolean .
 
 
 #################################################################
@@ -294,6 +296,18 @@ https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022]."""@
          <http://purl.org/dc/elements/1.1/description> "Neutral NPCs can be attacked without consequences and will not report crimes. They will fight back if provoked. Neutral NPCs cannot be pickpocketed. Their names, health bars and glowing outlines are yellow."@en .
 
 
+###  http://www.semanticweb.org/TESOO#Neutral_and_Disputed
+:Neutral_and_Disputed rdf:type owl:Class ;
+                      rdfs:subClassOf :zone ;
+                      <http://purl.org/dc/elements/1.1/description> """Coldharbour — Molag Bal's realm of Oblivion.
+
+Craglorn — A region situated in northeastern Hammerfell between Bangkorai and Cyrodiil.
+
+Cyrodiil — The central province of Tamriel and home of the Imperials, who stand alone in the Alliance War.
+
+Imperial City — The central city and capital of Cyrodiil and the former Empire""" .
+
+
 ###  http://www.semanticweb.org/TESOO#None
 :None rdf:type owl:Class ;
       rdfs:subClassOf :npc ;
@@ -309,6 +323,11 @@ https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022]."""@
                            ] ;
        <http://purl.org/dc/elements/1.1/description> "Quests are sorted by where they are assigned or by which faction assigns them. Every zone has a main storyline running through it, as well as dozens of smaller side quests. You can only have 25 quests active at any one time."@en ;
        <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Quests\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Quests. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Strongholds
+:Strongholds rdf:type owl:Class ;
+             rdfs:subClassOf :specific_place .
 
 
 ###  http://www.semanticweb.org/TESOO#character
@@ -327,6 +346,9 @@ https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022]."""@
 
 ###  http://www.semanticweb.org/TESOO#place
 :place rdf:type owl:Class ;
+       owl:disjointUnionOf ( :specific_place
+                             :zone
+                           ) ;
        <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Places\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Places [Accessed: 07- June- 2022]."@en ;
        :definition "a place in ESO"@en ;
        rdfs:label "place"@en .
@@ -341,6 +363,13 @@ https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022]."""@
                                     ] ;
                 rdfs:subClassOf :place ;
                 owl:disjointWith :zone ;
+                owl:disjointUnionOf ( :Body_of_Water
+                                      :Cave
+                                      :Cemetery
+                                      :City
+                                      :Crypt
+                                      :Strongholds
+                                    ) ;
                 <http://purl.org/dc/elements/1.1/description> """Every specific place on the map:
 Abyssal Geysers — Wave-based group events found only on Summerset
 Battlefields — Sites of ancient and contemporary battles
@@ -384,13 +413,18 @@ Wayshrines — Access points to the fast-travel system"""@en .
                                                  ]
                                                  [ rdf:type owl:Restriction ;
                                                    owl:onProperty :zone_controlled_by ;
-                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                    owl:onClass :Faction
                                                  ]
                                                ) ;
                             rdf:type owl:Class
                           ] ;
       rdfs:subClassOf :place ;
+      owl:disjointUnionOf ( :Aldmeri_Dominion
+                            :Daggerfall_Covenant
+                            :Ebonheart_Pact
+                            :Neutral_and_Disputed
+                          ) ;
       <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Zones\", 2022. [Online]. Available:
  https://en.uesp.net/wiki/Online:Zones. [Accessed: June 2022]."""@en ;
       <http://purl.org/dc/terms/source> "Online:Zone"@en ;
@@ -415,17 +449,77 @@ Wayshrines — Access points to the fast-travel system"""@en .
                            :Faction .
 
 
+###  http://www.semanticweb.org/TESOO#Auridon
+:Auridon rdf:type owl:NamedIndividual ,
+                  :Aldmeri_Dominion ;
+         :zone_controlled_by :Aldmeri_Dominion ;
+         <http://purl.org/dc/elements/1.1/description> "Auridon is the second-largest island in the Summerset Isles and the location of Firsthold, one of the largest Aldmeri cities in the world. It is renowned for its unique architecture and magnificent gardens."@en ;
+         <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Auridon\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#Coldharbour
+:Coldharbour rdf:type owl:NamedIndividual ,
+                      :Neutral_and_Disputed ;
+             <http://purl.org/dc/terms/bibliographicCitation> """Coldharbour is Molag Bal's realm of Oblivion. The Prince is attempting to pull Nirn into his realm through the use of Dark Anchors.
+
+Parts of Coldharbour are visited during the main quest. You get access to the main region by finishing The Weight of Three Crowns."""@en ,
+                                                              "Uesp.net, \"Online:Coldharbour\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Coldharbour [Accessed: June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Hooded_Figure
+:Hooded_Figure rdf:type owl:NamedIndividual ,
+                        :Friendly ;
+               :npc_located_in :Vulkhel_Guard ;
+               :has_gender "Female"^^xsd:string ;
+               :has_health "39959"^^xsd:int ;
+               :has_race "Breton" ;
+               <http://purl.org/dc/elements/1.1/description> "The Hooded Figure is a Breton who is in the employ of a mysterious contact known as \"the Benefactor\". In reality, she is deceiving you to hand you over to the Worm Cult."@en ;
+               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Hooded Figure\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Hooded_Figure [Accessed: June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Soul_Shriven_in_Coldharbour__Quest
+:Soul_Shriven_in_Coldharbour__Quest rdf:type owl:NamedIndividual ,
+                                             :Main_Quest ;
+                                    :has_next_quest :The_Harborage_Quest ;
+                                    :has_quest_giver :Hooded_Figure ;
+                                    :has_XP_Gain "Very High"^^xsd:string ;
+                                    :has_quest_id "4296"^^xsd:int ;
+                                    :has_reward """Sealed Urn (contents)
+1 Skill Point
+Soul Magic Skill Line
+Achievement:Soul Shriven in Coldharbour"""^^xsd:string ;
+                                    <http://purl.org/dc/elements/1.1/description> """Quick Walkthrough
+
+Locate The Benefactor.
+Listen to Lyris Titanborn and escape the prison cell.
+Talk to The Prophet and head into the Bleeding Forge.
+Head into the Towers of Eyes and destroy a Coldharbour Sentinel.
+Talk to Cadwell then enter the Undercroft.
+Reach the Prophet's Cell and disable the Dark Pinions.
+Enter the Anchor Mooring and defeat the Child of Bones.
+Escape Coldharbour."""@en ;
+                                    <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Soul Shriven in Coldharbour\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Soul_Shriven_in_Coldharbour [Accessed: June- 2022]."@en .
+
+
 ###  http://www.semanticweb.org/TESOO#The_Harborage
 :The_Harborage rdf:type owl:NamedIndividual ,
                         :Cave ;
+               :is_located :Auridon ;
                :is_location_of_quest :The_Harborage_Quest ;
                <http://purl.org/dc/elements/1.1/description> "The Harborage is a cave in the wilderness which the Prophet has adopted as his home and refuge. The cave is located near the first major city of each alliance, and serves as the starting point for each stage of the Main Quest."@en ;
-               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:The Harborage (place)\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:The_Harborage_(place) [Accessed: 07- June- 2022]."@en .
+               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:The Harborage (place)\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:The_Harborage_(place) [Accessed:  June- 2022]."@en .
 
 
 ###  http://www.semanticweb.org/TESOO#The_Harborage_Quest
 :The_Harborage_Quest rdf:type owl:NamedIndividual ,
                               :Main_Quest ;
+                     :has_XP_Gain "Very High"^^xsd:string ;
+                     :has_reward """Prophet's Recollection
+1 Skill Point
+Very High Leveled Gold
+Achievement:The Harborage"""^^xsd:string ;
+                     :quest_solo_only "true"^^xsd:boolean ;
                      <http://purl.org/dc/elements/1.1/description> """Quick Walkthrough:
 
 -Speak to the Prophet.
@@ -436,7 +530,7 @@ Wayshrines — Access points to the fast-travel system"""@en .
 -Follow the Prophet and learn about the threat of Molag Bal's Dark -Anchors and the Planemeld.
 -Return to the Harborage and discuss your next moves."""@en ;
                      <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:The Harborage (quest)\", 2022. [Online]. Available: 
-https://en.uesp.net/wiki/Online:The_Harborage_(quest) [Accessed: 07- June- 2022]."""@en .
+https://en.uesp.net/wiki/Online:The_Harborage_(quest) [Accessed: June- 2022]."""@en .
 
 
 ###  http://www.semanticweb.org/TESOO#The_Prophet
@@ -452,6 +546,34 @@ https://en.uesp.net/wiki/Online:The_Harborage_(quest) [Accessed: 07- June- 2022]
 https://en.uesp.net/wiki/Online:The_Prophet [Accessed:June- 2022]."""@en .
 
 
+###  http://www.semanticweb.org/TESOO#The_Wailing_Prison
+:The_Wailing_Prison rdf:type owl:NamedIndividual ,
+                             :Strongholds ;
+                    :is_located :Coldharbour ;
+                    <http://purl.org/dc/elements/1.1/description> "The Wailing Prison is a sub-location of Coldharbour, Molag Bal's realm of Oblivion. It is where the introductory quest to the game takes place. The location is split into seven zones."@en ;
+                    <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:The Wailing Prison\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:The_Wailing_Prison [Accessed:June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#Vulkhel_Guard
+:Vulkhel_Guard rdf:type owl:NamedIndividual ,
+                        :City ;
+               :is_located :Auridon ;
+               <http://purl.org/dc/elements/1.1/description> """Vulkhel Guard is a port city at the southern tip of Auridon. It is ruled by Canonreeve Nesaranwe. The Queen has planned a visit here as one stop on her tour around Auridon, and Watch Captain Astanya is working frantically to prepare.
+
+
+The area near the wayshrine - Mara's Kiss Public House and Abecean Saddle Company
+
+Vulkhel Docks
+
+The crafting and shopping area in town, as seen from the Fighters Guild
+Vulkhel Guard contains all the necessary services for a large city, including crafting stations, a bank, and chapters of the Fighters Guild and Mages Guild, arranged into four districts. In the center lie the manor house, which has a Skyshard on the middle balcony, and temple, where Queen Ayrenn and her entourage are starting their tour of Auridon. To the west is the main marketplace and guildhalls, while the residences and guard barracks can be found around the Wayshrine in the east. In the south lies Vulkhel Docks, where those wishing to visit Khenarthi's Roost can arrange transport with Sugar-Claws, and characters can take a ship to Daggerfall or Davon's Watch. Vulkhel Guard Lighthouse is just outside the city to the northeast.
+
+If you head south from the wayshrine, you'll come across the Harborside Market, which lies on the beach between the city and the docks. There is a cooking fire and a Basic Provisioning Guide across from the general store."""@en ;
+               <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Vulkhel Guard\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Vulkhel_Guard [Accessed:June- 2022]."""@en .
+
+
 #################################################################
 #    Annotations
 #################################################################
@@ -465,11 +587,21 @@ https://en.uesp.net/wiki/Online:The_Prophet [Accessed:June- 2022]."""@en .
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Aldmeri_Dominion
+                :Daggerfall_Covenant
+                :Ebonheart_Pact
+                :Neutral_and_Disputed
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Body_of_Water
                 :Cave
                 :Cemetery
                 :City
                 :Crypt
+                :Strongholds
               )
 ] .
 
