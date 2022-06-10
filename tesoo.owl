@@ -102,7 +102,8 @@
 
 
 ###  http://www.semanticweb.org/TESOO#is_located
-:is_located rdf:type owl:ObjectProperty ;
+:is_located rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :specific_place ;
             rdfs:range :zone .
 
@@ -111,8 +112,11 @@
 :is_location_of_npc rdf:type owl:ObjectProperty ;
                     owl:inverseOf :npc_located_in ;
                     rdf:type owl:TransitiveProperty ;
-                    rdfs:domain :specific_place ;
-                    rdfs:range :npc .
+                    rdfs:domain :place ;
+                    rdfs:range :npc ;
+                    owl:propertyChainAxiom ( :is_location_of_npc
+                                             :is_located
+                                           ) .
 
 
 ###  http://www.semanticweb.org/TESOO#is_location_of_quest
@@ -129,7 +133,10 @@
 ###  http://www.semanticweb.org/TESOO#npc_located_in
 :npc_located_in rdf:type owl:ObjectProperty ;
                 rdfs:domain :npc ;
-                rdfs:range :specific_place .
+                rdfs:range :place ;
+                owl:propertyChainAxiom ( :npc_located_in
+                                         :is_located
+                                       ) .
 
 
 ###  http://www.semanticweb.org/TESOO#quest_located_in
@@ -514,6 +521,7 @@ Escape Coldharbour."""@en ;
 ###  http://www.semanticweb.org/TESOO#The_Harborage_Quest
 :The_Harborage_Quest rdf:type owl:NamedIndividual ,
                               :Main_Quest ;
+                     :quest_located_in :The_Harborage ;
                      :has_XP_Gain "Very High"^^xsd:string ;
                      :has_reward """Prophet's Recollection
 1 Skill Point
