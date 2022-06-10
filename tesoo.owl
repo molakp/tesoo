@@ -221,6 +221,10 @@ tesoo:quest_solo_only rdf:type owl:DatatypeProperty ;
 
 ###  http://www.semanticweb.org/TESOO#Aldmeri_Dominion
 tesoo:Aldmeri_Dominion rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty tesoo:zone_controlled_by ;
+                                             owl:hasValue tesoo:Aldmeri_Dominion
+                                           ] ;
                        rdfs:subClassOf tesoo:zone .
 
 
@@ -264,9 +268,7 @@ tesoo:Crypt rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/TESOO#Daggerfall_Covenant
 tesoo:Daggerfall_Covenant rdf:type owl:Class ;
-                          rdfs:subClassOf tesoo:zone ;
-                          <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Daggerfall_Covenant. [Accessed: June 2022]."@en ;
-                          tesoo:definition "Zones controlled by Daggerfall Covenant"@en .
+                          rdfs:subClassOf tesoo:zone .
 
 
 ###  http://www.semanticweb.org/TESOO#Ebonheart_Pact
@@ -463,8 +465,7 @@ tesoo:Aldmeri_Dominion rdf:type owl:NamedIndividual ,
 
 
 ###  http://www.semanticweb.org/TESOO#Auridon
-tesoo:Auridon rdf:type owl:NamedIndividual ,
-                       tesoo:Aldmeri_Dominion ;
+tesoo:Auridon rdf:type owl:NamedIndividual ;
               tesoo:zone_controlled_by tesoo:Aldmeri_Dominion ;
               <http://purl.org/dc/elements/1.1/description> "Auridon is the second-largest island in the Summerset Isles and the location of Firsthold, one of the largest Aldmeri cities in the world. It is renowned for its unique architecture and magnificent gardens."@en ;
               <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Auridon\", 2022. [Online]. Available: 
@@ -478,6 +479,19 @@ tesoo:Coldharbour rdf:type owl:NamedIndividual ,
 
 Parts of Coldharbour are visited during the main quest. You get access to the main region by finishing The Weight of Three Crowns."""@en ,
                                                                    "Uesp.net, \"Online:Coldharbour\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Coldharbour [Accessed: June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Daggerfall_Covenant
+tesoo:Daggerfall_Covenant rdf:type owl:NamedIndividual ,
+                                   tesoo:Faction .
+
+
+###  http://www.semanticweb.org/TESOO#Grahtwood
+tesoo:Grahtwood rdf:type owl:NamedIndividual ;
+                tesoo:zone_controlled_by tesoo:Aldmeri_Dominion ;
+                <http://purl.org/dc/elements/1.1/description> "Grahtwood is a large region deep in the jungles of Valenwood, and the location of the Aldmeri Dominion's capital, Elden Root. An area in Grahtwood was devastated by Molag Bal long ago, and it remains there to this day."@en ;
+                <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Grahtwood\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Grahtwood. [Accessed: June 2022]."""@en .
 
 
 ###  http://www.semanticweb.org/TESOO#Hooded_Figure
@@ -596,6 +610,10 @@ tesoo:Aldmeri_Dominion tesoo:definition "Zone controlled by Aldmeri Dominion All
                        <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Aldmeri_Dominion. [Accessed: June 2022]."@en .
 
 
+tesoo:Daggerfall_Covenant <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Daggerfall_Covenant. [Accessed: June 2022]."@en ;
+                          tesoo:definition "Zones controlled by Daggerfall Covenant"@en .
+
+
 #################################################################
 #    General axioms
 #################################################################
@@ -627,6 +645,13 @@ tesoo:Aldmeri_Dominion tesoo:definition "Zone controlled by Aldmeri Dominion All
                 tesoo:Neutral
                 tesoo:None
               )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:Aldmeri_Dominion
+                        tesoo:Daggerfall_Covenant
+                      )
 ] .
 
 
