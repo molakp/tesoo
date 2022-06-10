@@ -252,6 +252,13 @@ tesoo:has_reward rdf:type owl:DatatypeProperty ;
                  rdfs:range xsd:string .
 
 
+###  http://www.semanticweb.org/TESOO#place_is_discoverable
+tesoo:place_is_discoverable rdf:type owl:DatatypeProperty ;
+                            rdfs:domain tesoo:specific_place ;
+                            rdfs:range xsd:boolean ;
+                            <http://purl.org/dc/elements/1.1/description> "Some places are freely discoverable, other are locked untile specific actions are done or conditions are met"@en .
+
+
 ###  http://www.semanticweb.org/TESOO#place_is_dungeon
 tesoo:place_is_dungeon rdf:type owl:DatatypeProperty ;
                        rdfs:domain tesoo:specific_place ;
@@ -382,6 +389,12 @@ tesoo:Justice_Neutral rdf:type owl:Class ;
 tesoo:Main_Quest rdf:type owl:Class ;
                  rdfs:subClassOf tesoo:Quest ;
                  <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Main Quest\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Main_Quest. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Mine
+tesoo:Mine rdf:type owl:Class ;
+           rdfs:subClassOf tesoo:specific_place ;
+           <http://purl.org/dc/elements/1.1/description> "all the mines in Elder Scrolls Online."@en .
 
 
 ###  http://www.semanticweb.org/TESOO#Neutral
@@ -738,6 +751,16 @@ Vulkhel Guard contains all the necessary services for a large city, including cr
 If you head south from the wayshrine, you'll come across the Harborside Market, which lies on the beach between the city and the docks. There is a cooking fire and a Basic Provisioning Guide across from the general store."""@en ;
                     <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Vulkhel Guard\", 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Vulkhel_Guard [Accessed:June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#Del's_Claim
+<http://www.semanticweb.org/TESOO#Del's_Claim> rdf:type owl:NamedIndividual ,
+                                                        tesoo:Mine ;
+                                               tesoo:is_located tesoo:Auridon ;
+                                               tesoo:dungeon_completition_type "Explore and Clear"^^xsd:string ;
+                                               tesoo:place_is_discoverable "true"^^xsd:boolean ;
+                                               <http://purl.org/dc/elements/1.1/description> "Del's Claim is a mine in southern Auridon, just northwest of the city of Vulkhel Guard. It has recently been taken over by followers of the Veiled Heritance, who killed all the miners. They plan to use it as a secure base of operations."@en ;
+                                               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Del's Claim\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Del%27s_Claim. [Accessed: June 2022]."@en .
 
 
 #################################################################
