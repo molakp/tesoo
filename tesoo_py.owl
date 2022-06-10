@@ -1,0 +1,1059 @@
+@prefix : <http://www.semanticweb.org/TESOO#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix vgo: <http://purl.org/net/videogameontology#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/index.rdf> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tesoo: <http://www.semanticweb.org/TESOO#> .
+@base <http://www.semanticweb.org/TESOO> .
+
+<http://www.semanticweb.org/TESOO> rdf:type owl:Ontology ;
+                                    <http://purl.org/dc/elements/1.1/creator> "Silvestro Stefano Frisullo"@en ;
+                                    <http://purl.org/dc/elements/1.1/date> "June 2022"@en ;
+                                    <http://purl.org/dc/elements/1.1/description> "Ontology for The Elder Scrolls Online"@en ;
+                                    <http://purl.org/dc/elements/1.1/title> "TESOO: The Elder Scrolls Online Ontology"@en ;
+                                    <http://purl.org/dc/terms/license> "http://opensource.org/licenses/mit-license.php/" ;
+                                    tesoo:vann:preferredNamespacePrefix "http://www.tesoo.com"@en ,
+                                                                        "tesoo"@en ;
+                                    rdfs:label "TESOO"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/image
+<http://schema.org/image> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/TESOO#definition
+tesoo:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/TESOO#vann:preferredNamespacePrefix
+tesoo:vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/TESOO#vann:preferredNamespaceUri
+tesoo:vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/TESOO#belongs_to_organization
+tesoo:belongs_to_organization rdf:type owl:ObjectProperty ;
+                              owl:inverseOf tesoo:organization_has_member ;
+                              rdfs:domain [ rdf:type owl:Class ;
+                                            owl:unionOf ( tesoo:character
+                                                          tesoo:npc
+                                                        )
+                                          ] ;
+                              rdfs:range <http://xmlns.com/foaf/0.1/Organization> .
+
+
+###  http://www.semanticweb.org/TESOO#city_ruled_by
+tesoo:city_ruled_by rdf:type owl:ObjectProperty ;
+                    owl:inverseOf tesoo:npc_rules_city ;
+                    rdfs:domain tesoo:City ;
+                    rdfs:range tesoo:npc .
+
+
+###  http://www.semanticweb.org/TESOO#contains_place
+tesoo:contains_place rdf:type owl:ObjectProperty ;
+                     owl:inverseOf tesoo:is_located ;
+                     rdfs:domain tesoo:zone ;
+                     rdfs:range tesoo:specific_place .
+
+
+###  http://www.semanticweb.org/TESOO#dungeon_kill_to_complete
+tesoo:dungeon_kill_to_complete rdf:type owl:ObjectProperty ;
+                               owl:inverseOf tesoo:npc_killed_to_complete_dungeon ;
+                               rdfs:domain tesoo:specific_place ;
+                               rdfs:range tesoo:npc .
+
+
+###  http://www.semanticweb.org/TESOO#faction_controls
+tesoo:faction_controls rdf:type owl:ObjectProperty ;
+                       owl:inverseOf tesoo:zone_controlled_by ;
+                       rdf:type owl:AsymmetricProperty ;
+                       rdfs:domain tesoo:Faction ;
+                       rdfs:range tesoo:zone .
+
+
+###  http://www.semanticweb.org/TESOO#has_next_quest
+tesoo:has_next_quest rdf:type owl:ObjectProperty ;
+                     owl:inverseOf tesoo:has_prerequisite_quest ;
+                     rdfs:domain tesoo:Quest ;
+                     rdfs:range tesoo:Quest .
+
+
+###  http://www.semanticweb.org/TESOO#has_prerequisite_quest
+tesoo:has_prerequisite_quest rdf:type owl:ObjectProperty ;
+                             rdfs:domain tesoo:Quest ;
+                             rdfs:range tesoo:Quest .
+
+
+###  http://www.semanticweb.org/TESOO#has_quest_giver
+tesoo:has_quest_giver rdf:type owl:ObjectProperty ;
+                      owl:inverseOf tesoo:npc_is_quest_giver ;
+                      rdf:type owl:AsymmetricProperty ;
+                      rdfs:domain tesoo:Quest ;
+                      rdfs:range tesoo:npc .
+
+
+###  http://www.semanticweb.org/TESOO#is_located
+tesoo:is_located rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain tesoo:specific_place ;
+                 rdfs:range tesoo:zone .
+
+
+###  http://www.semanticweb.org/TESOO#is_location_of_npc
+tesoo:is_location_of_npc rdf:type owl:ObjectProperty ;
+                         owl:inverseOf tesoo:npc_located_in ;
+                         rdf:type owl:TransitiveProperty ;
+                         rdfs:domain <http://purl.org/net/VideoGameOntology#PlayingArea> ;
+                         rdfs:range tesoo:npc .
+
+
+###  http://www.semanticweb.org/TESOO#is_location_of_quest
+tesoo:is_location_of_quest rdf:type owl:ObjectProperty ;
+                           owl:inverseOf tesoo:quest_located_in ;
+                           rdfs:domain <http://purl.org/net/VideoGameOntology#PlayingArea> ;
+                           rdfs:range tesoo:Quest .
+
+
+###  http://www.semanticweb.org/TESOO#npc_in_relationship_with
+tesoo:npc_in_relationship_with rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/TESOO#npc_is_married_with
+tesoo:npc_is_married_with rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf tesoo:npc_in_relationship_with ;
+                          rdf:type owl:SymmetricProperty ;
+                          rdfs:domain tesoo:npc ;
+                          rdfs:range tesoo:npc .
+
+
+###  http://www.semanticweb.org/TESOO#npc_is_quest_giver
+tesoo:npc_is_quest_giver rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf tesoo:npc_related_quest ;
+                         rdfs:domain tesoo:npc ;
+                         rdfs:range tesoo:Quest .
+
+
+###  http://www.semanticweb.org/TESOO#npc_killed_to_complete_dungeon
+tesoo:npc_killed_to_complete_dungeon rdf:type owl:ObjectProperty ,
+                                              owl:FunctionalProperty ;
+                                     rdfs:domain tesoo:npc ;
+                                     rdfs:range tesoo:specific_place .
+
+
+###  http://www.semanticweb.org/TESOO#npc_located_in
+tesoo:npc_located_in rdf:type owl:ObjectProperty ;
+                     rdfs:domain tesoo:npc ;
+                     rdfs:range <http://purl.org/net/VideoGameOntology#PlayingArea> ;
+                     owl:propertyChainAxiom ( tesoo:npc_killed_to_complete_dungeon
+                                            ) ,
+                                            ( tesoo:npc_located_in
+                                              tesoo:is_located
+                                            ) .
+
+
+###  http://www.semanticweb.org/TESOO#npc_related_quest
+tesoo:npc_related_quest rdf:type owl:ObjectProperty ;
+                        rdfs:domain tesoo:npc ;
+                        rdfs:range tesoo:Quest .
+
+
+###  http://www.semanticweb.org/TESOO#npc_rules_city
+tesoo:npc_rules_city rdf:type owl:ObjectProperty ;
+                     rdfs:domain tesoo:npc ;
+                     rdfs:range tesoo:City .
+
+
+###  http://www.semanticweb.org/TESOO#organization_has_member
+tesoo:organization_has_member rdf:type owl:ObjectProperty ;
+                              rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+                              rdfs:range [ rdf:type owl:Class ;
+                                           owl:unionOf ( tesoo:character
+                                                         tesoo:npc
+                                                       )
+                                         ] .
+
+
+###  http://www.semanticweb.org/TESOO#quest_located_in
+tesoo:quest_located_in rdf:type owl:ObjectProperty ;
+                       rdfs:domain tesoo:Quest ;
+                       rdfs:range <http://purl.org/net/VideoGameOntology#PlayingArea> ;
+                       owl:propertyChainAxiom ( tesoo:quest_located_in
+                                                tesoo:is_located
+                                              ) .
+
+
+###  http://www.semanticweb.org/TESOO#zone_controlled_by
+tesoo:zone_controlled_by rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdf:type owl:AsymmetricProperty ;
+                         rdfs:domain tesoo:zone ;
+                         rdfs:range tesoo:Faction .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/TESOO#dungeon_completition_type
+tesoo:dungeon_completition_type rdf:type owl:DatatypeProperty ;
+                                rdfs:domain tesoo:specific_place ;
+                                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/TESOO#has_XP_Gain
+tesoo:has_XP_Gain rdf:type owl:DatatypeProperty ;
+                  rdfs:domain tesoo:Quest ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/TESOO#has_gender
+tesoo:has_gender rdf:type owl:DatatypeProperty ;
+                 rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/TESOO#has_health
+tesoo:has_health rdf:type owl:DatatypeProperty ;
+                 rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
+                 rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/TESOO#has_quest_id
+tesoo:has_quest_id rdf:type owl:DatatypeProperty ;
+                   rdfs:domain tesoo:Quest ;
+                   rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/TESOO#has_race
+tesoo:has_race rdf:type owl:DatatypeProperty ;
+               rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/TESOO#has_reward
+tesoo:has_reward rdf:type owl:DatatypeProperty ;
+                 rdfs:domain tesoo:Quest ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/TESOO#place_is_discoverable
+tesoo:place_is_discoverable rdf:type owl:DatatypeProperty ;
+                            rdfs:domain tesoo:specific_place ;
+                            rdfs:range xsd:boolean ;
+                            <http://purl.org/dc/elements/1.1/description> "Some places are freely discoverable, other are locked untile specific actions are done or conditions are met"@en .
+
+
+###  http://www.semanticweb.org/TESOO#place_is_dungeon
+tesoo:place_is_dungeon rdf:type owl:DatatypeProperty ;
+                       rdfs:domain tesoo:specific_place ;
+                       rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/TESOO#quest_solo_only
+tesoo:quest_solo_only rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain tesoo:Quest ;
+                      rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/net/VideoGameOntology#PlayingArea
+<http://purl.org/net/VideoGameOntology#PlayingArea> rdf:type owl:Class ;
+                                                    owl:disjointUnionOf ( tesoo:specific_place
+                                                                          tesoo:zone
+                                                                        ) .
+
+
+###  http://www.omg.org/spec/EDMC-FIBO/FND/Places/VirtualPlaces/VirtualLocation
+<http://www.omg.org/spec/EDMC-FIBO/FND/Places/VirtualPlaces/VirtualLocation> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/TESOO#Aldmeri_Dominion
+tesoo:Aldmeri_Dominion rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty tesoo:zone_controlled_by ;
+                                             owl:hasValue tesoo:Aldmeri_Dominion
+                                           ] ;
+                       rdfs:subClassOf tesoo:zone .
+
+
+###  http://www.semanticweb.org/TESOO#Body_of_Water
+tesoo:Body_of_Water rdf:type owl:Class ;
+                    rdfs:subClassOf tesoo:specific_place ;
+                    <http://purl.org/dc/elements/1.1/description> "Places like lakes, seas, rivers etc"@en ;
+                    <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Bodies of Water\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Bodies_of_Water. [Accessed: June 2022]."@en ;
+                    rdfs:label "body_of_water"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Cave
+tesoo:Cave rdf:type owl:Class ;
+           rdfs:subClassOf tesoo:specific_place ;
+           <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Caves\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Caves. [Accessed: June 2022]."@en ;
+           rdfs:label "cave"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Cemetery
+tesoo:Cemetery rdf:type owl:Class ;
+               rdfs:subClassOf tesoo:specific_place ;
+               <http://purl.org/dc/elements/1.1/description> "all the cemeteries (including graveyards and necropoli)"@en ;
+               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Cemeteries\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Cemeteries. [Accessed: June 2022]."@en ;
+               rdfs:label "cemetery"@en .
+
+
+###  http://www.semanticweb.org/TESOO#City
+tesoo:City rdf:type owl:Class ;
+           rdfs:subClassOf tesoo:specific_place ;
+           <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Cities\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Cities. [Accessed: June 2022]."@en ;
+           <http://purl.org/dc/terms/source> "ESO:Cities"@en ;
+           tesoo:definition "A populated city in the game"@en ;
+           rdfs:label "city"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Covert_group
+tesoo:Covert_group rdf:type owl:Class ;
+                   rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+                   owl:disjointWith tesoo:Faction .
+
+
+###  http://www.semanticweb.org/TESOO#Crypt
+tesoo:Crypt rdf:type owl:Class ;
+            rdfs:subClassOf tesoo:specific_place ;
+            <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Crypts\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Crypts. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Daggerfall_Covenant
+tesoo:Daggerfall_Covenant rdf:type owl:Class ;
+                          rdfs:subClassOf tesoo:zone .
+
+
+###  http://www.semanticweb.org/TESOO#Ebonheart_Pact
+tesoo:Ebonheart_Pact rdf:type owl:Class ;
+                     rdfs:subClassOf tesoo:zone ;
+                     <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Zone\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022]."""@en ;
+                     tesoo:definition "Zones controlled by Ebonheart Pact"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Elven_Ruin
+tesoo:Elven_Ruin rdf:type owl:Class ;
+                 rdfs:subClassOf tesoo:Ruins ;
+                 <http://purl.org/dc/elements/1.1/description> "Ruins of the Elfes"@en ;
+                 <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Elven Ruins\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Ruins. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Faction
+tesoo:Faction rdf:type owl:Class ;
+              rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+              <http://purl.org/dc/elements/1.1/description> "Factions determine the the character allegiance and starting area in Elder Scrolls Online."@en ;
+              <http://purl.org/dc/terms/bibliographicCitation> "Eso Wiki, \"Factions\", 2022. [Online]. Available: https://elderscrollsonline.wiki.fextralife.com/Factions. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Friendly
+tesoo:Friendly rdf:type owl:Class ;
+               rdfs:subClassOf tesoo:npc ;
+               <http://purl.org/dc/elements/1.1/description> "Friendly NPCs can't be attacked or pickpocketed. Some friendly NPCs (namely merchants) can report crimes, but they will not fight. Friendly NPCs that aren't merchants will not report crimes. If nameplates are turned on, their health bars, names and outlines are green."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Hostile
+tesoo:Hostile rdf:type owl:Class ;
+              rdfs:subClassOf tesoo:npc ;
+              <http://purl.org/dc/elements/1.1/description> "Hostile NPCs can be attacked without consequence and will not report crimes. They attack on sight. Hostile NPCs have red health bars, names and outlines."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Justice_Neutral
+tesoo:Justice_Neutral rdf:type owl:Class ;
+                      rdfs:subClassOf tesoo:npc ;
+                      <http://purl.org/dc/elements/1.1/description> "Justice Neutral NPCs can be attacked and pickpocketed with consequence. They will report crimes if they witness them, and will fight back if attacked. They can also be provoked into attacking if they witness a crime being committed, but they won't always do so. If they witness a murder, they will report it, and some will attack you or flee the scene. They have yellow health bars and white nameplates and outlines."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Main_Quest
+tesoo:Main_Quest rdf:type owl:Class ;
+                 rdfs:subClassOf tesoo:Quest ;
+                 <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Main Quest\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Main_Quest. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Mine
+tesoo:Mine rdf:type owl:Class ;
+           rdfs:subClassOf tesoo:specific_place ;
+           <http://purl.org/dc/elements/1.1/description> "all the mines in Elder Scrolls Online."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Neutral
+tesoo:Neutral rdf:type owl:Class ;
+              rdfs:subClassOf tesoo:npc ;
+              <http://purl.org/dc/elements/1.1/description> "Neutral NPCs can be attacked without consequences and will not report crimes. They will fight back if provoked. Neutral NPCs cannot be pickpocketed. Their names, health bars and glowing outlines are yellow."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Neutral_and_Disputed
+tesoo:Neutral_and_Disputed rdf:type owl:Class ;
+                           rdfs:subClassOf tesoo:zone ;
+                           <http://purl.org/dc/elements/1.1/description> """Coldharbour — Molag Bal's realm of Oblivion.
+
+Craglorn — A region situated in northeastern Hammerfell between Bangkorai and Cyrodiil.
+
+Cyrodiil — The central province of Tamriel and home of the Imperials, who stand alone in the Alliance War.
+
+Imperial City — The central city and capital of Cyrodiil and the former Empire""" .
+
+
+###  http://www.semanticweb.org/TESOO#None
+tesoo:None rdf:type owl:Class ;
+           rdfs:subClassOf tesoo:npc ;
+           <http://purl.org/dc/elements/1.1/description> "Usually reserved for deceased characters, also applies to NPCs without healthbars that can't be interacted with in any way (coded as \"0\")"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Quest
+tesoo:Quest rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:has_next_quest ;
+                                  owl:someValuesFrom tesoo:Quest
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:has_prerequisite_quest ;
+                                  owl:someValuesFrom tesoo:Quest
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:npc_killed_to_complete_dungeon ;
+                                  owl:someValuesFrom tesoo:Quest
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:npc_related_quest ;
+                                  owl:someValuesFrom tesoo:Quest
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:quest_located_in ;
+                                  owl:someValuesFrom <http://purl.org/net/VideoGameOntology#PlayingArea>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:has_quest_giver ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass tesoo:npc
+                                ] ;
+            <http://purl.org/dc/elements/1.1/description> "Quests are sorted by where they are assigned or by which faction assigns them. Every zone has a main storyline running through it, as well as dozens of smaller side quests. You can only have 25 quests active at any one time."@en ;
+            <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Quests\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Quests. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Ruins
+tesoo:Ruins rdf:type owl:Class ;
+            rdfs:subClassOf tesoo:specific_place ;
+            <http://purl.org/dc/elements/1.1/description> "Ruins of a forgotten or comtemporary civilization"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Strongholds
+tesoo:Strongholds rdf:type owl:Class ;
+                  rdfs:subClassOf tesoo:specific_place .
+
+
+###  http://www.semanticweb.org/TESOO#Vary
+tesoo:Vary rdf:type owl:Class ;
+           rdfs:subClassOf tesoo:npc ;
+           <http://purl.org/dc/elements/1.1/description> "Vary is for NPC that can change according to the story or player's actions."@en .
+
+
+###  http://www.semanticweb.org/TESOO#character
+tesoo:character rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
+                <http://purl.org/dc/elements/1.1/description> "One of the seven charachter the player can have in ESO"@en .
+
+
+###  http://www.semanticweb.org/TESOO#npc
+tesoo:npc rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
+          owl:disjointUnionOf ( tesoo:Friendly
+                                tesoo:Hostile
+                                tesoo:Justice_Neutral
+                                tesoo:Neutral
+                                tesoo:None
+                                tesoo:Vary
+                              ) ;
+          <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:NPCs\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:NPCs. [Accessed: June 2022]."@en ;
+          tesoo:definition "Any Non Playable Character in ESO"@en ;
+          rdfs:label "npc"@en .
+
+
+###  http://www.semanticweb.org/TESOO#player
+tesoo:player rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> .
+
+
+###  http://www.semanticweb.org/TESOO#specific_place
+tesoo:specific_place rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty tesoo:is_located ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass tesoo:zone
+                                         ] ;
+                     rdfs:subClassOf <http://purl.org/net/VideoGameOntology#PlayingArea> ;
+                     owl:disjointWith tesoo:zone ;
+                     owl:disjointUnionOf ( tesoo:Body_of_Water
+                                           tesoo:Cave
+                                           tesoo:Cemetery
+                                           tesoo:City
+                                           tesoo:Crypt
+                                           tesoo:Strongholds
+                                         ) ;
+                     <http://purl.org/dc/elements/1.1/description> """Every specific place on the map:
+Abyssal Geysers — Wave-based group events found only on Summerset
+Battlefields — Sites of ancient and contemporary battles
+Beacons — Watchtowers, lighthouses, and other free-standing signal towers
+Bodies of Water — Lakes, rivers and seas
+Camps — Bandit camps, guard camps, and other temporary settlements
+Caves — Root hollows, lava chambers, ice caves, and all other types of natural cavern
+Cemeteries — Graveyards, necropoli and other places where the (un)dead dwell
+Cities — Major settlements in each zone
+Crypts — Tombs, barrows, and other underground burial sites
+Daedric Ruins — Ancient shrines to the Daedric Princes
+Docks — Harbors, boatyards and shipwreck sites
+Dolmens — Summoning locations for Molag Bal's Dark Anchors
+Dragonscours — Locations where dragon hunting group events can occur
+Dwemer Ruins — The ruins of ancient Dwemer cities
+Elven Ruins — The ruins of ancient Ayleid and Aldmeri cities
+Estates — Countryside houses, homesteads and other estates
+Farms — Plantations and farmsteads
+Forts — Towers, forts, keeps and other fortified locations
+Gates — Milegates, passes, and other guarded thoroughfares
+Groves — Glades, marshes, oases and other natural wildernesses
+Harrowstorms — Wave-based group events
+Landmarks — Other miscellaneous locations
+Mines — Mining establishments and settlements
+Mundus Stones — Magical stones which grant special passive abilities
+Player Houses — Instanced locations that can be purchased and decorated
+Realms — Places which exist outside of Nirn
+Ruins — Nordic ruins, Yokudan ruins, and other ruins of contemporary civilization
+Sewers — City sewerage systems
+Ships — In-service, under construction, and scuttled ships
+Strongholds — Major locations in Coldharbour visited during the Main Quest
+Towns — Towns, villages, and other permanent settlements
+Wayshrines — Access points to the fast-travel system"""@en .
+
+
+###  http://www.semanticweb.org/TESOO#zone
+tesoo:zone rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty tesoo:contains_place ;
+                                                        owl:someValuesFrom tesoo:specific_place
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty tesoo:zone_controlled_by ;
+                                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass tesoo:Faction
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf <http://purl.org/net/VideoGameOntology#PlayingArea> ;
+           owl:disjointUnionOf ( tesoo:Aldmeri_Dominion
+                                 tesoo:Daggerfall_Covenant
+                                 tesoo:Ebonheart_Pact
+                                 tesoo:Neutral_and_Disputed
+                               ) ;
+           <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Zones\", 2022. [Online]. Available:
+ https://en.uesp.net/wiki/Online:Zones. [Accessed: June 2022]."""@en ;
+           <http://purl.org/dc/terms/source> "Online:Zone"@en ;
+           tesoo:definition "Zones are playable areas of the world in Elder Scrolls Online. Unlike recent single-player entries in the series, the world is not one continuous map, and is divided into several separate regions which cross the borders of the traditional Imperial provinces."@en ;
+           rdfs:label "Zone"@en .
+
+
+###  http://www.w3.org/2000/10/swap/pim/contact#foaf:Person
+<http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> rdf:type owl:Class ;
+                                                         owl:disjointUnionOf ( tesoo:character
+                                                                               tesoo:npc
+                                                                               tesoo:player
+                                                                             ) .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         owl:disjointUnionOf ( tesoo:Covert_group
+                                                               tesoo:Faction
+                                                             ) .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/TESOO#A_Hostile_Situation_Quest
+tesoo:A_Hostile_Situation_Quest rdf:type owl:NamedIndividual ,
+                                         tesoo:Quest ;
+                                tesoo:quest_located_in tesoo:Vulkhel_Guard ;
+                                tesoo:has_XP_Gain "Standard"^^xsd:string ;
+                                tesoo:has_quest_id "4256"^^xsd:int ;
+                                tesoo:has_reward """Queensguard Greaves
+Average Leveled Gold"""^^xsd:string ;
+                                <http://purl.org/dc/elements/1.1/description> """Speak with Watch Captain Astanya.
+Meet with Razum-dar and follow his instructions.
+Find Battlereeve Urcelmo.
+Kill the assassin."""@en ;
+                                <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:A Hostile Situation\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:A_Hostile_Situation. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Aldmeri_Dominion
+tesoo:Aldmeri_Dominion rdf:type owl:NamedIndividual ,
+                                tesoo:Faction .
+
+
+###  http://www.semanticweb.org/TESOO#Auridon
+tesoo:Auridon rdf:type owl:NamedIndividual ;
+              tesoo:zone_controlled_by tesoo:Aldmeri_Dominion ;
+              <http://purl.org/dc/elements/1.1/description> "Auridon is the second-largest island in the Summerset Isles and the location of Firsthold, one of the largest Aldmeri cities in the world. It is renowned for its unique architecture and magnificent gardens."@en ;
+              <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Auridon\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#Bewan
+tesoo:Bewan rdf:type owl:NamedIndividual ,
+                     tesoo:Elven_Ruin ;
+            tesoo:is_located tesoo:Auridon ;
+            tesoo:dungeon_completition_type "Explore and clear Bewan."^^xsd:string ;
+            tesoo:place_is_dungeon "true"^^xsd:boolean ;
+            <http://purl.org/dc/elements/1.1/description> "Bewan is an elven ruin on the western coast of Auridon, just southwest of the town of Dawnbreak containing Sea Viper soldiers. Some of the soldiers are acting drunk. Parts of the ruin are flooded with shallow water."@en ;
+            <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Bewan\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Bewan [Accessed: June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Camandar
+tesoo:Camandar rdf:type owl:NamedIndividual ,
+                        tesoo:Hostile ;
+               tesoo:npc_killed_to_complete_dungeon tesoo:Bewan ;
+               tesoo:has_gender "Male"^^xsd:string ;
+               tesoo:has_health "146590"^^xsd:int ;
+               tesoo:has_race "Maormer"^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/description> "Camandar is the Maormer leader of the Sea Vipers found in the ruins of Bewan. He has a chance to drop Sea Greaves of the Veiled Heritance, a unique item in the Armor of the Veiled Heritance item set."@en ;
+               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Camandar\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Camandar [Accessed: June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Coldharbour
+tesoo:Coldharbour rdf:type owl:NamedIndividual ,
+                           tesoo:Neutral_and_Disputed ;
+                  <http://purl.org/dc/terms/bibliographicCitation> """Coldharbour is Molag Bal's realm of Oblivion. The Prince is attempting to pull Nirn into his realm through the use of Dark Anchors.
+
+Parts of Coldharbour are visited during the main quest. You get access to the main region by finishing The Weight of Three Crowns."""@en ,
+                                                                   "Uesp.net, \"Online:Coldharbour\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Coldharbour [Accessed: June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Daggerfall_Covenant
+tesoo:Daggerfall_Covenant rdf:type owl:NamedIndividual ,
+                                   tesoo:Faction .
+
+
+###  http://www.semanticweb.org/TESOO#Ensuring_Security_Quest
+tesoo:Ensuring_Security_Quest rdf:type owl:NamedIndividual ,
+                                       tesoo:Quest ;
+                              tesoo:has_next_quest tesoo:A_Hostile_Situation_Quest ;
+                              tesoo:quest_located_in tesoo:Vulkhel_Guard ;
+                              tesoo:has_XP_Gain "High"^^xsd:string ;
+                              tesoo:has_quest_id "4255"^^xsd:int ;
+                              tesoo:has_reward "High Leveled Gold"^^xsd:string ;
+                              <http://purl.org/dc/elements/1.1/description> """Quick Walkthrough
+Talk to Watch Captain Astanya.
+Help both Advisor Norion and Steward Eminwe patch holes in Vulkhel Guard's security.
+Return to Astanya, then find Watchman Heldil.
+Enter the suspect's house and witness the confrontation."""@en ;
+                              <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Ensuring Security\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#Grahtwood
+tesoo:Grahtwood rdf:type owl:NamedIndividual ;
+                tesoo:zone_controlled_by tesoo:Aldmeri_Dominion ;
+                <http://purl.org/dc/elements/1.1/description> "Grahtwood is a large region deep in the jungles of Valenwood, and the location of the Aldmeri Dominion's capital, Elden Root. An area in Grahtwood was devastated by Molag Bal long ago, and it remains there to this day."@en ;
+                <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Grahtwood\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Grahtwood. [Accessed: June 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#High_Kinlady_Estre
+tesoo:High_Kinlady_Estre rdf:type owl:NamedIndividual ,
+                                  tesoo:Friendly ;
+                         tesoo:belongs_to_organization tesoo:Veiled_Heritance ;
+                         tesoo:npc_located_in tesoo:Auridon ;
+                         tesoo:npc_rules_city tesoo:Skywatch ;
+                         tesoo:has_gender "Female"^^xsd:string ;
+                         tesoo:has_race "High Elf"^^xsd:string ;
+                         <http://purl.org/dc/elements/1.1/description> """High Kinlady Estre is the Altmer High Kinlady of Skywatch, wife of Prince Naemon of Summerset Isle, sister-in-law of Queen Ayrenn, and the leader of the Veiled Heritance under the guise of the Veiled Queen.
+
+Initially, before starting the quest Ensuring Security, she is found inside the manor in Vulkhel Guard, talking to her husband. Talking to her here, she says, \"You have the pleasure of speaking with High Kinlady Estre, scion of royal Aldmeri blood. I must apologize, but my escort and I were just in the middle of a conversation. If you'll excuse us?\""""@en ;
+                         <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:High Kinlady Estre\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:High_Kinlady_Estre [Accessed: June- 2022]."@en ;
+                         <http://schema.org/image> <https://images.uesp.net/c/c4/ON-npc-High_Kinlady_Estre.jpg> .
+
+
+###  http://www.semanticweb.org/TESOO#Hooded_Figure
+tesoo:Hooded_Figure rdf:type owl:NamedIndividual ,
+                             tesoo:Friendly ;
+                    tesoo:npc_located_in tesoo:Vulkhel_Guard ;
+                    tesoo:has_gender "Female"^^xsd:string ;
+                    tesoo:has_health "39959"^^xsd:int ;
+                    tesoo:has_race "Breton" ;
+                    <http://purl.org/dc/elements/1.1/description> "The Hooded Figure is a Breton who is in the employ of a mysterious contact known as \"the Benefactor\". In reality, she is deceiving you to hand you over to the Worm Cult."@en ;
+                    <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Hooded Figure\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Hooded_Figure [Accessed: June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Prince_Naemon
+tesoo:Prince_Naemon rdf:type owl:NamedIndividual ,
+                             tesoo:Vary ;
+                    tesoo:npc_is_married_with tesoo:High_Kinlady_Estre ;
+                    tesoo:npc_located_in tesoo:Vulkhel_Guard ;
+                    tesoo:has_gender "Male"^^xsd:string ;
+                    tesoo:has_health "133844"^^xsd:int ;
+                    tesoo:has_race "High Elf"^^xsd:string ;
+                    <http://purl.org/dc/elements/1.1/description> "Prince Naemon is a High Elf noble and the younger brother of Queen Ayrenn. Originally named heir to the throne of Alinor after Ayrenn's sudden disappearance, when his sister returned after years of absence, she was crowned instead. He currently lives as a high-ranking noble with his wife, High Kinlady Estre."@en ;
+                    <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Prince Naemon\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Prince_Naemon [Accessed: June- 2022]."@en ;
+                    <http://schema.org/image> <https://images.uesp.net/0/06/ON-npc-Prince_Naemon.jpg> .
+
+
+###  http://www.semanticweb.org/TESOO#Razum-dar
+tesoo:Razum-dar rdf:type owl:NamedIndividual ,
+                         tesoo:Friendly ;
+                tesoo:npc_located_in <http://www.semanticweb.org/TESOO#Khenarthi's_Roost> ;
+                tesoo:has_gender "Male"^^xsd:string ;
+                tesoo:has_health "39959"^^xsd:int ;
+                tesoo:has_race "Khajiit"^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/description> """Razum-dar, known simply as Raz to his friends, is a Khajiit initially found in Eagle's Strand. If you are aligned with the Aldmeri Dominion, you will meet him upon leaving Coldharbour. After you help Commander Karinith and Ealcil at his behest, Razum-dar will relocate to Mistral and later to Auridon to ask you for aid in several more quests. Eventually, Razum-dar reveals himself as one of the Eyes of the Queen—personal agents of Queen Ayrenn, whom he knows personally from her days exploring Tamriel as a princess. He frequently serves a liaison between you and the Queen in matters she cannot be seen as publicly involved in.
+
+A version of Razum-dar is fought alongside Captain Odreth during the Circus of Cheerful Slaughter."""@en ;
+                <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Razum-dar\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Razum-dar [Accessed: June- 2022]."@en ;
+                <http://schema.org/image> <https://images.uesp.net/f/f7/ON-npc-Razum-dar.jpg> .
+
+
+###  http://www.semanticweb.org/TESOO#Skywatch
+tesoo:Skywatch rdf:type owl:NamedIndividual ,
+                        tesoo:City ;
+               tesoo:is_located tesoo:Auridon ;
+               <http://purl.org/dc/elements/1.1/description> "Skywatch is a city at the eastern side of Auridon. The city is built around an ancient ruin and is a very prominent port for the Aldmeri Dominion. It is ruled by High Kinlady Estre. The Festival of Defiance is currently ongoing, and Skywatch Celebrants fill every nook and cranny of Skywatch's public areas. Royal Bodyguards stand watch by the stairwells. Dominion Guard stand vigilant, keeping the peace."@en ;
+               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Skywatch\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Skywatch [Accessed: June- 2022]."@en ;
+               <http://schema.org/image> <https://images.uesp.net/1/15/ON-place-Skywatch.jpg> .
+
+
+###  http://www.semanticweb.org/TESOO#Soul_Shriven_in_Coldharbour__Quest
+tesoo:Soul_Shriven_in_Coldharbour__Quest rdf:type owl:NamedIndividual ,
+                                                  tesoo:Main_Quest ;
+                                         tesoo:has_next_quest tesoo:The_Harborage_Quest ;
+                                         tesoo:has_quest_giver tesoo:Hooded_Figure ;
+                                         tesoo:has_XP_Gain "Very High"^^xsd:string ;
+                                         tesoo:has_quest_id "4296"^^xsd:int ;
+                                         tesoo:has_reward """Sealed Urn (contents)
+1 Skill Point
+Soul Magic Skill Line
+Achievement:Soul Shriven in Coldharbour"""^^xsd:string ;
+                                         <http://purl.org/dc/elements/1.1/description> """Quick Walkthrough
+
+Locate The Benefactor.
+Listen to Lyris Titanborn and escape the prison cell.
+Talk to The Prophet and head into the Bleeding Forge.
+Head into the Towers of Eyes and destroy a Coldharbour Sentinel.
+Talk to Cadwell then enter the Undercroft.
+Reach the Prophet's Cell and disable the Dark Pinions.
+Enter the Anchor Mooring and defeat the Child of Bones.
+Escape Coldharbour."""@en ;
+                                         <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Soul Shriven in Coldharbour\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Soul_Shriven_in_Coldharbour [Accessed: June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#The_Harborage
+tesoo:The_Harborage rdf:type owl:NamedIndividual ,
+                             tesoo:Cave ;
+                    tesoo:is_located tesoo:Auridon ;
+                    tesoo:is_location_of_quest tesoo:The_Harborage_Quest ;
+                    <http://purl.org/dc/elements/1.1/description> "The Harborage is a cave in the wilderness which the Prophet has adopted as his home and refuge. The cave is located near the first major city of each alliance, and serves as the starting point for each stage of the Main Quest."@en ;
+                    <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:The Harborage (place)\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:The_Harborage_(place) [Accessed:  June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#The_Harborage_Quest
+tesoo:The_Harborage_Quest rdf:type owl:NamedIndividual ,
+                                   tesoo:Main_Quest ;
+                          tesoo:quest_located_in tesoo:The_Harborage ;
+                          tesoo:has_XP_Gain "Very High"^^xsd:string ;
+                          tesoo:has_reward """Prophet's Recollection
+1 Skill Point
+Very High Leveled Gold
+Achievement:The Harborage"""^^xsd:string ;
+                          tesoo:quest_solo_only "true"^^xsd:boolean ;
+                          <http://purl.org/dc/elements/1.1/description> """Quick Walkthrough:
+
+-Speak to the Prophet.
+-Visit the Harborage to find the Prophet.
+-Enter the Prophet's mind to view visions of the past.
+-Follow the Prophet and learn about his life with the Moth Priests.
+-Watch the visions of the Five Companions and the Soulburst.
+-Follow the Prophet and learn about the threat of Molag Bal's Dark -Anchors and the Planemeld.
+-Return to the Harborage and discuss your next moves."""@en ;
+                          <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:The Harborage (quest)\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:The_Harborage_(quest) [Accessed: June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#The_Prophet
+tesoo:The_Prophet rdf:type owl:NamedIndividual ,
+                           tesoo:Friendly ;
+                  tesoo:npc_is_quest_giver tesoo:The_Harborage_Quest ;
+                  tesoo:npc_located_in tesoo:The_Harborage ;
+                  tesoo:has_gender "Male"^^xsd:string ;
+                  tesoo:has_health "39959"^^xsd:int ;
+                  tesoo:has_race "Imperial"^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/description> "The Prophet, whose true name is Varen Aquilarios, is the former Emperor of Cyrodiil and a central figure in the main questline. Many years ago he was captured, alongside his steadfast ally Lyris Titanborn, and condemned to Coldharbour for becoming entangled in the schemes of Molag Bal and Mannimarco."@en ;
+                  <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:The Prophet\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:The_Prophet [Accessed:June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#The_Tempest_Unleashed
+tesoo:The_Tempest_Unleashed rdf:type owl:NamedIndividual ;
+                            tesoo:has_next_quest tesoo:To_Auridon_Quest .
+
+
+###  http://www.semanticweb.org/TESOO#The_Wailing_Prison
+tesoo:The_Wailing_Prison rdf:type owl:NamedIndividual ,
+                                  tesoo:Strongholds ;
+                         tesoo:is_located tesoo:Coldharbour ;
+                         <http://purl.org/dc/elements/1.1/description> "The Wailing Prison is a sub-location of Coldharbour, Molag Bal's realm of Oblivion. It is where the introductory quest to the game takes place. The location is split into seven zones."@en ;
+                         <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:The Wailing Prison\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:The_Wailing_Prison [Accessed:June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#To_Auridon_Quest
+tesoo:To_Auridon_Quest rdf:type owl:NamedIndividual ,
+                                tesoo:Quest ;
+                       tesoo:has_next_quest tesoo:Ensuring_Security_Quest ;
+                       tesoo:has_quest_giver tesoo:Razum-dar ;
+                       tesoo:quest_located_in <http://www.semanticweb.org/TESOO#Khenarthi's_Roost> ;
+                       tesoo:has_XP_Gain "Low"^^xsd:string ;
+                       tesoo:has_quest_id "4818"^^xsd:int ;
+                       tesoo:has_reward "Low Leveled Gold"^^xsd:string ;
+                       <http://purl.org/dc/elements/1.1/description> """Quick Walkthrough
+Speak with Razum-dar.
+(Optional) Speak with Captain Jimila.
+Board the skiff and head to Auridon."""@en ;
+                       <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:To Auridon\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:To_Auridon [Accessed:June- 2022]."""@en ;
+                       <http://schema.org/image> <https://images.uesp.net/thumb/f/f0/ON-quest-To_Auridon.jpg/300px-ON-quest-To_Auridon.jpg> .
+
+
+###  http://www.semanticweb.org/TESOO#Veiled_Heritance
+tesoo:Veiled_Heritance rdf:type owl:NamedIndividual ,
+                                tesoo:Covert_group ;
+                       <http://purl.org/dc/elements/1.1/description> "The Veiled Heritance is a covert group of Altmeri nationalists seeking to depose Queen Ayrenn and appoint their own regent, the Veiled Queen, High Kinlady Estre — Ayrenn's sister-in-law and her brother Naemon's wife. One of their main bases is known as The Veiled Keep, and is located under their training grounds on Errinorne Isle in central Auridon."@en ;
+                       <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Veiled Heritance\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Veiled_Heritance [Accessed:June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#Vulkhel_Guard
+tesoo:Vulkhel_Guard rdf:type owl:NamedIndividual ,
+                             tesoo:City ;
+                    tesoo:is_located tesoo:Auridon ;
+                    <http://purl.org/dc/elements/1.1/description> """Vulkhel Guard is a port city at the southern tip of Auridon. It is ruled by Canonreeve Nesaranwe. The Queen has planned a visit here as one stop on her tour around Auridon, and Watch Captain Astanya is working frantically to prepare.
+
+
+The area near the wayshrine - Mara's Kiss Public House and Abecean Saddle Company
+
+Vulkhel Docks
+
+The crafting and shopping area in town, as seen from the Fighters Guild
+Vulkhel Guard contains all the necessary services for a large city, including crafting stations, a bank, and chapters of the Fighters Guild and Mages Guild, arranged into four districts. In the center lie the manor house, which has a Skyshard on the middle balcony, and temple, where Queen Ayrenn and her entourage are starting their tour of Auridon. To the west is the main marketplace and guildhalls, while the residences and guard barracks can be found around the Wayshrine in the east. In the south lies Vulkhel Docks, where those wishing to visit Khenarthi's Roost can arrange transport with Sugar-Claws, and characters can take a ship to Daggerfall or Davon's Watch. Vulkhel Guard Lighthouse is just outside the city to the northeast.
+
+If you head south from the wayshrine, you'll come across the Harborside Market, which lies on the beach between the city and the docks. There is a cooking fire and a Basic Provisioning Guide across from the general store."""@en ;
+                    <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Vulkhel Guard\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Vulkhel_Guard [Accessed:June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#Watch_Captain_Astanya
+tesoo:Watch_Captain_Astanya rdf:type owl:NamedIndividual ,
+                                     tesoo:Friendly ;
+                            tesoo:npc_located_in tesoo:Vulkhel_Guard ;
+                            tesoo:npc_related_quest tesoo:A_Hostile_Situation_Quest ,
+                                                    tesoo:Ensuring_Security_Quest ;
+                            tesoo:has_gender "Female"^^xsd:string ;
+                            tesoo:has_health "39959"^^xsd:int ;
+                            <http://purl.org/dc/elements/1.1/description> """Watch Captain Astanya is a High Elf guard captain who is charged with overseeing security details for Queen Ayrenn's visit to Vulkhel Guard.
+
+If you are aligned with the Aldmeri Dominion, your first quest upon leaving Coldharbour directs you to help her with investigating potential threats to the Queen in the city.
+
+However, she is later revealed to be a member of the Veiled Heritance, intent on assassinating the Queen at her own visit."""@en ;
+                            <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Watch Captain Astanya\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Watch_Captain_Astanya [Accessed:June- 2022]."""@en ;
+                            <http://schema.org/image> <https://images.uesp.net/3/30/ON-npc-Watch_Captain_Astanya.jpg> .
+
+
+###  http://www.semanticweb.org/TESOO#Watchman_Heldil
+tesoo:Watchman_Heldil rdf:type owl:NamedIndividual ,
+                               tesoo:Friendly ;
+                      tesoo:npc_is_quest_giver tesoo:Ensuring_Security_Quest ;
+                      tesoo:npc_located_in tesoo:Vulkhel_Guard ;
+                      tesoo:npc_related_quest tesoo:A_Hostile_Situation_Quest ;
+                      tesoo:has_gender "Male"^^xsd:string ;
+                      tesoo:has_health "39959"^^xsd:int ;
+                      tesoo:has_race "High Elf"^^xsd:string ;
+                      <http://purl.org/dc/elements/1.1/description> "Watchman Heldil is a High Elf member of the Vulkhel Watch who can be found in Vulkhel Guard."@en ;
+                      <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Watchman_Heldil \", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Watchman_Heldil [Accessed:June- 2022]."""@en ;
+                      <http://schema.org/image> <https://images.uesp.net/3/3d/ON-npc-Watchman_Heldil.jpg> .
+
+
+###  http://www.semanticweb.org/TESOO#Del's_Claim
+<http://www.semanticweb.org/TESOO#Del's_Claim> rdf:type owl:NamedIndividual ,
+                                                        tesoo:Mine ;
+                                               tesoo:is_located tesoo:Auridon ;
+                                               tesoo:dungeon_completition_type "Explore and Clear"^^xsd:string ;
+                                               tesoo:place_is_discoverable "true"^^xsd:boolean ;
+                                               <http://purl.org/dc/elements/1.1/description> "Del's Claim is a mine in southern Auridon, just northwest of the city of Vulkhel Guard. It has recently been taken over by followers of the Veiled Heritance, who killed all the miners. They plan to use it as a secure base of operations."@en ;
+                                               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Del's Claim\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Del%27s_Claim. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Khenarthi's_Roost
+<http://www.semanticweb.org/TESOO#Khenarthi's_Roost> rdf:type owl:NamedIndividual ;
+                                                     tesoo:zone_controlled_by tesoo:Aldmeri_Dominion ;
+                                                     <http://purl.org/dc/elements/1.1/description> "Khenarthi's Roost is a small island off the coast of Elsweyr inhabited by both Khajiit and Maormer, named for the Khajiiti goddess Khenarthi. The island is dotted with moon-sugar plantations and is a location of both active Khajiiti worship and Maormer magic, as the Khajiit signed a peace treaty with the Maormer which allowed them to settle on the island. The island is under negotiations for inclusion in the Aldmeri Dominion, but the negotiations are being hampered by the existing Maormer treaty. Meanwhile, the Dominion are actively combating skooma production in the area as a show of goodwill towards the island's ruler."@en ;
+                                                     <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Khenarthi's Roost\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Khenarthi%27s_Roost [Accessed: June- 2022]."@en ;
+                                                     <http://schema.org/image> <https://images.uesp.net/a/ae/ON-place-Eagle%27s_Strand.jpg> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+tesoo:Aldmeri_Dominion tesoo:definition "Zone controlled by Aldmeri Dominion Alliance"@en ;
+                       <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Aldmeri_Dominion. [Accessed: June 2022]."@en .
+
+
+tesoo:Daggerfall_Covenant <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Daggerfall_Covenant. [Accessed: June 2022]."@en ;
+                          tesoo:definition "Zones controlled by Daggerfall Covenant"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( tesoo:Aldmeri_Dominion
+                tesoo:Daggerfall_Covenant
+                tesoo:Ebonheart_Pact
+                tesoo:Neutral_and_Disputed
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( tesoo:Body_of_Water
+                tesoo:Cave
+                tesoo:Cemetery
+                tesoo:City
+                tesoo:Crypt
+                tesoo:Strongholds
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( tesoo:Friendly
+                tesoo:Hostile
+                tesoo:Justice_Neutral
+                tesoo:Neutral
+                tesoo:None
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( tesoo:character
+                tesoo:npc
+                tesoo:player
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:A_Hostile_Situation_Quest
+                        tesoo:Ensuring_Security_Quest
+                        tesoo:The_Harborage_Quest
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:A_Hostile_Situation_Quest
+                        tesoo:Ensuring_Security_Quest
+                        tesoo:The_Harborage_Quest
+                        tesoo:To_Auridon_Quest
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:Aldmeri_Dominion
+                        tesoo:Daggerfall_Covenant
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:Camandar
+                        tesoo:High_Kinlady_Estre
+                        tesoo:Hooded_Figure
+                        tesoo:Prince_Naemon
+                        tesoo:The_Prophet
+                        tesoo:Watch_Captain_Astanya
+                        tesoo:Watchman_Heldil
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:High_Kinlady_Estre
+                        tesoo:Hooded_Figure
+                        tesoo:Prince_Naemon
+                        tesoo:Razum-dar
+                        tesoo:The_Prophet
+                        tesoo:Vulkhel_Guard
+                        tesoo:Watchman_Heldil
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:High_Kinlady_Estre
+                        tesoo:Hooded_Figure
+                        tesoo:The_Prophet
+                        tesoo:Watchman_Heldil
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

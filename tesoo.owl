@@ -835,9 +835,25 @@ tesoo:The_Prophet rdf:type owl:NamedIndividual ,
 https://en.uesp.net/wiki/Online:The_Prophet [Accessed:June- 2022]."""@en .
 
 
-###  http://www.semanticweb.org/TESOO#The_Tempest_Unleashed
-tesoo:The_Tempest_Unleashed rdf:type owl:NamedIndividual ;
-                            tesoo:has_next_quest tesoo:To_Auridon_Quest .
+###  http://www.semanticweb.org/TESOO#The_Tempest_Unleashed_Quest
+tesoo:The_Tempest_Unleashed_Quest rdf:type owl:NamedIndividual ;
+                                  tesoo:has_next_quest tesoo:To_Auridon_Quest ;
+                                  tesoo:quest_located_in <http://www.semanticweb.org/TESOO#Khenarthi's_Roost> ;
+                                  tesoo:has_XP_Gain "High Experience"^^xsd:string ;
+                                  tesoo:has_quest_id "4621"^^xsd:int ;
+                                  tesoo:has_reward """Storm-Slave's Razor
+High Leveled Gold"""^^xsd:string ;
+                                  <http://purl.org/dc/elements/1.1/description> """Quick Walkthrough
+Talk to Zaeri.
+Talk to Commander Karinith.
+Get the survivors to safety.
+Talk to Sergeant Firion and choose who to take along into Cat's Eye Quay.
+Search the tavern, the warehouse and the mines to find Ealcil's research notes.
+Find Ealcil.
+Drain the Storm Totems while traveling through the Wind Tunnels.
+Disrupt the ritual, then make your escape!""" ;
+                                  <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:The Tempest Unleashed\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:The_Tempest_Unleashed [Accessed:June- 2022]."""@en .
 
 
 ###  http://www.semanticweb.org/TESOO#The_Wailing_Prison
@@ -925,6 +941,19 @@ tesoo:Watchman_Heldil rdf:type owl:NamedIndividual ,
                       <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Watchman_Heldil \", 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Watchman_Heldil [Accessed:June- 2022]."""@en ;
                       <http://schema.org/image> <https://images.uesp.net/3/3d/ON-npc-Watchman_Heldil.jpg> .
+
+
+###  http://www.semanticweb.org/TESOO#Zaeri
+tesoo:Zaeri rdf:type owl:NamedIndividual ,
+                     tesoo:Friendly ;
+            tesoo:npc_is_quest_giver tesoo:The_Tempest_Unleashed_Quest ;
+            tesoo:npc_related_quest tesoo:Soul_Shriven_in_Coldharbour__Quest ;
+            tesoo:has_gender "Female"@en ;
+            tesoo:has_health "39959"@en ;
+            tesoo:has_race "Khajiit"@en ;
+            <http://purl.org/dc/elements/1.1/description> "Zaeri is a Khajiit who can be found in Mistral. She is a member of the Eyes of the Queen and can occasionally deliver messages to you."@en ;
+            <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zaeri\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zaeri [Accessed: June- 2022]."@en ;
+            <http://schema.org/image> <https://images.uesp.net/4/4e/ON-npc-Zaeri.jpg> .
 
 
 ###  http://www.semanticweb.org/TESOO#Del's_Claim
@@ -1031,6 +1060,19 @@ tesoo:Daggerfall_Covenant <http://purl.org/dc/terms/bibliographicCitation> "Uesp
                         tesoo:The_Prophet
                         tesoo:Watch_Captain_Astanya
                         tesoo:Watchman_Heldil
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:Camandar
+                        tesoo:Hooded_Figure
+                        tesoo:Prince_Naemon
+                        tesoo:Razum-dar
+                        tesoo:The_Prophet
+                        tesoo:Watch_Captain_Astanya
+                        tesoo:Watchman_Heldil
+                        tesoo:Zaeri
                       )
 ] .
 
