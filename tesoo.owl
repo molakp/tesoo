@@ -3,14 +3,11 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/index.rdf> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.semanticweb.org/TESOO> .
 
 <http://www.semanticweb.org/TESOO> rdf:type owl:Ontology ;
-                                    owl:imports <http://www.omg.org/spec/EDMC-FIBO/FND/20141101/AgentsAndPeople/Agents/> ,
-                                                <http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/Locations/> ,
-                                                <http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/VirtualPlaces/> ,
-                                                <http://xmlns.com/foaf/0.1/> ;
                                     <http://purl.org/dc/elements/1.1/creator> "Silvestro Stefano Frisullo"@en ;
                                     <http://purl.org/dc/elements/1.1/date> "June 2022"@en ;
                                     <http://purl.org/dc/elements/1.1/description> "Ontology for The Elder Scrolls Online"@en ;
@@ -65,14 +62,184 @@
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/TESOO#Gender
+:Gender rdf:type rdfs:Datatype ;
+        <http://purl.org/dc/elements/1.1/description> "Gender of a npc or character"@en ;
+        owl:equivalentClass xsd:string .
+
+
+###  http://www.semanticweb.org/TESOO#Health
+:Health rdf:type rdfs:Datatype ;
+        <http://purl.org/dc/elements/1.1/description> "Health of a npc or character"@en ;
+        owl:equivalentClass xsd:int .
+
+
+###  http://www.semanticweb.org/TESOO#race
+:race rdf:type rdfs:Datatype ;
+      <http://purl.org/dc/elements/1.1/description> "Race of a npc or character"@en ;
+      owl:equivalentClass xsd:string .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/TESOO#contains_place
+:contains_place rdf:type owl:ObjectProperty ;
+                owl:inverseOf :is_located ;
+                rdf:type owl:AsymmetricProperty ;
+                rdfs:domain :zone ;
+                rdfs:range :specific_place .
+
+
+###  http://www.semanticweb.org/TESOO#faction_controls
+:faction_controls rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :zone_controlled_by ;
+                  rdf:type owl:AsymmetricProperty ;
+                  rdfs:domain :Faction ;
+                  rdfs:range :zone .
+
+
+###  http://www.semanticweb.org/TESOO#has_next_quest
+:has_next_quest rdf:type owl:ObjectProperty ;
+                owl:inverseOf :has_prerequisite_quest ;
+                rdfs:domain :Quest ;
+                rdfs:range :Quest .
+
+
+###  http://www.semanticweb.org/TESOO#has_prerequisite_quest
+:has_prerequisite_quest rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Quest ;
+                        rdfs:range :Quest .
+
+
+###  http://www.semanticweb.org/TESOO#has_quest_giver
+:has_quest_giver rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :is_quest_giver ;
+                 rdf:type owl:AsymmetricProperty ;
+                 rdfs:domain :Quest ;
+                 rdfs:range :npc .
+
+
+###  http://www.semanticweb.org/TESOO#is_located
+:is_located rdf:type owl:ObjectProperty ,
+                     owl:AsymmetricProperty ;
+            rdfs:domain :specific_place ;
+            rdfs:range :zone .
+
+
+###  http://www.semanticweb.org/TESOO#is_location_of_npc
+:is_location_of_npc rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :npc_located_in ;
+                    rdfs:domain :specific_place ;
+                    rdfs:range :npc .
+
+
+###  http://www.semanticweb.org/TESOO#is_location_of_quest
+:is_location_of_quest rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :quest_located_in .
+
+
+###  http://www.semanticweb.org/TESOO#is_quest_giver
+:is_quest_giver rdf:type owl:ObjectProperty ;
+                rdfs:domain :npc ;
+                rdfs:range :Quest .
+
+
+###  http://www.semanticweb.org/TESOO#npc_located_in
+:npc_located_in rdf:type owl:ObjectProperty ;
+                rdfs:domain :npc ;
+                rdfs:range :specific_place .
+
+
+###  http://www.semanticweb.org/TESOO#quest_located_in
+:quest_located_in rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Quest ;
+                  rdfs:range :specific_place .
+
+
+###  http://www.semanticweb.org/TESOO#zone_controlled_by
+:zone_controlled_by rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:AsymmetricProperty ;
+                    rdfs:domain :zone ;
+                    rdfs:range :Faction .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/TESOO#has_gender
+:has_gender rdf:type owl:DatatypeProperty ;
+            rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/TESOO#has_health
+:has_health rdf:type owl:DatatypeProperty ;
+            rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
+            rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/TESOO#has_race
+:has_race rdf:type owl:DatatypeProperty ;
+          rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
+          rdfs:range xsd:string .
+
+
+#################################################################
 #    Classes
 #################################################################
 
+###  http://www.omg.org/spec/EDMC-FIBO/FND/Places/VirtualPlaces/VirtualLocation
+<http://www.omg.org/spec/EDMC-FIBO/FND/Places/VirtualPlaces/VirtualLocation> rdf:type owl:Class .
+
+
 ###  http://www.semanticweb.org/TESOO#Aldmeri_Dominion
 :Aldmeri_Dominion rdf:type owl:Class ;
-                  rdfs:subClassOf :zone ;
-                  :definition "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Aldmeri_Dominion. [Accessed: June 2022]."@en ,
-                              "Zone controlled by Aldmeri Dominion Alliance"@en .
+                  rdfs:subClassOf :zone .
+
+
+###  http://www.semanticweb.org/TESOO#Body_of_Water
+:Body_of_Water rdf:type owl:Class ;
+               rdfs:subClassOf :specific_place ;
+               <http://purl.org/dc/elements/1.1/description> "Places like lakes, seas, rivers etc"@en ;
+               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Bodies of Water\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Bodies_of_Water. [Accessed: June 2022]."@en ;
+               rdfs:label "body_of_water"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Cave
+:Cave rdf:type owl:Class ;
+      rdfs:subClassOf :specific_place ;
+      <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Caves\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Caves. [Accessed: June 2022]."@en ;
+      rdfs:label "cave"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Cemetery
+:Cemetery rdf:type owl:Class ;
+          rdfs:subClassOf :specific_place ;
+          <http://purl.org/dc/elements/1.1/description> "all the cemeteries (including graveyards and necropoli)"@en ;
+          <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Cemeteries\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Cemeteries. [Accessed: June 2022]."@en ;
+          rdfs:label "cemetery"@en .
+
+
+###  http://www.semanticweb.org/TESOO#City
+:City rdf:type owl:Class ;
+      rdfs:subClassOf :specific_place ;
+      <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Cities\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Cities. [Accessed: June 2022]."@en ;
+      <http://purl.org/dc/terms/source> "ESO:Cities"@en ;
+      :definition "A populated city in the game"@en ;
+      rdfs:label "city"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Crypt
+:Crypt rdf:type owl:Class ;
+       rdfs:subClassOf :specific_place ;
+       <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Crypts\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Crypts. [Accessed: June 2022]."@en .
 
 
 ###  http://www.semanticweb.org/TESOO#Daggerfall_Covenant
@@ -97,23 +264,62 @@ https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022]."""@
          <http://purl.org/dc/terms/bibliographicCitation> "Eso Wiki, \"Factions\", 2022. [Online]. Available: https://elderscrollsonline.wiki.fextralife.com/Factions. [Accessed: June 2022]."@en .
 
 
+###  http://www.semanticweb.org/TESOO#Friendly
+:Friendly rdf:type owl:Class ;
+          rdfs:subClassOf :npc ;
+          <http://purl.org/dc/elements/1.1/description> "Friendly NPCs can't be attacked or pickpocketed. Some friendly NPCs (namely merchants) can report crimes, but they will not fight. Friendly NPCs that aren't merchants will not report crimes. If nameplates are turned on, their health bars, names and outlines are green."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Hostile
+:Hostile rdf:type owl:Class ;
+         rdfs:subClassOf :npc ;
+         <http://purl.org/dc/elements/1.1/description> "Hostile NPCs can be attacked without consequence and will not report crimes. They attack on sight. Hostile NPCs have red health bars, names and outlines."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Justice_Neutral
+:Justice_Neutral rdf:type owl:Class ;
+                 rdfs:subClassOf :npc ;
+                 <http://purl.org/dc/elements/1.1/description> "Justice Neutral NPCs can be attacked and pickpocketed with consequence. They will report crimes if they witness them, and will fight back if attacked. They can also be provoked into attacking if they witness a crime being committed, but they won't always do so. If they witness a murder, they will report it, and some will attack you or flee the scene. They have yellow health bars and white nameplates and outlines."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Main_Quest
+:Main_Quest rdf:type owl:Class ;
+            rdfs:subClassOf :Quest ;
+            <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Main Quest\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Main_Quest. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Neutral
+:Neutral rdf:type owl:Class ;
+         rdfs:subClassOf :npc ;
+         <http://purl.org/dc/elements/1.1/description> "Neutral NPCs can be attacked without consequences and will not report crimes. They will fight back if provoked. Neutral NPCs cannot be pickpocketed. Their names, health bars and glowing outlines are yellow."@en .
+
+
+###  http://www.semanticweb.org/TESOO#None
+:None rdf:type owl:Class ;
+      rdfs:subClassOf :npc ;
+      <http://purl.org/dc/elements/1.1/description> "Usually reserved for deceased characters, also applies to NPCs without healthbars that can't be interacted with in any way (coded as \"0\")"@en .
+
+
+###  http://www.semanticweb.org/TESOO#Quest
+:Quest rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :has_quest_giver ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :npc
+                           ] ;
+       <http://purl.org/dc/elements/1.1/description> "Quests are sorted by where they are assigned or by which faction assigns them. Every zone has a main storyline running through it, as well as dozens of smaller side quests. You can only have 25 quests active at any one time."@en ;
+       <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Quests\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Quests. [Accessed: June 2022]."@en .
+
+
 ###  http://www.semanticweb.org/TESOO#character
 :character rdf:type owl:Class ;
-           rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> .
-
-
-###  http://www.semanticweb.org/TESOO#city
-:city rdf:type owl:Class ;
-      rdfs:subClassOf :place ;
-      <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"ESO:Cities\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Cities. [Accessed: June 2022]."@en ;
-      <http://purl.org/dc/terms/source> "ESO:Cities"@en ;
-      :definition "A populated city in the game"@en ;
-      rdfs:label "city"@en .
+           rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
+           <http://purl.org/dc/elements/1.1/description> "One of the seven charachter the player can have in ESO"@en .
 
 
 ###  http://www.semanticweb.org/TESOO#npc
 :npc rdf:type owl:Class ;
-     rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> ;
+     rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
      <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:NPCs\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:NPCs. [Accessed: June 2022]."@en ;
      :definition "Any Non Playable Character in ESO"@en ;
      rdfs:label "npc"@en .
@@ -121,20 +327,161 @@ https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022]."""@
 
 ###  http://www.semanticweb.org/TESOO#place
 :place rdf:type owl:Class ;
-       rdfs:subClassOf <http://www.omg.org/spec/EDMC-FIBO/FND/Places/VirtualPlaces/VirtualLocation> ;
        <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Places\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Places [Accessed: 07- June- 2022]."@en ;
        :definition "a place in ESO"@en ;
        rdfs:label "place"@en .
 
 
+###  http://www.semanticweb.org/TESOO#specific_place
+:specific_place rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_located ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :zone
+                                    ] ;
+                rdfs:subClassOf :place ;
+                owl:disjointWith :zone ;
+                <http://purl.org/dc/elements/1.1/description> """Every specific place on the map:
+Abyssal Geysers — Wave-based group events found only on Summerset
+Battlefields — Sites of ancient and contemporary battles
+Beacons — Watchtowers, lighthouses, and other free-standing signal towers
+Bodies of Water — Lakes, rivers and seas
+Camps — Bandit camps, guard camps, and other temporary settlements
+Caves — Root hollows, lava chambers, ice caves, and all other types of natural cavern
+Cemeteries — Graveyards, necropoli and other places where the (un)dead dwell
+Cities — Major settlements in each zone
+Crypts — Tombs, barrows, and other underground burial sites
+Daedric Ruins — Ancient shrines to the Daedric Princes
+Docks — Harbors, boatyards and shipwreck sites
+Dolmens — Summoning locations for Molag Bal's Dark Anchors
+Dragonscours — Locations where dragon hunting group events can occur
+Dwemer Ruins — The ruins of ancient Dwemer cities
+Elven Ruins — The ruins of ancient Ayleid and Aldmeri cities
+Estates — Countryside houses, homesteads and other estates
+Farms — Plantations and farmsteads
+Forts — Towers, forts, keeps and other fortified locations
+Gates — Milegates, passes, and other guarded thoroughfares
+Groves — Glades, marshes, oases and other natural wildernesses
+Harrowstorms — Wave-based group events
+Landmarks — Other miscellaneous locations
+Mines — Mining establishments and settlements
+Mundus Stones — Magical stones which grant special passive abilities
+Player Houses — Instanced locations that can be purchased and decorated
+Realms — Places which exist outside of Nirn
+Ruins — Nordic ruins, Yokudan ruins, and other ruins of contemporary civilization
+Sewers — City sewerage systems
+Ships — In-service, under construction, and scuttled ships
+Strongholds — Major locations in Coldharbour visited during the Main Quest
+Towns — Towns, villages, and other permanent settlements
+Wayshrines — Access points to the fast-travel system"""@en .
+
+
 ###  http://www.semanticweb.org/TESOO#zone
 :zone rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :contains_place ;
+                                                   owl:someValuesFrom :specific_place
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :zone_controlled_by ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onClass :Faction
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
       rdfs:subClassOf :place ;
       <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Zones\", 2022. [Online]. Available:
  https://en.uesp.net/wiki/Online:Zones. [Accessed: June 2022]."""@en ;
       <http://purl.org/dc/terms/source> "Online:Zone"@en ;
       :definition "Zones are playable areas of the world in Elder Scrolls Online. Unlike recent single-player entries in the series, the world is not one continuous map, and is divided into several separate regions which cross the borders of the traditional Imperial provinces."@en ;
       rdfs:label "Zone"@en .
+
+
+###  http://www.w3.org/2000/10/swap/pim/contact#foaf:Person
+<http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/TESOO#Aldmeri_Dominion
+:Aldmeri_Dominion rdf:type owl:NamedIndividual ,
+                           :Faction .
+
+
+###  http://www.semanticweb.org/TESOO#The_Harborage
+:The_Harborage rdf:type owl:NamedIndividual ,
+                        :Cave ;
+               :is_location_of_quest :The_Harborage_Quest ;
+               <http://purl.org/dc/elements/1.1/description> "The Harborage is a cave in the wilderness which the Prophet has adopted as his home and refuge. The cave is located near the first major city of each alliance, and serves as the starting point for each stage of the Main Quest."@en ;
+               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:The Harborage (place)\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:The_Harborage_(place) [Accessed: 07- June- 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#The_Harborage_Quest
+:The_Harborage_Quest rdf:type owl:NamedIndividual ,
+                              :Main_Quest ;
+                     <http://purl.org/dc/elements/1.1/description> """Quick Walkthrough:
+
+-Speak to the Prophet.
+-Visit the Harborage to find the Prophet.
+-Enter the Prophet's mind to view visions of the past.
+-Follow the Prophet and learn about his life with the Moth Priests.
+-Watch the visions of the Five Companions and the Soulburst.
+-Follow the Prophet and learn about the threat of Molag Bal's Dark -Anchors and the Planemeld.
+-Return to the Harborage and discuss your next moves."""@en ;
+                     <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:The Harborage (quest)\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:The_Harborage_(quest) [Accessed: 07- June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#The_Prophet
+:The_Prophet rdf:type owl:NamedIndividual ,
+                      :Friendly ;
+             :is_quest_giver :The_Harborage_Quest ;
+             :npc_located_in :The_Harborage ;
+             :has_gender "Male"^^xsd:string ;
+             :has_health "39959"^^xsd:int ;
+             :has_race "Imperial"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/description> "The Prophet, whose true name is Varen Aquilarios, is the former Emperor of Cyrodiil and a central figure in the main questline. Many years ago he was captured, alongside his steadfast ally Lyris Titanborn, and condemned to Coldharbour for becoming entangled in the schemes of Molag Bal and Mannimarco."@en ;
+             <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:The Prophet\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:The_Prophet [Accessed:June- 2022]."""@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Aldmeri_Dominion :definition "Zone controlled by Aldmeri Dominion Alliance"@en ;
+                  <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Aldmeri_Dominion. [Accessed: June 2022]."@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Body_of_Water
+                :Cave
+                :Cemetery
+                :City
+                :Crypt
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Friendly
+                :Hostile
+                :Justice_Neutral
+                :Neutral
+                :None
+              )
+] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
