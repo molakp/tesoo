@@ -51,6 +51,10 @@
 <http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
 
 
+###  http://schema.org/image
+<http://schema.org/image> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.semanticweb.org/TESOO#definition
 tesoo:definition rdf:type owl:AnnotationProperty .
 
@@ -122,7 +126,7 @@ tesoo:has_prerequisite_quest rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/TESOO#has_quest_giver
 tesoo:has_quest_giver rdf:type owl:ObjectProperty ;
-                      owl:inverseOf tesoo:is_quest_giver ;
+                      owl:inverseOf tesoo:npc_is_quest_giver ;
                       rdf:type owl:AsymmetricProperty ;
                       rdfs:domain tesoo:Quest ;
                       rdfs:range tesoo:npc .
@@ -150,14 +154,28 @@ tesoo:is_location_of_quest rdf:type owl:ObjectProperty ;
                            rdfs:range tesoo:Quest .
 
 
-###  http://www.semanticweb.org/TESOO#is_quest_giver
-tesoo:is_quest_giver rdf:type owl:ObjectProperty ;
-                     rdfs:domain tesoo:npc ;
-                     rdfs:range tesoo:Quest .
+###  http://www.semanticweb.org/TESOO#npc_in_relationship_with
+tesoo:npc_in_relationship_with rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/TESOO#npc_is_married_with
+tesoo:npc_is_married_with rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf tesoo:npc_in_relationship_with ;
+                          rdf:type owl:SymmetricProperty ;
+                          rdfs:domain tesoo:npc ;
+                          rdfs:range tesoo:npc .
+
+
+###  http://www.semanticweb.org/TESOO#npc_is_quest_giver
+tesoo:npc_is_quest_giver rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf tesoo:npc_related_quest ;
+                         rdfs:domain tesoo:npc ;
+                         rdfs:range tesoo:Quest .
 
 
 ###  http://www.semanticweb.org/TESOO#npc_killed_to_complete_dungeon
-tesoo:npc_killed_to_complete_dungeon rdf:type owl:ObjectProperty ;
+tesoo:npc_killed_to_complete_dungeon rdf:type owl:ObjectProperty ,
+                                              owl:FunctionalProperty ;
                                      rdfs:domain tesoo:npc ;
                                      rdfs:range tesoo:specific_place .
 
@@ -171,6 +189,12 @@ tesoo:npc_located_in rdf:type owl:ObjectProperty ;
                                             ( tesoo:npc_located_in
                                               tesoo:is_located
                                             ) .
+
+
+###  http://www.semanticweb.org/TESOO#npc_related_quest
+tesoo:npc_related_quest rdf:type owl:ObjectProperty ;
+                        rdfs:domain tesoo:npc ;
+                        rdfs:range tesoo:Quest .
 
 
 ###  http://www.semanticweb.org/TESOO#npc_rules_city
@@ -424,6 +448,26 @@ tesoo:None rdf:type owl:Class ;
 ###  http://www.semanticweb.org/TESOO#Quest
 tesoo:Quest rdf:type owl:Class ;
             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:has_next_quest ;
+                                  owl:someValuesFrom tesoo:Quest
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:has_prerequisite_quest ;
+                                  owl:someValuesFrom tesoo:Quest
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:npc_killed_to_complete_dungeon ;
+                                  owl:someValuesFrom tesoo:Quest
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:npc_related_quest ;
+                                  owl:someValuesFrom tesoo:Quest
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty tesoo:quest_located_in ;
+                                  owl:someValuesFrom <http://purl.org/net/VideoGameOntology#PlayingArea>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
                                   owl:onProperty tesoo:has_quest_giver ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onClass tesoo:npc
@@ -443,6 +487,12 @@ tesoo:Strongholds rdf:type owl:Class ;
                   rdfs:subClassOf tesoo:specific_place .
 
 
+###  http://www.semanticweb.org/TESOO#Vary
+tesoo:Vary rdf:type owl:Class ;
+           rdfs:subClassOf tesoo:npc ;
+           <http://purl.org/dc/elements/1.1/description> "Vary is for NPC that can change according to the story or player's actions."@en .
+
+
 ###  http://www.semanticweb.org/TESOO#character
 tesoo:character rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
@@ -452,6 +502,13 @@ tesoo:character rdf:type owl:Class ;
 ###  http://www.semanticweb.org/TESOO#npc
 tesoo:npc rdf:type owl:Class ;
           rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person> ;
+          owl:disjointUnionOf ( tesoo:Friendly
+                                tesoo:Hostile
+                                tesoo:Justice_Neutral
+                                tesoo:Neutral
+                                tesoo:None
+                                tesoo:Vary
+                              ) ;
           <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:NPCs\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:NPCs. [Accessed: June 2022]."@en ;
           tesoo:definition "Any Non Playable Character in ESO"@en ;
           rdfs:label "npc"@en .
@@ -559,6 +616,21 @@ tesoo:zone rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/TESOO#A_Hostile_Situation_Quest
+tesoo:A_Hostile_Situation_Quest rdf:type owl:NamedIndividual ,
+                                         tesoo:Quest ;
+                                tesoo:quest_located_in tesoo:Vulkhel_Guard ;
+                                tesoo:has_XP_Gain "Standard"^^xsd:string ;
+                                tesoo:has_quest_id "4256"^^xsd:int ;
+                                tesoo:has_reward """Queensguard Greaves
+Average Leveled Gold"""^^xsd:string ;
+                                <http://purl.org/dc/elements/1.1/description> """Speak with Watch Captain Astanya.
+Meet with Razum-dar and follow his instructions.
+Find Battlereeve Urcelmo.
+Kill the assassin."""@en ;
+                                <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:A Hostile Situation\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:A_Hostile_Situation. [Accessed: June 2022]."@en .
+
+
 ###  http://www.semanticweb.org/TESOO#Aldmeri_Dominion
 tesoo:Aldmeri_Dominion rdf:type owl:NamedIndividual ,
                                 tesoo:Faction .
@@ -607,6 +679,23 @@ tesoo:Daggerfall_Covenant rdf:type owl:NamedIndividual ,
                                    tesoo:Faction .
 
 
+###  http://www.semanticweb.org/TESOO#Ensuring_Security_Quest
+tesoo:Ensuring_Security_Quest rdf:type owl:NamedIndividual ,
+                                       tesoo:Quest ;
+                              tesoo:has_next_quest tesoo:A_Hostile_Situation_Quest ;
+                              tesoo:quest_located_in tesoo:Vulkhel_Guard ;
+                              tesoo:has_XP_Gain "High"^^xsd:string ;
+                              tesoo:has_quest_id "4255"^^xsd:int ;
+                              tesoo:has_reward "High Leveled Gold"^^xsd:string ;
+                              <http://purl.org/dc/elements/1.1/description> """Quick Walkthrough
+Talk to Watch Captain Astanya.
+Help both Advisor Norion and Steward Eminwe patch holes in Vulkhel Guard's security.
+Return to Astanya, then find Watchman Heldil.
+Enter the suspect's house and witness the confrontation."""@en ;
+                              <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Ensuring Security\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022]."""@en .
+
+
 ###  http://www.semanticweb.org/TESOO#Grahtwood
 tesoo:Grahtwood rdf:type owl:NamedIndividual ;
                 tesoo:zone_controlled_by tesoo:Aldmeri_Dominion ;
@@ -626,7 +715,8 @@ tesoo:High_Kinlady_Estre rdf:type owl:NamedIndividual ,
                          <http://purl.org/dc/elements/1.1/description> """High Kinlady Estre is the Altmer High Kinlady of Skywatch, wife of Prince Naemon of Summerset Isle, sister-in-law of Queen Ayrenn, and the leader of the Veiled Heritance under the guise of the Veiled Queen.
 
 Initially, before starting the quest Ensuring Security, she is found inside the manor in Vulkhel Guard, talking to her husband. Talking to her here, she says, \"You have the pleasure of speaking with High Kinlady Estre, scion of royal Aldmeri blood. I must apologize, but my escort and I were just in the middle of a conversation. If you'll excuse us?\""""@en ;
-                         <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:High Kinlady Estre\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:High_Kinlady_Estre [Accessed: June- 2022]."@en .
+                         <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:High Kinlady Estre\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:High_Kinlady_Estre [Accessed: June- 2022]."@en ;
+                         <http://schema.org/image> <https://images.uesp.net/c/c4/ON-npc-High_Kinlady_Estre.jpg> .
 
 
 ###  http://www.semanticweb.org/TESOO#Hooded_Figure
@@ -640,12 +730,40 @@ tesoo:Hooded_Figure rdf:type owl:NamedIndividual ,
                     <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Hooded Figure\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Hooded_Figure [Accessed: June- 2022]."@en .
 
 
+###  http://www.semanticweb.org/TESOO#Prince_Naemon
+tesoo:Prince_Naemon rdf:type owl:NamedIndividual ,
+                             tesoo:Vary ;
+                    tesoo:npc_is_married_with tesoo:High_Kinlady_Estre ;
+                    tesoo:npc_located_in tesoo:Vulkhel_Guard ;
+                    tesoo:has_gender "Male"^^xsd:string ;
+                    tesoo:has_health "133844"^^xsd:int ;
+                    tesoo:has_race "High Elf"^^xsd:string ;
+                    <http://purl.org/dc/elements/1.1/description> "Prince Naemon is a High Elf noble and the younger brother of Queen Ayrenn. Originally named heir to the throne of Alinor after Ayrenn's sudden disappearance, when his sister returned after years of absence, she was crowned instead. He currently lives as a high-ranking noble with his wife, High Kinlady Estre."@en ;
+                    <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Prince Naemon\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Prince_Naemon [Accessed: June- 2022]."@en ;
+                    <http://schema.org/image> <https://images.uesp.net/0/06/ON-npc-Prince_Naemon.jpg> .
+
+
+###  http://www.semanticweb.org/TESOO#Razum-dar
+tesoo:Razum-dar rdf:type owl:NamedIndividual ,
+                         tesoo:Friendly ;
+                tesoo:npc_located_in <http://www.semanticweb.org/TESOO#Khenarthi's_Roost> ;
+                tesoo:has_gender "Male"^^xsd:string ;
+                tesoo:has_health "39959"^^xsd:int ;
+                tesoo:has_race "Khajiit"^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/description> """Razum-dar, known simply as Raz to his friends, is a Khajiit initially found in Eagle's Strand. If you are aligned with the Aldmeri Dominion, you will meet him upon leaving Coldharbour. After you help Commander Karinith and Ealcil at his behest, Razum-dar will relocate to Mistral and later to Auridon to ask you for aid in several more quests. Eventually, Razum-dar reveals himself as one of the Eyes of the Queen—personal agents of Queen Ayrenn, whom he knows personally from her days exploring Tamriel as a princess. He frequently serves a liaison between you and the Queen in matters she cannot be seen as publicly involved in.
+
+A version of Razum-dar is fought alongside Captain Odreth during the Circus of Cheerful Slaughter."""@en ;
+                <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Razum-dar\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Razum-dar [Accessed: June- 2022]."@en ;
+                <http://schema.org/image> <https://images.uesp.net/f/f7/ON-npc-Razum-dar.jpg> .
+
+
 ###  http://www.semanticweb.org/TESOO#Skywatch
 tesoo:Skywatch rdf:type owl:NamedIndividual ,
                         tesoo:City ;
                tesoo:is_located tesoo:Auridon ;
                <http://purl.org/dc/elements/1.1/description> "Skywatch is a city at the eastern side of Auridon. The city is built around an ancient ruin and is a very prominent port for the Aldmeri Dominion. It is ruled by High Kinlady Estre. The Festival of Defiance is currently ongoing, and Skywatch Celebrants fill every nook and cranny of Skywatch's public areas. Royal Bodyguards stand watch by the stairwells. Dominion Guard stand vigilant, keeping the peace."@en ;
-               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Skywatch\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Skywatch [Accessed: June- 2022]."@en .
+               <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Skywatch\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Skywatch [Accessed: June- 2022]."@en ;
+               <http://schema.org/image> <https://images.uesp.net/1/15/ON-place-Skywatch.jpg> .
 
 
 ###  http://www.semanticweb.org/TESOO#Soul_Shriven_in_Coldharbour__Quest
@@ -707,7 +825,7 @@ https://en.uesp.net/wiki/Online:The_Harborage_(quest) [Accessed: June- 2022]."""
 ###  http://www.semanticweb.org/TESOO#The_Prophet
 tesoo:The_Prophet rdf:type owl:NamedIndividual ,
                            tesoo:Friendly ;
-                  tesoo:is_quest_giver tesoo:The_Harborage_Quest ;
+                  tesoo:npc_is_quest_giver tesoo:The_Harborage_Quest ;
                   tesoo:npc_located_in tesoo:The_Harborage ;
                   tesoo:has_gender "Male"^^xsd:string ;
                   tesoo:has_health "39959"^^xsd:int ;
@@ -717,6 +835,11 @@ tesoo:The_Prophet rdf:type owl:NamedIndividual ,
 https://en.uesp.net/wiki/Online:The_Prophet [Accessed:June- 2022]."""@en .
 
 
+###  http://www.semanticweb.org/TESOO#The_Tempest_Unleashed
+tesoo:The_Tempest_Unleashed rdf:type owl:NamedIndividual ;
+                            tesoo:has_next_quest tesoo:To_Auridon_Quest .
+
+
 ###  http://www.semanticweb.org/TESOO#The_Wailing_Prison
 tesoo:The_Wailing_Prison rdf:type owl:NamedIndividual ,
                                   tesoo:Strongholds ;
@@ -724,6 +847,24 @@ tesoo:The_Wailing_Prison rdf:type owl:NamedIndividual ,
                          <http://purl.org/dc/elements/1.1/description> "The Wailing Prison is a sub-location of Coldharbour, Molag Bal's realm of Oblivion. It is where the introductory quest to the game takes place. The location is split into seven zones."@en ;
                          <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:The Wailing Prison\", 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:The_Wailing_Prison [Accessed:June- 2022]."""@en .
+
+
+###  http://www.semanticweb.org/TESOO#To_Auridon_Quest
+tesoo:To_Auridon_Quest rdf:type owl:NamedIndividual ,
+                                tesoo:Quest ;
+                       tesoo:has_next_quest tesoo:Ensuring_Security_Quest ;
+                       tesoo:has_quest_giver tesoo:Razum-dar ;
+                       tesoo:quest_located_in <http://www.semanticweb.org/TESOO#Khenarthi's_Roost> ;
+                       tesoo:has_XP_Gain "Low"^^xsd:string ;
+                       tesoo:has_quest_id "4818"^^xsd:int ;
+                       tesoo:has_reward "Low Leveled Gold"^^xsd:string ;
+                       <http://purl.org/dc/elements/1.1/description> """Quick Walkthrough
+Speak with Razum-dar.
+(Optional) Speak with Captain Jimila.
+Board the skiff and head to Auridon."""@en ;
+                       <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:To Auridon\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:To_Auridon [Accessed:June- 2022]."""@en ;
+                       <http://schema.org/image> <https://images.uesp.net/thumb/f/f0/ON-quest-To_Auridon.jpg/300px-ON-quest-To_Auridon.jpg> .
 
 
 ###  http://www.semanticweb.org/TESOO#Veiled_Heritance
@@ -753,6 +894,39 @@ If you head south from the wayshrine, you'll come across the Harborside Market, 
 https://en.uesp.net/wiki/Online:Vulkhel_Guard [Accessed:June- 2022]."""@en .
 
 
+###  http://www.semanticweb.org/TESOO#Watch_Captain_Astanya
+tesoo:Watch_Captain_Astanya rdf:type owl:NamedIndividual ,
+                                     tesoo:Friendly ;
+                            tesoo:npc_located_in tesoo:Vulkhel_Guard ;
+                            tesoo:npc_related_quest tesoo:A_Hostile_Situation_Quest ,
+                                                    tesoo:Ensuring_Security_Quest ;
+                            tesoo:has_gender "Female"^^xsd:string ;
+                            tesoo:has_health "39959"^^xsd:int ;
+                            <http://purl.org/dc/elements/1.1/description> """Watch Captain Astanya is a High Elf guard captain who is charged with overseeing security details for Queen Ayrenn's visit to Vulkhel Guard.
+
+If you are aligned with the Aldmeri Dominion, your first quest upon leaving Coldharbour directs you to help her with investigating potential threats to the Queen in the city.
+
+However, she is later revealed to be a member of the Veiled Heritance, intent on assassinating the Queen at her own visit."""@en ;
+                            <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Watch Captain Astanya\", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Watch_Captain_Astanya [Accessed:June- 2022]."""@en ;
+                            <http://schema.org/image> <https://images.uesp.net/3/30/ON-npc-Watch_Captain_Astanya.jpg> .
+
+
+###  http://www.semanticweb.org/TESOO#Watchman_Heldil
+tesoo:Watchman_Heldil rdf:type owl:NamedIndividual ,
+                               tesoo:Friendly ;
+                      tesoo:npc_is_quest_giver tesoo:Ensuring_Security_Quest ;
+                      tesoo:npc_located_in tesoo:Vulkhel_Guard ;
+                      tesoo:npc_related_quest tesoo:A_Hostile_Situation_Quest ;
+                      tesoo:has_gender "Male"^^xsd:string ;
+                      tesoo:has_health "39959"^^xsd:int ;
+                      tesoo:has_race "High Elf"^^xsd:string ;
+                      <http://purl.org/dc/elements/1.1/description> "Watchman Heldil is a High Elf member of the Vulkhel Watch who can be found in Vulkhel Guard."@en ;
+                      <http://purl.org/dc/terms/bibliographicCitation> """Uesp.net, \"Online:Watchman_Heldil \", 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Watchman_Heldil [Accessed:June- 2022]."""@en ;
+                      <http://schema.org/image> <https://images.uesp.net/3/3d/ON-npc-Watchman_Heldil.jpg> .
+
+
 ###  http://www.semanticweb.org/TESOO#Del's_Claim
 <http://www.semanticweb.org/TESOO#Del's_Claim> rdf:type owl:NamedIndividual ,
                                                         tesoo:Mine ;
@@ -761,6 +935,14 @@ https://en.uesp.net/wiki/Online:Vulkhel_Guard [Accessed:June- 2022]."""@en .
                                                tesoo:place_is_discoverable "true"^^xsd:boolean ;
                                                <http://purl.org/dc/elements/1.1/description> "Del's Claim is a mine in southern Auridon, just northwest of the city of Vulkhel Guard. It has recently been taken over by followers of the Veiled Heritance, who killed all the miners. They plan to use it as a secure base of operations."@en ;
                                                <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Del's Claim\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Del%27s_Claim. [Accessed: June 2022]."@en .
+
+
+###  http://www.semanticweb.org/TESOO#Khenarthi's_Roost
+<http://www.semanticweb.org/TESOO#Khenarthi's_Roost> rdf:type owl:NamedIndividual ;
+                                                     tesoo:zone_controlled_by tesoo:Aldmeri_Dominion ;
+                                                     <http://purl.org/dc/elements/1.1/description> "Khenarthi's Roost is a small island off the coast of Elsweyr inhabited by both Khajiit and Maormer, named for the Khajiiti goddess Khenarthi. The island is dotted with moon-sugar plantations and is a location of both active Khajiiti worship and Maormer magic, as the Khajiit signed a peace treaty with the Maormer which allowed them to settle on the island. The island is under negotiations for inclusion in the Aldmeri Dominion, but the negotiations are being hampered by the existing Maormer treaty. Meanwhile, the Dominion are actively combating skooma production in the area as a show of goodwill towards the island's ruler."@en ;
+                                                     <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Khenarthi's Roost\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Khenarthi%27s_Roost [Accessed: June- 2022]."@en ;
+                                                     <http://schema.org/image> <https://images.uesp.net/a/ae/ON-place-Eagle%27s_Strand.jpg> .
 
 
 #################################################################
@@ -818,8 +1000,58 @@ tesoo:Daggerfall_Covenant <http://purl.org/dc/terms/bibliographicCitation> "Uesp
 
 
 [ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:A_Hostile_Situation_Quest
+                        tesoo:Ensuring_Security_Quest
+                        tesoo:The_Harborage_Quest
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:A_Hostile_Situation_Quest
+                        tesoo:Ensuring_Security_Quest
+                        tesoo:The_Harborage_Quest
+                        tesoo:To_Auridon_Quest
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( tesoo:Aldmeri_Dominion
                         tesoo:Daggerfall_Covenant
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:Camandar
+                        tesoo:High_Kinlady_Estre
+                        tesoo:Hooded_Figure
+                        tesoo:Prince_Naemon
+                        tesoo:The_Prophet
+                        tesoo:Watch_Captain_Astanya
+                        tesoo:Watchman_Heldil
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:High_Kinlady_Estre
+                        tesoo:Hooded_Figure
+                        tesoo:Prince_Naemon
+                        tesoo:Razum-dar
+                        tesoo:The_Prophet
+                        tesoo:Vulkhel_Guard
+                        tesoo:Watchman_Heldil
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:High_Kinlady_Estre
+                        tesoo:Hooded_Figure
+                        tesoo:The_Prophet
+                        tesoo:Watchman_Heldil
                       )
 ] .
 
