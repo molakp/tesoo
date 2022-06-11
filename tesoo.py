@@ -79,7 +79,7 @@ assert Drug("my_drug3") is Drug("my_drug3")
 
 
 #Accessing properties
- print(onto.npc.npc)
+print(onto.npc.npc_related_quest)
 
 
 #Saving, OWL/XML is not yet supported for writing, only refxml is supported

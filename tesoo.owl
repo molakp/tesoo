@@ -978,8 +978,8 @@ tesoo:Zaeri rdf:type owl:NamedIndividual ,
 #    Annotations
 #################################################################
 
-tesoo:Aldmeri_Dominion tesoo:definition "Zone controlled by Aldmeri Dominion Alliance"@en ;
-                       <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Aldmeri_Dominion. [Accessed: June 2022]."@en .
+tesoo:Aldmeri_Dominion tesoo:definition "The Aldmeri Dominion is one of the three joinable factions participating in the Alliance War, the other two being the Daggerfall Covenant and the Ebonheart Pact. The crest of the Aldmeri Dominion is an eagle, and its colors are yellow and silver. It consists of the Altmer of Summerset Isles, the Bosmer of Valenwood, and the Khajiit of Elsweyr. The alliance is a nascent empire that rules its holdings with an iron fist. Led by Queen Ayrenn with Elden Root as its capital, the Dominion seeks to reestablish Elven dominance over Tamriel in order to protect it from the carelessness of the younger races. The province of Valenwood, led by King Camoran Aeradan, joined the alliance to help fight off the Colovian troops that were capturing territory in northern Valenwood, while Elsweyr still remains in the grip of the Knahaten Flu. Dominion players will begin on Khenarthi's Roost after being washed up unconscious on the shores of the island following their escape from Molag Bal's realm of Coldharbour."@en ;
+                       <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Aldmeri Dominion\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Aldmeri_Dominion. [Accessed: June 2022]."@en .
 
 
 tesoo:Daggerfall_Covenant <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zone\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Daggerfall_Covenant. [Accessed: June 2022]."@en ;
@@ -1041,6 +1041,13 @@ tesoo:Daggerfall_Covenant <http://purl.org/dc/terms/bibliographicCitation> "Uesp
                         tesoo:Ensuring_Security_Quest
                         tesoo:The_Harborage_Quest
                         tesoo:To_Auridon_Quest
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( tesoo:Aldmeri_Dominion
+                        tesoo:Auridon
                       )
 ] .
 
