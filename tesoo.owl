@@ -948,9 +948,9 @@ tesoo:Zaeri rdf:type owl:NamedIndividual ,
                      tesoo:Friendly ;
             tesoo:npc_is_quest_giver tesoo:The_Tempest_Unleashed_Quest ;
             tesoo:npc_related_quest tesoo:Soul_Shriven_in_Coldharbour__Quest ;
-            tesoo:has_gender "Female"@en ;
-            tesoo:has_health "39959"@en ;
-            tesoo:has_race "Khajiit"@en ;
+            tesoo:has_gender "Female"^^xsd:string ;
+            tesoo:has_health "39959"^^xsd:int ;
+            tesoo:has_race "Khajiit"^^xsd:string ;
             <http://purl.org/dc/elements/1.1/description> "Zaeri is a Khajiit who can be found in Mistral. She is a member of the Eyes of the Queen and can occasionally deliver messages to you."@en ;
             <http://purl.org/dc/terms/bibliographicCitation> "Uesp.net, \"Online:Zaeri\", 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zaeri [Accessed: June- 2022]."@en ;
             <http://schema.org/image> <https://images.uesp.net/4/4e/ON-npc-Zaeri.jpg> .
