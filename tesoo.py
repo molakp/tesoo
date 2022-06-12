@@ -81,6 +81,13 @@ assert Drug("my_drug3") is Drug("my_drug3")
 #Accessing properties
 print(onto.npc.npc_related_quest)
 
+#Introspecting properties
+# https://owlready2.readthedocs.io/en/v0.37/class.html#introspecting-individuals
+print(onto.my_drug.get_properties())
 
+
+for prop in onto.drug_1.get_properties():
+    for value in prop[onto.drug_1]:
+        print(".%s == %s" % (prop.python_name, value))
 #Saving, OWL/XML is not yet supported for writing, only refxml is supported
 onto.save(file = "C:/Users/silve/OneDrive/Documenti/Git/tesoo/tesoo_py_save", format = "rdfxml")
