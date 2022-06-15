@@ -1,0 +1,360 @@
+@prefix : <http://www.modsem.org/arte#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.modsem.org/arte> .
+
+<http://www.modsem.org/arte> rdf:type owl:Ontology ;
+                              rdfs:comment """Osservazioni: 
+- Le date delle opere non sono collegate alle epoche: queste ultime potrebbero essere rappresentate come restrizioni sulle date.
+- La creazione artistica si può rappresentare come processo, a cui sono associate ruoli di creatore, contributore, strumento, tecnica, ecc.""" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.modsem.org/arte#appartieneEpoca
+:appartieneEpoca rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Opera ;
+                 rdfs:range :Epoca .
+
+
+###  http://www.modsem.org/arte#creatoreDi
+:creatoreDi rdf:type owl:ObjectProperty ;
+            owl:inverseOf :haCreatore ;
+            rdfs:domain :Artista ;
+            rdfs:range :Opera .
+
+
+###  http://www.modsem.org/arte#dataNascita
+:dataNascita rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Artista ;
+             rdfs:range :Epoca .
+
+
+###  http://www.modsem.org/arte#espone
+:espone rdf:type owl:ObjectProperty ;
+        owl:inverseOf :espostaPresso ;
+        rdfs:domain :Museo ;
+        rdfs:range :Opera .
+
+
+###  http://www.modsem.org/arte#esponeArtista
+:esponeArtista rdf:type owl:ObjectProperty ;
+               rdfs:domain :Museo ;
+               rdfs:range :Artista ;
+               owl:propertyChainAxiom ( :espone
+                                        :haCreatore
+                                      ) .
+
+
+###  http://www.modsem.org/arte#espostaPresso
+:espostaPresso rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Opera ;
+               rdfs:range :Museo .
+
+
+###  http://www.modsem.org/arte#haCreatore
+:haCreatore rdf:type owl:ObjectProperty ;
+            rdfs:domain :Opera ;
+            rdfs:range :Artista .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Opera ;
+        rdfs:range xsd:dateTime .
+
+
+###  http://www.modsem.org/arte#IconclassSubject
+:IconclassSubject rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Opera ;
+                  rdfs:range xsd:anyURI .
+
+
+###  http://www.modsem.org/arte#haTitolo
+:haTitolo rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Opera ;
+          rdfs:range xsd:string .
+
+
+###  http://www.modsem.org/arte#haURI
+:haURI rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Opera ;
+       rdfs:range xsd:string .
+
+
+###  http://www.modsem.org/arte#nomeArtista
+:nomeArtista rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Artista ;
+             rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.modsem.org/arte#Antica
+:Antica rdf:type owl:Class ;
+        rdfs:subClassOf :Epoca .
+
+
+###  http://www.modsem.org/arte#Artista
+:Artista rdf:type owl:Class .
+
+
+###  http://www.modsem.org/arte#Dipinto
+:Dipinto rdf:type owl:Class ;
+         rdfs:subClassOf :Opera .
+
+
+###  http://www.modsem.org/arte#Epoca
+:Epoca rdf:type owl:Class .
+
+
+###  http://www.modsem.org/arte#Medioevale
+:Medioevale rdf:type owl:Class ;
+            rdfs:subClassOf :Epoca .
+
+
+###  http://www.modsem.org/arte#Moderna
+:Moderna rdf:type owl:Class ;
+         rdfs:subClassOf :Epoca .
+
+
+###  http://www.modsem.org/arte#Museo
+:Museo rdf:type owl:Class .
+
+
+###  http://www.modsem.org/arte#MuseoArcheologico
+:MuseoArcheologico rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty :espone ;
+                                         owl:someValuesFrom [ owl:intersectionOf ( :Opera
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :appartieneEpoca ;
+                                                                                     owl:allValuesFrom :Antica
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ]
+                                       ] ;
+                   rdfs:subClassOf :Museo .
+
+
+###  http://www.modsem.org/arte#Musicista
+:Musicista rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :creatoreDi ;
+                                 owl:someValuesFrom :OperaMusicale
+                               ] ;
+           rdfs:subClassOf :Artista .
+
+
+###  http://www.modsem.org/arte#Novecento
+:Novecento rdf:type owl:Class ;
+           rdfs:subClassOf :Epoca .
+
+
+###  http://www.modsem.org/arte#Opera
+:Opera rdf:type owl:Class .
+
+
+###  http://www.modsem.org/arte#OperaClassica
+:OperaClassica rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :appartieneEpoca ;
+                                     owl:someValuesFrom :Antica
+                                   ] ;
+               rdfs:subClassOf :Opera .
+
+
+###  http://www.modsem.org/arte#OperaContemporanea
+:OperaContemporanea rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty :appartieneEpoca ;
+                                          owl:someValuesFrom :Novecento
+                                        ] ;
+                    rdfs:subClassOf :Opera .
+
+
+###  http://www.modsem.org/arte#OperaMusicale
+:OperaMusicale rdf:type owl:Class ;
+               rdfs:subClassOf :Opera .
+
+
+###  http://www.modsem.org/arte#Pinacoteca
+:Pinacoteca rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty :espone ;
+                                  owl:someValuesFrom :Dipinto
+                                ] ;
+            rdfs:subClassOf :Museo .
+
+
+###  http://www.modsem.org/arte#Pittore
+:Pittore rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :creatoreDi ;
+                               owl:someValuesFrom :Dipinto
+                             ] ;
+         rdfs:subClassOf :Artista .
+
+
+###  http://www.modsem.org/arte#Scultore
+:Scultore rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :creatoreDi ;
+                                owl:someValuesFrom :Scultura
+                              ] ;
+          rdfs:subClassOf :Artista .
+
+
+###  http://www.modsem.org/arte#Scultura
+:Scultura rdf:type owl:Class ;
+          rdfs:subClassOf :Opera .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.modsem.org/arte#Carmen
+:Carmen rdf:type owl:NamedIndividual ,
+                 :OperaMusicale ;
+        :haTitolo "Carmen"^^xsd:string .
+
+
+###  http://www.modsem.org/arte#CentroReinaSofia
+:CentroReinaSofia rdf:type owl:NamedIndividual ,
+                           :Museo .
+
+
+###  http://www.modsem.org/arte#Contemporanea
+:Contemporanea rdf:type owl:NamedIndividual ,
+                        :Moderna .
+
+
+###  http://www.modsem.org/arte#Discobolo
+:Discobolo rdf:type owl:NamedIndividual ,
+                    :Scultura ;
+           :appartieneEpoca :EpocaClassica ;
+           :espostaPresso :MuseoNazionaleRoma ;
+           :haTitolo "Discobolo"^^xsd:string .
+
+
+###  http://www.modsem.org/arte#DonnaSeduta
+:DonnaSeduta rdf:type owl:NamedIndividual ,
+                      :Scultura ;
+             :appartieneEpoca <http://www.modsem.org/arte#1920> ;
+             :espostaPresso :MuseoPicassoParigi ;
+             :haTitolo "Donna Seduta"^^xsd:string .
+
+
+###  http://www.modsem.org/arte#EpocaClassica
+:EpocaClassica rdf:type owl:NamedIndividual ,
+                        :Antica .
+
+
+###  http://www.modsem.org/arte#GeorgesBizet
+:GeorgesBizet rdf:type owl:NamedIndividual ,
+                       :Artista ;
+              :creatoreDi :Carmen ;
+              :nomeArtista "Georges Bizet"^^xsd:string .
+
+
+###  http://www.modsem.org/arte#Guernica
+:Guernica rdf:type owl:NamedIndividual ,
+                   :Dipinto ;
+          :espostaPresso :CentroReinaSofia ;
+          :IconclassSubject "http://iconclass.org/45AI"^^xsd:anyURI ;
+          :haTitolo "Guernica"^^xsd:string .
+
+
+###  http://www.modsem.org/arte#Light_Red_Over_Black
+:Light_Red_Over_Black rdf:type owl:NamedIndividual ,
+                               :Opera ;
+                      dc:date "1957-01-01T00:00:00.0"^^xsd:dateTime ;
+                      :IconclassSubject "http://iconclass.org/22C4"^^xsd:anyURI ;
+                      :haTitolo "Light Red Over Black"^^xsd:string ;
+                      :haURI "http://www.tate.org.uk/art/artworks/rothko-light-red-over-black-t00275"^^xsd:string .
+
+
+###  http://www.modsem.org/arte#Mirone
+:Mirone rdf:type owl:NamedIndividual ,
+                 :Artista ;
+        :creatoreDi :Discobolo ;
+        :dataNascita :EpocaClassica ;
+        :nomeArtista "Mirone"^^xsd:string .
+
+
+###  http://www.modsem.org/arte#MuseoNazionaleRoma
+:MuseoNazionaleRoma rdf:type owl:NamedIndividual ,
+                             :Museo .
+
+
+###  http://www.modsem.org/arte#MuseoPicassoParigi
+:MuseoPicassoParigi rdf:type owl:NamedIndividual ,
+                             :Museo ;
+                    :espone :DonnaSeduta .
+
+
+###  http://www.modsem.org/arte#PabloPicasso
+:PabloPicasso rdf:type owl:NamedIndividual ,
+                       :Artista ;
+              :creatoreDi :DonnaSeduta ,
+                          :Guernica ;
+              :nomeArtista "Pablo Picasso"^^xsd:string .
+
+
+###  http://www.modsem.org/arte#RitrattoDoraMaar
+:RitrattoDoraMaar rdf:type owl:NamedIndividual ,
+                           :Dipinto ;
+                  :espostaPresso :MuseoPicassoParigi ;
+                  :haCreatore :PabloPicasso .
+
+
+###  http://www.modsem.org/arte#Rothko
+:Rothko rdf:type owl:NamedIndividual ,
+                 :Artista ;
+        :creatoreDi :Light_Red_Over_Black .
+
+
+###  http://www.modsem.org/arte#1920
+<http://www.modsem.org/arte#1920> rdf:type owl:NamedIndividual ,
+                                           :Novecento .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Antica
+                :Medioevale
+                :Moderna
+                :Novecento
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Artista
+                :Epoca
+                :Museo
+                :Opera
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
