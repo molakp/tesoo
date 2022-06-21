@@ -982,6 +982,15 @@ tesoo:Daggerfall_Covenant <http://purl.org/dc/terms/bibliographicCitation> "Uesp
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://purl.org/net/VideoGameOntology#PlayingArea>
+                tesoo:Quest
+                <http://www.w3.org/2000/10/swap/pim/contact#foaf:Person>
+                <http://xmlns.com/foaf/0.1/Organization>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( tesoo:Aldmeri_Dominion
                 tesoo:Daggerfall_Covenant
                 tesoo:Ebonheart_Pact
