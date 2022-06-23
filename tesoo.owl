@@ -128,6 +128,8 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TESOO#belongs_to_organization">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/TESOO#organization_has_member"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -139,6 +141,35 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
         <rdfs:label rdf:resource="http://www.semanticweb.org/belongs_to_organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TESOO#belongs_to_race -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TESOO#belongs_to_race">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Character"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Npc"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TESOO#Race"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TESOO#character_is_attacked -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TESOO#character_is_attacked">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/TESOO#npc_will_attack_character"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TESOO#Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TESOO#Npc"/>
     </owl:ObjectProperty>
     
 
@@ -202,6 +233,31 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:List#QuestLine"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/TESOO#Quest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TESOO#has_more_health -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TESOO#has_more_health">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Character"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Npc"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Character"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Npc"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -310,6 +366,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/TESOO#npc_is_attacked -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TESOO#npc_is_attacked">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TESOO#Npc"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Character"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Npc"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/TESOO#npc_is_married_with -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TESOO#npc_is_married_with">
@@ -387,10 +459,26 @@
     <!-- http://www.semanticweb.org/TESOO#npc_will_attack -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TESOO#npc_will_attack">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/TESOO#Npc"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/TESOO#Npc"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Character"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Npc"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TESOO#npc_will_attack_character -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TESOO#npc_will_attack_character">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TESOO#npc_will_attack"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TESOO#Npc"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TESOO#Character"/>
     </owl:ObjectProperty>
     
 
@@ -712,34 +800,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/TESOO#Ebonheart_Pact">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TESOO#zone"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TESOO#contains_place"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TESOO#Specific_Place"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TESOO#zone_controlled_by"/>
-                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/TESOO#Faction"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/TESOO#contains_place"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TESOO#Specific_Place"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/TESOO#zone_controlled_by"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/TESOO#Faction"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Zone&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022].</terms:bibliographicCitation>
         <definition xml:lang="en">Zones controlled by Ebonheart Pact</definition>
@@ -1104,6 +1164,7 @@ Kill the assassin.</dc:description>
         <rdf:type rdf:resource="http://www.semanticweb.org/TESOO#Friendly"/>
         <npc_belongs_same_organization rdf:resource="http://www.semanticweb.org/TESOO#Advisor_Norion"/>
         <npc_located_in rdf:resource="http://www.semanticweb.org/TESOO#Vulkhel_Guard"/>
+        <has_race rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High Elf</has_race>
         <dc:description>Advisor Norion is a High Elf member of Queen Ayrenn&apos;s court. He can be initially found outside a warehouse in Vulkhel Guard.</dc:description>
         <terms:bibliographicCitation>Uesp.net, &quot;Online:Advisor Norion&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Advisor_Norion [Accessed: June- 2022].</terms:bibliographicCitation>
         <rdfs:label>Advisor Norion</rdfs:label>
@@ -1152,6 +1213,7 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</terms:bibliogra
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TESOO#Camandar">
         <rdf:type rdf:resource="http://www.semanticweb.org/TESOO#Hostile"/>
+        <belongs_to_organization rdf:resource="http://www.semanticweb.org/TESOO#Sea_Vipers"/>
         <npc_killed_to_complete_dungeon rdf:resource="http://www.semanticweb.org/TESOO#Bewan"/>
         <has_gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</has_gender>
         <has_health rdf:datatype="http://www.w3.org/2001/XMLSchema#int">146590</has_health>
@@ -1210,6 +1272,18 @@ https://en.uesp.net/wiki/Online:Daughter_of_Giants. [Accessed: June 2022].</term
     
 
 
+    <!-- http://www.semanticweb.org/TESOO#Dominion_Guard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TESOO#Dominion_Guard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TESOO#Justice_Neutral"/>
+        <npc_is_attacked rdf:resource="http://www.semanticweb.org/TESOO#Fjallena"/>
+        <dc:description>Dominion Guards are guards that are found throughout Aldmeri Dominion territory. They wear heavy armor in the style of their race, and carry either a two-handed weapon or a one-handed weapon and shield. Altmer guards are found in Auridon and Summerset, Bosmer guards are found in Valenwood and Khajiit guards are found in Reaper&apos;s March, which is partially in Elsweyr.</dc:description>
+        <terms:bibliographicCitation>Uesp.net, &quot;Online:Dominion Guard&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Dominion_Guard [Accessed: June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>Dominion Guard</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/TESOO#Ensuring_Security_Quest -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TESOO#Ensuring_Security_Quest">
@@ -1227,6 +1301,18 @@ Return to Astanya, then find Watchman Heldil.
 Enter the suspect&apos;s house and witness the confrontation.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Ensuring Security&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022].</terms:bibliographicCitation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TESOO#Fjallena -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TESOO#Fjallena">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TESOO#Character"/>
+        <has_gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</has_gender>
+        <has_health rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50000</has_health>
+        <dc:description>Fjallena is a character, High Elf, sorcerer</dc:description>
+        <rdfs:label>Fjallena Character</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1346,11 +1432,20 @@ A version of Razum-dar is fought alongside Captain Odreth during the Circus of C
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TESOO#Sea_Vipers">
         <rdf:type rdf:resource="http://www.semanticweb.org/TESOO#Covert_group"/>
-        <belongs_to_organization rdf:resource="http://www.semanticweb.org/TESOO#Sea_Vipers"/>
         <dc:description>The Sea Vipers are crews of Maormer who attack the coastlines of Auridon, Greenshade and Khenarthi&apos;s Roost. They formed an alliance with the Veiled Heritance with the promise of lands if the Aldmeri Dominion was dismantled.</dc:description>
         <terms:bibliographicCitation>Uesp.net, &quot;Online:Sea Vipers&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Sea_Vipers [Accessed:June- 2022].</terms:bibliographicCitation>
         <rdfs:label>Sea Vipers</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TESOO#Silvestro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TESOO#Silvestro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TESOO#Player"/>
+        <dc:description>Silvestro is a player of The Elder Scrolls Online</dc:description>
+        <rdfs:label>Silvestro Player</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1682,8 +1777,8 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
      -->
 
     <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Aldmeri_Dominion">
-        <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Aldmeri Dominion&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Aldmeri_Dominion. [Accessed: June 2022].</terms:bibliographicCitation>
         <definition xml:lang="en">The Aldmeri Dominion is one of the three joinable factions participating in the Alliance War, the other two being the Daggerfall Covenant and the Ebonheart Pact. The crest of the Aldmeri Dominion is an eagle, and its colors are yellow and silver. It consists of the Altmer of Summerset Isles, the Bosmer of Valenwood, and the Khajiit of Elsweyr. The alliance is a nascent empire that rules its holdings with an iron fist. Led by Queen Ayrenn with Elden Root as its capital, the Dominion seeks to reestablish Elven dominance over Tamriel in order to protect it from the carelessness of the younger races. The province of Valenwood, led by King Camoran Aeradan, joined the alliance to help fight off the Colovian troops that were capturing territory in northern Valenwood, while Elsweyr still remains in the grip of the Knahaten Flu. Dominion players will begin on Khenarthi&apos;s Roost after being washed up unconscious on the shores of the island following their escape from Molag Bal&apos;s realm of Coldharbour.</definition>
+        <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Aldmeri Dominion&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Aldmeri_Dominion. [Accessed: June 2022].</terms:bibliographicCitation>
         <rdfs:label>Aldmeri_Dominion</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Daggerfall_Covenant">
@@ -1802,6 +1897,15 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
     <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#npc">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#h1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#h2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#hostile_npc">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
@@ -1816,6 +1920,150 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#questline">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A justice neutral NPC will attack if attacked by the character</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/TESOO#Justice_Neutral"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#npc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/TESOO#Character"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#c"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/TESOO#npc_is_attacked"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#npc"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/TESOO#c"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/TESOO#npc_will_attack_character"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#npc"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/TESOO#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAs more health than another npc</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/TESOO#Npc"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#npc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/TESOO#has_health"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#npc"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/TESOO#h1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/TESOO#Character"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#c"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/TESOO#has_health"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#c"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/TESOO#h2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                                        <swrl:arguments rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#h2"/>
+                                                            <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#h1"/>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/TESOO#has_more_health"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#c"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/TESOO#npc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
     </rdf:Description>
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
@@ -1911,7 +2159,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">belongs to questline</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quest is in questline</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
