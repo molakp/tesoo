@@ -1153,7 +1153,7 @@ Meet with Razum-dar and follow his instructions.
 Find Battlereeve Urcelmo.
 Kill the assassin.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:A Hostile Situation&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:A_Hostile_Situation. [Accessed: June 2022].</terms:bibliographicCitation>
-        <rdfs:label>A_Hostile_Situation_Quest</rdfs:label>
+        <rdfs:label>A Hostile Situation Quest</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1205,6 +1205,7 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</terms:bibliogra
         <place_is_dungeon rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</place_is_dungeon>
         <dc:description xml:lang="en">Bewan is an elven ruin on the western coast of Auridon, just southwest of the town of Dawnbreak containing Sea Viper soldiers. Some of the soldiers are acting drunk. Parts of the ruin are flooded with shallow water.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Bewan&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Bewan [Accessed: June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>Bewan</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1220,6 +1221,7 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</terms:bibliogra
         <has_race rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maormer</has_race>
         <dc:description xml:lang="en">Camandar is the Maormer leader of the Sea Vipers found in the ruins of Bewan. He has a chance to drop Sea Greaves of the Veiled Heritance, a unique item in the Armor of the Veiled Heritance item set.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Camandar&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Camandar [Accessed: June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>Camandar</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1232,6 +1234,7 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</terms:bibliogra
 
 Parts of Coldharbour are visited during the main quest. You get access to the main region by finishing The Weight of Three Crowns.</terms:bibliographicCitation>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Coldharbour&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Coldharbour [Accessed: June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>Coldharbour</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1301,6 +1304,7 @@ Return to Astanya, then find Watchman Heldil.
 Enter the suspect&apos;s house and witness the confrontation.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Ensuring Security&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022].</terms:bibliographicCitation>
+        <rdfs:label>Ensuring Security Quest</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1309,8 +1313,6 @@ https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022].</terms
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TESOO#Fjallena">
         <rdf:type rdf:resource="http://www.semanticweb.org/TESOO#Character"/>
-        <has_gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</has_gender>
-        <has_health rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50000</has_health>
         <dc:description>Fjallena is a character, High Elf, sorcerer</dc:description>
         <rdfs:label>Fjallena Character</rdfs:label>
     </owl:NamedIndividual>
@@ -1325,6 +1327,7 @@ https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022].</terms
         <dc:description xml:lang="en">Grahtwood is a large region deep in the jungles of Valenwood, and the location of the Aldmeri Dominion&apos;s capital, Elden Root. An area in Grahtwood was devastated by Molag Bal long ago, and it remains there to this day.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Grahtwood&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Grahtwood. [Accessed: June 2022].</terms:bibliographicCitation>
+        <rdfs:label>Grahtwood</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1365,6 +1368,7 @@ https://en.uesp.net/wiki/Online:High_Elf. [Accessed: June 2022].</terms:bibliogr
 Initially, before starting the quest Ensuring Security, she is found inside the manor in Vulkhel Guard, talking to her husband. Talking to her here, she says, &quot;You have the pleasure of speaking with High Kinlady Estre, scion of royal Aldmeri blood. I must apologize, but my escort and I were just in the middle of a conversation. If you&apos;ll excuse us?&quot;</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:High Kinlady Estre&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:High_Kinlady_Estre [Accessed: June- 2022].</terms:bibliographicCitation>
         <schema:image rdf:resource="https://images.uesp.net/c/c4/ON-npc-High_Kinlady_Estre.jpg"/>
+        <rdfs:label>High Kinlady Estre</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1379,6 +1383,7 @@ Initially, before starting the quest Ensuring Security, she is found inside the 
         <has_race>Breton</has_race>
         <dc:description xml:lang="en">The Hooded Figure is a Breton who is in the employ of a mysterious contact known as &quot;the Benefactor&quot;. In reality, she is deceiving you to hand you over to the Worm Cult.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Hooded Figure&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Hooded_Figure [Accessed: June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>Hooded Figure</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1407,6 +1412,7 @@ Initially, before starting the quest Ensuring Security, she is found inside the 
         <dc:description xml:lang="en">Prince Naemon is a High Elf noble and the younger brother of Queen Ayrenn. Originally named heir to the throne of Alinor after Ayrenn&apos;s sudden disappearance, when his sister returned after years of absence, she was crowned instead. He currently lives as a high-ranking noble with his wife, High Kinlady Estre.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Prince Naemon&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Prince_Naemon [Accessed: June- 2022].</terms:bibliographicCitation>
         <schema:image rdf:resource="https://images.uesp.net/0/06/ON-npc-Prince_Naemon.jpg"/>
+        <rdfs:label>Prince Naemon</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1424,6 +1430,7 @@ Initially, before starting the quest Ensuring Security, she is found inside the 
 A version of Razum-dar is fought alongside Captain Odreth during the Circus of Cheerful Slaughter.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Razum-dar&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Razum-dar [Accessed: June- 2022].</terms:bibliographicCitation>
         <schema:image rdf:resource="https://images.uesp.net/f/f7/ON-npc-Razum-dar.jpg"/>
+        <rdfs:label>Razum-dar</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1458,6 +1465,7 @@ https://en.uesp.net/wiki/Online:Sea_Vipers [Accessed:June- 2022].</terms:bibliog
         <dc:description xml:lang="en">Skywatch is a city at the eastern side of Auridon. The city is built around an ancient ruin and is a very prominent port for the Aldmeri Dominion. It is ruled by High Kinlady Estre. The Festival of Defiance is currently ongoing, and Skywatch Celebrants fill every nook and cranny of Skywatch&apos;s public areas. Royal Bodyguards stand watch by the stairwells. Dominion Guard stand vigilant, keeping the peace.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Skywatch&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Skywatch [Accessed: June- 2022].</terms:bibliographicCitation>
         <schema:image rdf:resource="https://images.uesp.net/1/15/ON-place-Skywatch.jpg"/>
+        <rdfs:label>Skywatch</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1470,6 +1478,7 @@ https://en.uesp.net/wiki/Online:Sea_Vipers [Accessed:June- 2022].</terms:bibliog
         <has_last_quest rdf:resource="http://www.semanticweb.org/TESOO#The_Harborage_Quest"/>
         <rdfs:comment>Questline for the introduction to the game, playted by all the factions.
 Doesn&apos;t have a spefic wiki page.</rdfs:comment>
+        <rdfs:label>Soul Shriven in Coldharbour Questline</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1497,6 +1506,7 @@ Reach the Prophet&apos;s Cell and disable the Dark Pinions.
 Enter the Anchor Mooring and defeat the Child of Bones.
 Escape Coldharbour.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Soul Shriven in Coldharbour&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Soul_Shriven_in_Coldharbour [Accessed: June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>Soul Shriven in Coldharbour Quest</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1509,6 +1519,7 @@ Escape Coldharbour.</dc:description>
         <is_location_of_quest rdf:resource="http://www.semanticweb.org/TESOO#The_Harborage_Quest"/>
         <dc:description xml:lang="en">The Harborage is a cave in the wilderness which the Prophet has adopted as his home and refuge. The cave is located near the first major city of each alliance, and serves as the starting point for each stage of the Main Quest.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:The Harborage (place)&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:The_Harborage_(place) [Accessed:  June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>The Harborage</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1536,6 +1547,7 @@ Achievement:The Harborage</has_reward>
 -Return to the Harborage and discuss your next moves.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:The Harborage (quest)&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:The_Harborage_(quest) [Accessed: June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>The Harborage Quest</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1552,6 +1564,7 @@ https://en.uesp.net/wiki/Online:The_Harborage_(quest) [Accessed: June- 2022].</t
         <dc:description xml:lang="en">The Prophet, whose true name is Varen Aquilarios, is the former Emperor of Cyrodiil and a central figure in the main questline. Many years ago he was captured, alongside his steadfast ally Lyris Titanborn, and condemned to Coldharbour for becoming entangled in the schemes of Molag Bal and Mannimarco.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:The Prophet&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:The_Prophet [Accessed:June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>The Prophet</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1576,6 +1589,7 @@ Drain the Storm Totems while traveling through the Wind Tunnels.
 Disrupt the ritual, then make your escape!</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:The Tempest Unleashed&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:The_Tempest_Unleashed [Accessed:June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>The Tempest Unleashed Quest</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1588,6 +1602,7 @@ https://en.uesp.net/wiki/Online:The_Tempest_Unleashed [Accessed:June- 2022].</te
         <dc:description xml:lang="en">The Wailing Prison is a sub-location of Coldharbour, Molag Bal&apos;s realm of Oblivion. It is where the introductory quest to the game takes place. The location is split into seven zones.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:The Wailing Prison&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:The_Wailing_Prison [Accessed:June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>The Wailing Prison</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1610,6 +1625,7 @@ Board the skiff and head to Auridon.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:To Auridon&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:To_Auridon [Accessed:June- 2022].</terms:bibliographicCitation>
         <schema:image rdf:resource="https://images.uesp.net/thumb/f/f0/ON-quest-To_Auridon.jpg/300px-ON-quest-To_Auridon.jpg"/>
+        <rdfs:label>To Auridon Quest</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1660,6 +1676,7 @@ Vulkhel Guard contains all the necessary services for a large city, including cr
 If you head south from the wayshrine, you&apos;ll come across the Harborside Market, which lies on the beach between the city and the docks. There is a cooking fire and a Basic Provisioning Guide across from the general store.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Vulkhel Guard&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Vulkhel_Guard [Accessed:June- 2022].</terms:bibliographicCitation>
+        <rdfs:label>Vulkhel Guard</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1681,6 +1698,7 @@ However, she is later revealed to be a member of the Veiled Heritance, intent on
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Watch Captain Astanya&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Watch_Captain_Astanya [Accessed:June- 2022].</terms:bibliographicCitation>
         <schema:image rdf:resource="https://images.uesp.net/3/30/ON-npc-Watch_Captain_Astanya.jpg"/>
+        <rdfs:label>Watch Captain Astanya</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1699,6 +1717,7 @@ https://en.uesp.net/wiki/Online:Watch_Captain_Astanya [Accessed:June- 2022].</te
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Watchman_Heldil &quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Watchman_Heldil [Accessed:June- 2022].</terms:bibliographicCitation>
         <schema:image rdf:resource="https://images.uesp.net/3/3d/ON-npc-Watchman_Heldil.jpg"/>
+        <rdfs:label>Watchman Heldil</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1741,6 +1760,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
         <place_is_discoverable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</place_is_discoverable>
         <dc:description xml:lang="en">Del&apos;s Claim is a mine in southern Auridon, just northwest of the city of Vulkhel Guard. It has recently been taken over by followers of the Veiled Heritance, who killed all the miners. They plan to use it as a secure base of operations.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Del&apos;s Claim&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Del%27s_Claim. [Accessed: June 2022].</terms:bibliographicCitation>
+        <rdfs:label>Del&apos;s Claim</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1752,6 +1772,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
         <dc:description xml:lang="en">Khenarthi&apos;s Roost is a small island off the coast of Elsweyr inhabited by both Khajiit and Maormer, named for the Khajiiti goddess Khenarthi. The island is dotted with moon-sugar plantations and is a location of both active Khajiiti worship and Maormer magic, as the Khajiit signed a peace treaty with the Maormer which allowed them to settle on the island. The island is under negotiations for inclusion in the Aldmeri Dominion, but the negotiations are being hampered by the existing Maormer treaty. Meanwhile, the Dominion are actively combating skooma production in the area as a show of goodwill towards the island&apos;s ruler.</dc:description>
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Khenarthi&apos;s Roost&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Khenarthi%27s_Roost [Accessed: June- 2022].</terms:bibliographicCitation>
         <schema:image rdf:resource="https://images.uesp.net/a/ae/ON-place-Eagle%27s_Strand.jpg"/>
+        <rdfs:label>Khenarthi&apos;s Roost</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1783,6 +1804,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#Daggerfall_Covenant">
         <terms:bibliographicCitation xml:lang="en">Uesp.net, &quot;Online:Zone&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Daggerfall_Covenant. [Accessed: June 2022].</terms:bibliographicCitation>
+        <rdfs:label>Daggerfall Covenant</rdfs:label>
         <definition xml:lang="en">Zones controlled by Daggerfall Covenant</definition>
     </rdf:Description>
     
@@ -1900,12 +1922,6 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
     <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#c">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#h1">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#h2">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#hostile_npc">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
@@ -1924,7 +1940,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A justice neutral NPC will attack if attacked by the character</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A justice neutral NPC will attack if attacked</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
@@ -1973,92 +1989,6 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
                         <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/TESOO#npc_will_attack_character"/>
                         <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#npc"/>
                         <swrl:argument2 rdf:resource="http://www.semanticweb.org/TESOO#c"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAs more health than another npc</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/TESOO#Npc"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#npc"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/TESOO#has_health"/>
-                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#npc"/>
-                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/TESOO#h1"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/TESOO#Character"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#c"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/TESOO#has_health"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#c"/>
-                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/TESOO#h2"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
-                                                        <swrl:arguments rdf:parseType="Collection">
-                                                            <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#h2"/>
-                                                            <rdf:Description rdf:about="http://www.semanticweb.org/TESOO#h1"/>
-                                                        </swrl:arguments>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/TESOO#has_more_health"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/TESOO#c"/>
-                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/TESOO#npc"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -2159,7 +2089,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</terms:bibliogra
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quest is in questline</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">belongs to questline</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
