@@ -2252,6 +2252,11 @@ High Leveled Gold</Literal>
         <Literal>QuestLine</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/net/VideoGameOntology#PlayingArea</IRI>
+        <Literal>Playing Area</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#A_Hostile_Situation_Quest</IRI>
         <Literal xml:lang="en">Speak with Watch Captain Astanya.
@@ -2391,6 +2396,11 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</Literal>
         <Literal xml:lang="en">One of the seven charachter the player can have in ESO</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Character</IRI>
+        <Literal>Character</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#City</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Cities&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Cities. [Accessed: June 2022].</Literal>
@@ -2436,6 +2446,11 @@ Parts of Coldharbour are visited during the main quest. You get access to the ma
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Crypt</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Crypts&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Crypts. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Crypt</IRI>
+        <Literal>Crypt</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
@@ -2505,6 +2520,11 @@ https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022].</Li
         <Literal xml:lang="en">Zones controlled by Ebonheart Pact</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Ebonheart_Pact</IRI>
+        <Literal>Ebonhearth Pact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Elven_Ruin</IRI>
         <Literal xml:lang="en">Ruins of the Elfes</Literal>
@@ -2513,6 +2533,11 @@ https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022].</Li
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Elven_Ruin</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Elven Ruins&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Ruins. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Elven_Ruin</IRI>
+        <Literal>Elven Ruin</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -2563,6 +2588,11 @@ https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022].</Liter
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Friendly</IRI>
         <Literal xml:lang="en">Friendly NPCs can&apos;t be attacked or pickpocketed. Some friendly NPCs (namely merchants) can report crimes, but they will not fight. Friendly NPCs that aren&apos;t merchants will not report crimes. If nameplates are turned on, their health bars, names and outlines are green.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Friendly</IRI>
+        <Literal>Friendly</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -2644,9 +2674,19 @@ Initially, before starting the quest Ensuring Security, she is found inside the 
         <Literal xml:lang="en">Hostile NPCs can be attacked without consequence and will not report crimes. They attack on sight. Hostile NPCs have red health bars, names and outlines.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Hostile</IRI>
+        <Literal>Hostile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Justice_Neutral</IRI>
         <Literal xml:lang="en">Justice Neutral NPCs can be attacked and pickpocketed with consequence. They will report crimes if they witness them, and will fight back if attacked. They can also be provoked into attacking if they witness a crime being committed, but they won&apos;t always do so. If they witness a murder, they will report it, and some will attack you or flee the scene. They have yellow health bars and white nameplates and outlines.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Justice_Neutral</IRI>
+        <Literal>Justice Neutral</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -2684,9 +2724,19 @@ Initially, before starting the quest Ensuring Security, she is found inside the 
         <Literal xml:lang="en">all the mines in Elder Scrolls Online.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mine</IRI>
+        <Literal>Mine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Neutral</IRI>
         <Literal xml:lang="en">Neutral NPCs can be attacked without consequences and will not report crimes. They will fight back if provoked. Neutral NPCs cannot be pickpocketed. Their names, health bars and glowing outlines are yellow.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Neutral</IRI>
+        <Literal>Neutral</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -2700,9 +2750,19 @@ Cyrodiil — The central province of Tamriel and home of the Imperials, who stan
 Imperial City — The central city and capital of Cyrodiil and the former Empire</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Neutral_and_Disputed</IRI>
+        <Literal>Neutral and Disputed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#None</IRI>
         <Literal xml:lang="en">Usually reserved for deceased characters, also applies to NPCs without healthbars that can&apos;t be interacted with in any way (coded as &quot;0&quot;)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#None</IRI>
+        <Literal>None (Dead)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
@@ -2718,6 +2778,11 @@ Imperial City — The central city and capital of Cyrodiil and the former Empire
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Npc</IRI>
         <Literal xml:lang="en">Npc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Player</IRI>
+        <Literal>Player</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -2750,6 +2815,16 @@ Imperial City — The central city and capital of Cyrodiil and the former Empire
         <Literal xml:lang="en">Uesp.net, &quot;Quests&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Quests. [Accessed: June 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Quest</IRI>
+        <Literal>Quest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Race</IRI>
+        <Literal>Race</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Razum-dar</IRI>
         <Literal xml:lang="en">Razum-dar, known simply as Raz to his friends, is a Khajiit initially found in Eagle&apos;s Strand. If you are aligned with the Aldmeri Dominion, you will meet him upon leaving Coldharbour. After you help Commander Karinith and Ealcil at his behest, Razum-dar will relocate to Mistral and later to Auridon to ask you for aid in several more quests. Eventually, Razum-dar reveals himself as one of the Eyes of the Queen—personal agents of Queen Ayrenn, whom he knows personally from her days exploring Tamriel as a princess. He frequently serves a liaison between you and the Queen in matters she cannot be seen as publicly involved in.
@@ -2775,6 +2850,11 @@ A version of Razum-dar is fought alongside Captain Odreth during the Circus of C
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Ruins</IRI>
         <Literal xml:lang="en">Ruins of a forgotten or comtemporary civilization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Ruins</IRI>
+        <Literal>Ruin</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -2893,6 +2973,16 @@ Ships — In-service, under construction, and scuttled ships
 Strongholds — Major locations in Coldharbour visited during the Main Quest
 Towns — Towns, villages, and other permanent settlements
 Wayshrines — Access points to the fast-travel system</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Specific_Place</IRI>
+        <Literal>Specific Place</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Strongholds</IRI>
+        <Literal>Strongholds</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -3017,6 +3107,11 @@ https://en.uesp.net/wiki/Online:To_Auridon [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Vary</IRI>
         <Literal xml:lang="en">Vary is for NPC that can change according to the story or player&apos;s actions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Vary</IRI>
+        <Literal>Vary</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -3273,6 +3368,16 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Khenarthi&apos;s_Roost_Questline</IRI>
         <Literal>Khenarthi&apos;s Roost Questline</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2000/10/swap/pim/contact#foaf:Person</IRI>
+        <Literal>foaf:Person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://xmlns.com/foaf/0.1/Organization</IRI>
+        <Literal>foaf:Organization</Literal>
     </AnnotationAssertion>
 </Ontology>
 
