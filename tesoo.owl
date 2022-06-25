@@ -3294,6 +3294,16 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>contains place</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#dungeon_completition_type</IRI>
+        <Literal>Dungeon can be completed in many ways, such as killing an npc, retrieving an object etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#dungeon_completition_type</IRI>
+        <Literal>dungeon completition type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#dungeon_kill_to_complete</IRI>
         <Literal>dungeon kill to complete</Literal>
@@ -3305,8 +3315,23 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_XP_Gain</IRI>
+        <Literal>has xp gain</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_first_quest</IRI>
         <Literal>has first quest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_gender</IRI>
+        <Literal>has gender</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_health</IRI>
+        <Literal>has health</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3317,6 +3342,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_more_health</IRI>
         <Literal>has more health</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_name</IRI>
+        <Literal>has name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3334,6 +3364,21 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>has quest giver</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_quest_id</IRI>
+        <Literal>has quest id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_race</IRI>
+        <Literal>has race</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_reward</IRI>
+        <Literal>has reward</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_first_quest_of</IRI>
         <Literal>Assert that a specific quest is the first in a questline.</Literal>
@@ -3347,6 +3392,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_killable</IRI>
         <Literal>specify if npc is killable by the player</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_killable</IRI>
+        <Literal>is killable</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3450,6 +3500,21 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#place_is_discoverable</IRI>
+        <Literal>place is discoverable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#place_is_dungeon</IRI>
+        <Literal>If a place is a dangeon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#place_is_dungeon</IRI>
+        <Literal>place is dungeon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#quest_is_in_questline</IRI>
         <Literal>quest is in questline</Literal>
     </AnnotationAssertion>
@@ -3457,6 +3522,16 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#quest_located_in</IRI>
         <Literal>quest located in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#quest_solo_only</IRI>
+        <Literal>true If a quest must be completed alone, false otherwise</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#quest_solo_only</IRI>
+        <Literal>quest solo only</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
