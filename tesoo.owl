@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/TESOO">
-    <Prefix name="" IRI="http://www.semanticweb.org/TESOO#"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/TESOO"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -3497,6 +3497,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal xml:lang="en">belongs to race</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#character_is_attacked</IRI>
+        <Literal xml:lang="en">Tells if character is attacked by a npc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#character_is_attacked</IRI>
         <Literal>character is attacked</Literal>
@@ -3505,6 +3510,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#city_ruled_by</IRI>
         <Literal>city ruled by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contains_place</IRI>
+        <Literal xml:lang="en">Tells by what NPC the city is ruled</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3522,9 +3532,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>dungeon completition type</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#dungeon_kill_to_complete</IRI>
+        <Literal xml:lang="en">Usually in order to complete a dungeon the character must defeat the boss, this relation links each dungeon to its final boss.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#dungeon_kill_to_complete</IRI>
         <Literal>dungeon kill to complete</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#faction_controls</IRI>
+        <Literal xml:lang="en">A faction controls a zone</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3535,6 +3555,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_XP_Gain</IRI>
         <Literal>has xp gain</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_first_quest</IRI>
+        <Literal xml:lang="en">The first quest of a questline</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3552,9 +3577,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>has health</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_last_quest</IRI>
+        <Literal xml:lang="en">The last quest of a questline</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_last_quest</IRI>
         <Literal>has last quest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_more_health</IRI>
+        <Literal xml:lang="en">Which NPC the characet has more health than.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3567,14 +3602,29 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>has name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_next_quest</IRI>
+        <Literal xml:lang="en">link a quest to the next</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_next_quest</IRI>
         <Literal>has next quest</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_prerequisite_quest</IRI>
+        <Literal xml:lang="en">links a quest to its prerequisite</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_prerequisite_quest</IRI>
         <Literal>has prerequisite quest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_quest_giver</IRI>
+        <Literal xml:lang="en">tells which NPC is the giver of the quest</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3617,9 +3667,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>is killable</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#is_last_quest_of</IRI>
+        <Literal xml:lang="en">Assert that a quest is the last of a questline</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#is_last_quest_of</IRI>
         <Literal>is last quest of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#is_located</IRI>
+        <Literal xml:lang="en">locates a specific place into a Zone</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3627,9 +3687,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>is located</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#is_location_of_npc</IRI>
+        <Literal xml:lang="en">tells that a specific place is the location of a npc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#is_location_of_npc</IRI>
         <Literal>is location of npc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#is_location_of_quest</IRI>
+        <Literal xml:lang="en">tells that a playing area is the location of a quest</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3647,9 +3717,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>npc belongs same organization</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#npc_in_relationship_with</IRI>
+        <Literal xml:lang="en">Links two npc that are in a general relationship</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#npc_in_relationship_with</IRI>
         <Literal>npc in relationship with</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#npc_is_attacked</IRI>
+        <Literal xml:lang="en">tells that an noc is attacked by someone</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3657,9 +3737,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>npc is attacked</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#npc_is_married_with</IRI>
+        <Literal xml:lang="en">link two married npc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#npc_is_married_with</IRI>
         <Literal>npc is married with</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#npc_is_quest_giver</IRI>
+        <Literal xml:lang="en">Tells taht an noc is the giver of a quest</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3667,9 +3757,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>npc is quest giver</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#npc_killed_to_complete_dungeon</IRI>
+        <Literal xml:lang="en">Tells that an NPC is the final boss of a dungeon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#npc_killed_to_complete_dungeon</IRI>
         <Literal>npc killed to complete dungeon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#npc_located_in</IRI>
+        <Literal xml:lang="en">Describe the location of an npc</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3687,9 +3787,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>npc located in zone</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#npc_related_quest</IRI>
+        <Literal xml:lang="en">tells what quest an npc is related to</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#npc_related_quest</IRI>
         <Literal>npc related quest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#npc_rules_city</IRI>
+        <Literal xml:lang="en">Tells than an npc rule a city</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3697,14 +3807,29 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>npc rules city</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#npc_will_attack</IRI>
+        <Literal xml:lang="en">Links an NPC to the other npc or characters that it will attack</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#npc_will_attack</IRI>
         <Literal>npc will attack</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#npc_will_attack_character</IRI>
+        <Literal xml:lang="en">a subproperty, tell that an npc will attack the character</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#npc_will_attack_character</IRI>
         <Literal>npc will attack character</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#organization_has_member</IRI>
+        <Literal xml:lang="en">connect an organization to its members</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3732,9 +3857,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>place is dungeon</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#quest_is_in_questline</IRI>
+        <Literal xml:lang="en">connect a quest to its questline</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#quest_is_in_questline</IRI>
         <Literal>quest is in questline</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#quest_located_in</IRI>
+        <Literal xml:lang="en">Tell the location of a quest</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3773,9 +3908,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal xml:lang="en">Zone</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#zone_controlled_by</IRI>
+        <Literal xml:lang="en">Asset that a zone is controlled by a faction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#zone_controlled_by</IRI>
         <Literal>zone controlled by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#zone_is_location_of_npc</IRI>
+        <Literal xml:lang="en">Assert that a zone is the location of a npc</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
