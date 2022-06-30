@@ -1523,6 +1523,10 @@ High Leveled Gold</Literal>
         <ObjectProperty IRI="#zone_controlled_by"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#zone_is_location_of_npc"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#belongs_to_organization"/>
         <ObjectProperty IRI="#organization_has_member"/>
@@ -1586,9 +1590,6 @@ High Leveled Gold</Literal>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#is_first_quest_of"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#is_located"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#npc_killed_to_complete_dungeon"/>
@@ -2272,6 +2273,11 @@ Kill the assassin.</Literal>
         <Literal xml:lang="en">Uesp.net, &quot;Online:A Hostile Situation&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:A_Hostile_Situation. [Accessed: June 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#A_Hostile_Situation_Quest</IRI>
+        <Literal xml:lang="en">A quest, see description for details</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#A_Hostile_Situation_Quest</IRI>
         <Literal>A Hostile Situation Quest</Literal>
@@ -2287,9 +2293,19 @@ Kill the assassin.</Literal>
         <Literal>Uesp.net, &quot;Online:Advisor Norion&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Advisor_Norion [Accessed: June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Advisor_Norion</IRI>
+        <Literal xml:lang="en">An NPC, see description for details</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Advisor_Norion</IRI>
         <Literal>Advisor Norion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Aldmeri_Dominion</IRI>
+        <Literal xml:lang="en">The Aldmeri Dominion is one of the three joinable factions participating in the Alliance War, the other two being the Daggerfall Covenant and the Ebonheart Pact. The crest of the Aldmeri Dominion is an eagle, and its colors are yellow and silver. It consists of the Altmer of Summerset Isles, the Bosmer of Valenwood, and the Khajiit of Elsweyr. The alliance is a nascent empire that rules its holdings with an iron fist. Led by Queen Ayrenn with Elden Root as its capital, the Dominion seeks to reestablish Elven dominance over Tamriel in order to protect it from the carelessness of the younger races. The province of Valenwood, led by King Camoran Aeradan, joined the alliance to help fight off the Colovian troops that were capturing territory in northern Valenwood, while Elsweyr still remains in the grip of the Knahaten Flu. Dominion players will begin on Khenarthi&apos;s Roost after being washed up unconscious on the shores of the island following their escape from Molag Bal&apos;s realm of Coldharbour.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
@@ -2297,9 +2313,9 @@ Kill the assassin.</Literal>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Aldmeri Dominion&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Aldmeri_Dominion. [Accessed: June 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#definition"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Aldmeri_Dominion</IRI>
-        <Literal xml:lang="en">The Aldmeri Dominion is one of the three joinable factions participating in the Alliance War, the other two being the Daggerfall Covenant and the Ebonheart Pact. The crest of the Aldmeri Dominion is an eagle, and its colors are yellow and silver. It consists of the Altmer of Summerset Isles, the Bosmer of Valenwood, and the Khajiit of Elsweyr. The alliance is a nascent empire that rules its holdings with an iron fist. Led by Queen Ayrenn with Elden Root as its capital, the Dominion seeks to reestablish Elven dominance over Tamriel in order to protect it from the carelessness of the younger races. The province of Valenwood, led by King Camoran Aeradan, joined the alliance to help fight off the Colovian troops that were capturing territory in northern Valenwood, while Elsweyr still remains in the grip of the Knahaten Flu. Dominion players will begin on Khenarthi&apos;s Roost after being washed up unconscious on the shores of the island following their escape from Molag Bal&apos;s realm of Coldharbour.</Literal>
+        <Literal xml:lang="en">A Faction, see description for details</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2318,6 +2334,11 @@ Kill the assassin.</Literal>
 https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Auridon</IRI>
+        <Literal xml:lang="en">A Zone, see description for details</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Auridon</IRI>
         <Literal>Auridon</Literal>
@@ -2331,6 +2352,11 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Bewan</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Bewan&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Bewan [Accessed: June- 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Bewan</IRI>
+        <Literal xml:lang="en">A Ruin, see description for details</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2361,6 +2387,11 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Camandar</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Camandar&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Camandar [Accessed: June- 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Camandar</IRI>
+        <Literal xml:lang="en">An NPC, see description for details</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2484,6 +2515,11 @@ Parts of Coldharbour are visited during the main quest. You get access to the ma
         <Literal xml:lang="en">Uesp.net, &quot;Online:Coldharbour&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Coldharbour [Accessed: June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Coldharbour</IRI>
+        <Literal xml:lang="en">A Zone, see description for details</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Coldharbour</IRI>
         <Literal>Coldharbour</Literal>
@@ -2519,14 +2555,19 @@ Parts of Coldharbour are visited during the main quest. You get access to the ma
         <Literal xml:lang="en">Crypt</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Daggerfall_Covenant</IRI>
+        <Literal xml:lang="en">Zones controlled by Daggerfall Covenant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Daggerfall_Covenant</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Zone&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Zones#Daggerfall_Covenant. [Accessed: June 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#definition"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Daggerfall_Covenant</IRI>
-        <Literal xml:lang="en">Zones controlled by Daggerfall Covenant</Literal>
+        <Literal xml:lang="en">A Faction</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2555,6 +2596,11 @@ Parts of Coldharbour are visited during the main quest. You get access to the ma
 https://en.uesp.net/wiki/Online:Daughter_of_Giants. [Accessed: June 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Daughter_of_Giants</IRI>
+        <Literal xml:lang="en">A quest, see description for details</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Daughter_of_Giants</IRI>
         <Literal>Daughter of Giants Quest</Literal>
@@ -2570,20 +2616,25 @@ https://en.uesp.net/wiki/Online:Daughter_of_Giants. [Accessed: June 2022].</Lite
         <Literal>Uesp.net, &quot;Online:Dominion Guard&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Dominion_Guard [Accessed: June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Dominion_Guard</IRI>
+        <Literal xml:lang="en">An NPC, see description for details</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Dominion_Guard</IRI>
         <Literal>Dominion Guard</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Ebonheart_Pact</IRI>
+        <Literal xml:lang="en">Zones controlled by Ebonheart Pact</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Ebonheart_Pact</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Zone&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022].</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="#definition"/>
-        <IRI>#Ebonheart_Pact</IRI>
-        <Literal xml:lang="en">Zones controlled by Ebonheart Pact</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2593,7 +2644,7 @@ https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022].</Li
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Elven_Ruin</IRI>
-        <Literal xml:lang="en">Ruins of the Elfes</Literal>
+        <Literal xml:lang="en">Ruins of the Elves</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
@@ -2621,6 +2672,11 @@ Enter the suspect&apos;s house and witness the confrontation.</Literal>
 https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ensuring_Security_Quest</IRI>
+        <Literal xml:lang="en">A quest, see description for details</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Ensuring_Security_Quest</IRI>
         <Literal>Ensuring Security Quest</Literal>
@@ -2644,6 +2700,11 @@ https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022].</Liter
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Fjallena</IRI>
         <Literal>Fjallena is a character, High Elf, sorcerer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Fjallena</IRI>
+        <Literal xml:lang="en">A character played by the player</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2672,6 +2733,11 @@ https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022].</Liter
 https://en.uesp.net/wiki/Online:Grahtwood. [Accessed: June 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Grahtwood</IRI>
+        <Literal xml:lang="en">A playing area, see description for details</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Grahtwood</IRI>
         <Literal>Grahtwood</Literal>
@@ -2691,6 +2757,11 @@ https://en.uesp.net/wiki/Online:High_Elf. [Accessed: June 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="schema:image"/>
         <IRI>#High_Elf_Race</IRI>
         <IRI>https://images.uesp.net/c/ca/ON-concept-Altmer.png</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#High_Elf_Race</IRI>
+        <Literal xml:lang="en">A race, see description for details</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3522,7 +3593,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>contains place</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#dungeon_completition_type</IRI>
         <Literal>Dungeon can be completed in many ways, such as killing an npc, retrieving an object etc.</Literal>
     </AnnotationAssertion>
@@ -3552,6 +3623,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>faction controls</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_XP_Gain</IRI>
+        <Literal xml:lang="en">XP gain of a quest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_XP_Gain</IRI>
         <Literal>has xp gain</Literal>
@@ -3567,9 +3643,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>has first quest</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_gender</IRI>
+        <Literal xml:lang="en">gender of a person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_gender</IRI>
         <Literal>has gender</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_health</IRI>
+        <Literal xml:lang="en">health of a person</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3595,6 +3681,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_more_health</IRI>
         <Literal>has more health</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_name</IRI>
+        <Literal xml:lang="en">name of something</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3632,14 +3723,29 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>has quest giver</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_quest_id</IRI>
+        <Literal xml:lang="en">the ID of a quest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_quest_id</IRI>
         <Literal>has quest id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_race</IRI>
+        <Literal xml:lang="en">race of a Person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_race</IRI>
         <Literal>has race</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_reward</IRI>
+        <Literal xml:lang="en">reward of a quest</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3837,7 +3943,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>organization has member</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#place_is_discoverable</IRI>
         <Literal xml:lang="en">Some places are freely discoverable, other are locked untile specific actions are done or conditions are met</Literal>
     </AnnotationAssertion>
@@ -3847,7 +3953,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>place is discoverable</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#place_is_dungeon</IRI>
         <Literal>If a place is a dangeon</Literal>
     </AnnotationAssertion>
@@ -3877,7 +3983,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>quest located in</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#quest_solo_only</IRI>
         <Literal>true If a quest must be completed alone, false otherwise</Literal>
     </AnnotationAssertion>
@@ -3936,6 +4042,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Del&apos;s_Claim</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Del&apos;s Claim&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Del%27s_Claim. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Del&apos;s_Claim</IRI>
+        <Literal xml:lang="en">A Mine, see description for details</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
