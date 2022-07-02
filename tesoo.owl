@@ -2250,7 +2250,7 @@ High Leveled Gold</Literal>
         <Literal>QuestLine</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>http://purl.org/net/VideoGameOntology#PlayingArea</IRI>
         <Literal xml:lang="en">Imported from VideoGame Ontology, represent every possibile place in the game</Literal>
     </AnnotationAssertion>
@@ -2364,14 +2364,14 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</Literal>
         <Literal>Bewan</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <IRI>#Body_of_Water</IRI>
-        <Literal xml:lang="en">Places like lakes, seas, rivers etc</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Body_of_Water</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Bodies of Water&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Bodies_of_Water. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Body_of_Water</IRI>
+        <Literal xml:lang="en">Places like lakes, seas, rivers etc</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2399,11 +2399,6 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</Literal>
         <Literal>Camandar</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <IRI>#Cave</IRI>
-        <Literal xml:lang="en">Cave in ESO (different than Mines)</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Cave</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Caves&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Caves. [Accessed: June 2022].</Literal>
@@ -2414,6 +2409,11 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</Literal>
         <IRI>https://images.uesp.net/2/22/ON-mapicon-Cave.png</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cave</IRI>
+        <Literal xml:lang="en">Cave in ESO (different than Mines)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Cave</IRI>
         <Literal xml:lang="en">Cave</Literal>
@@ -2421,10 +2421,7 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Cemetery</IRI>
-        <Literal xml:lang="en">all the cemeteries (including graveyards and necropoli)
-
-
-Aldmeri Dominion
+        <Literal xml:lang="en">Aldmeri Dominion
 Grahtwood
 ON-mapicon-Cemetery.png Bone Orchard — A large cemetery in southwest Grahtwood, northeast of Southpoint. (map)
 Daggerfall Covenant
@@ -2463,12 +2460,17 @@ ON-mapicon-Cemetery.png Honor&apos;s RestOrsinium — A crypt found southeast of
         <IRI>https://images.uesp.net/4/49/ON-mapicon-Cemetery.png</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cemetery</IRI>
+        <Literal xml:lang="en">All the cemeteries, including graveyards and necropoli</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Cemetery</IRI>
         <Literal xml:lang="en">Cemetery</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Character</IRI>
         <Literal xml:lang="en">One of the seven charachter the player can have in ESO</Literal>
     </AnnotationAssertion>
@@ -2476,11 +2478,6 @@ ON-mapicon-Cemetery.png Honor&apos;s RestOrsinium — A crypt found southeast of
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Character</IRI>
         <Literal xml:lang="en">Character</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <IRI>#City</IRI>
-        <Literal xml:lang="en">A populated city in the game</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
@@ -2496,6 +2493,11 @@ ON-mapicon-Cemetery.png Honor&apos;s RestOrsinium — A crypt found southeast of
         <AnnotationProperty abbreviatedIRI="schema:image"/>
         <IRI>#City</IRI>
         <IRI>https://images.uesp.net/0/03/ON-mapicon-City.png</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#City</IRI>
+        <Literal xml:lang="en">A populated city in the game</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2535,11 +2537,6 @@ Parts of Coldharbour are visited during the main quest. You get access to the ma
         <Literal xml:lang="en">Covert Group</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <IRI>#Crypt</IRI>
-        <Literal xml:lang="en">A crypt containing tombs, usually very dangerous places.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Crypt</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Crypts&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Crypts. [Accessed: June 2022].</Literal>
@@ -2550,6 +2547,11 @@ Parts of Coldharbour are visited during the main quest. You get access to the ma
         <IRI>https://images.uesp.net/1/19/ON-mapicon-Crypt.png</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Crypt</IRI>
+        <Literal xml:lang="en">A crypt containing tombs, usually very dangerous places.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Crypt</IRI>
         <Literal xml:lang="en">Crypt</Literal>
@@ -2557,7 +2559,7 @@ Parts of Coldharbour are visited during the main quest. You get access to the ma
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Daggerfall_Covenant</IRI>
-        <Literal xml:lang="en">Zones controlled by Daggerfall Covenant</Literal>
+        <Literal xml:lang="en">The Daggerfall Covenant is one of the three joinable factions participating in the Alliance War, the other two being the Aldmeri Dominion and the Ebonheart Pact. The crest of the Daggerfall Covenant is a lion, and its colors are blue and silver. It consists of the kingdoms of High Rock, the Kingdom of Orsinium, and the Kingdom of Sentinel. The alliance is an egalitarian association which uses its military might to secure lucrative trade routes. Led by High King Emeric of Wayrest, the Covenant seeks to capture the Ruby Throne in order to restore the Second Empire and return stability to Tamriel. Covenant players will begin on Stros M&apos;Kai after being washed up unconscious on the shores of the island following their escape from Molag Bal&apos;s realm of Coldharbour.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
@@ -2567,7 +2569,12 @@ Parts of Coldharbour are visited during the main quest. You get access to the ma
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Daggerfall_Covenant</IRI>
-        <Literal xml:lang="en">A Faction</Literal>
+        <Literal xml:lang="en">A Faction, see description for details</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Daggerfall_Covenant</IRI>
+        <Literal xml:lang="en">Zones controlled by Daggerfall Covenant</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2628,7 +2635,7 @@ https://en.uesp.net/wiki/Online:Daughter_of_Giants. [Accessed: June 2022].</Lite
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Ebonheart_Pact</IRI>
-        <Literal xml:lang="en">Zones controlled by Ebonheart Pact</Literal>
+        <Literal xml:lang="en">The Ebonheart Pact is one of the three joinable factions participating in the Alliance War, the other two being the Daggerfall Covenant and the Aldmeri Dominion. The crest of the Ebonheart Pact is a dragon, and its colors are red and black. It consists of four of the five Dunmer Great Houses of Morrowind, the Nordic kingdom of Eastern Skyrim and the Argonian tribes of northern Black Marsh. The alliance was reluctantly formed out of necessity; despite the three races&apos; ancestral hatred for each other, they recognized the threat posed by their unified enemies, both at home and from across the sea, and banded together to protect their borders and freedom. Led by Jorunn the Skald-King, who presides over the Great Moot in the Pact&apos;s capital of Mournhold, the alliance seeks to defeat the corrupt Empire and preserve the independence of its homelands. Pact players will begin on Bleakrock Isle after being washed up unconscious on the shores of the island following their escape from Molag Bal&apos;s realm of Coldharbour.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
@@ -2637,19 +2644,24 @@ https://en.uesp.net/wiki/Online:Daughter_of_Giants. [Accessed: June 2022].</Lite
 https://en.uesp.net/wiki/Online:Zones#Ebonheart_Pact. [Accessed: June 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ebonheart_Pact</IRI>
+        <Literal xml:lang="en">Zones controlled by Ebonheart Pact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Ebonheart_Pact</IRI>
         <Literal>Ebonhearth Pact</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <IRI>#Elven_Ruin</IRI>
-        <Literal xml:lang="en">Ruins of the Elves</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Elven_Ruin</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Elven Ruins&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Ruins. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Elven_Ruin</IRI>
+        <Literal xml:lang="en">Ruins of the Elves</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2682,14 +2694,14 @@ https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022].</Liter
         <Literal>Ensuring Security Quest</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <IRI>#Faction</IRI>
-        <Literal xml:lang="en">Factions determine the the character allegiance and starting area in Elder Scrolls Online.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Faction</IRI>
         <Literal xml:lang="en">Eso Wiki, &quot;Factions&quot;, 2022. [Online]. Available: https://elderscrollsonline.wiki.fextralife.com/Factions. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Faction</IRI>
+        <Literal xml:lang="en">Factions determine the the character allegiance and starting area in Elder Scrolls Online.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2712,7 +2724,7 @@ https://en.uesp.net/wiki/Online:Ensuring_Security. [Accessed: June 2022].</Liter
         <Literal>Fjallena Character</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Friendly</IRI>
         <Literal xml:lang="en">Friendly NPCs can&apos;t be attacked or pickpocketed. Some friendly NPCs (namely merchants) can report crimes, but they will not fight. Friendly NPCs that aren&apos;t merchants will not report crimes. If nameplates are turned on, their health bars, names and outlines are green.</Literal>
     </AnnotationAssertion>
@@ -2786,6 +2798,11 @@ Initially, before starting the quest Ensuring Security, she is found inside the 
         <IRI>https://images.uesp.net/c/c4/ON-npc-High_Kinlady_Estre.jpg</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#High_Kinlady_Estre</IRI>
+        <Literal xml:lang="en">An NPC in Skywatch</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#High_Kinlady_Estre</IRI>
         <Literal>High Kinlady Estre</Literal>
@@ -2801,12 +2818,17 @@ Initially, before starting the quest Ensuring Security, she is found inside the 
         <Literal xml:lang="en">Uesp.net, &quot;Online:Hooded Figure&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Hooded_Figure [Accessed: June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hooded_Figure</IRI>
+        <Literal xml:lang="en">A mysterious NPC</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Hooded_Figure</IRI>
         <Literal>Hooded Figure</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Hostile</IRI>
         <Literal xml:lang="en">Hostile NPCs can be attacked without consequence and will not report crimes. They attack on sight. Hostile NPCs have red health bars, names and outlines.</Literal>
     </AnnotationAssertion>
@@ -2816,7 +2838,7 @@ Initially, before starting the quest Ensuring Security, she is found inside the 
         <Literal xml:lang="en">Hostile</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Justice_Neutral</IRI>
         <Literal xml:lang="en">Justice Neutral NPCs can be attacked and pickpocketed with consequence. They will report crimes if they witness them, and will fight back if attacked. They can also be provoked into attacking if they witness a crime being committed, but they won&apos;t always do so. If they witness a murder, they will report it, and some will attack you or flee the scene. They have yellow health bars and white nameplates and outlines.</Literal>
     </AnnotationAssertion>
@@ -2841,20 +2863,25 @@ Initially, before starting the quest Ensuring Security, she is found inside the 
         <IRI>https://images.uesp.net/8/86/ON-concept-Khajiit.png</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Khajiit_Race</IRI>
+        <Literal xml:lang="en">An ESO Race</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Khajiit_Race</IRI>
         <Literal>Khajiit Race</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <IRI>#Main_Quest</IRI>
-        <Literal xml:lang="en">Main quests are quest central to the developing of the story in ESO.
-Usually many side quests are played while playing the main quest.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Main_Quest</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Main Quest&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Main_Quest. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Main_Quest</IRI>
+        <Literal xml:lang="en">Main quests are quest central to the developing of the story in ESO.
+Usually many side quests are played while playing the main quest.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2902,12 +2929,17 @@ ON-mapicon-GroupBoss.png Secluded Nirncrux Mine — An Iron Orc Nirncrux Mine in
         <IRI>https://images.uesp.net/3/3c/ON-mapicon-Mine.png</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mine</IRI>
+        <Literal xml:lang="en">All the mines in ESO</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Mine</IRI>
         <Literal xml:lang="en">Mine</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Neutral</IRI>
         <Literal xml:lang="en">Neutral NPCs can be attacked without consequences and will not report crimes. They will fight back if provoked. Neutral NPCs cannot be pickpocketed. Their names, health bars and glowing outlines are yellow.</Literal>
     </AnnotationAssertion>
@@ -2928,12 +2960,17 @@ Cyrodiil — The central province of Tamriel and home of the Imperials, who stan
 Imperial City — The central city and capital of Cyrodiil and the former Empire</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Neutral_and_Disputed</IRI>
+        <Literal xml:lang="en">Territories which are not controlled by any faction or neutral</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Neutral_and_Disputed</IRI>
         <Literal>Neutral and Disputed</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#None</IRI>
         <Literal xml:lang="en">Usually reserved for deceased characters, also applies to NPCs without healthbars that can&apos;t be interacted with in any way (coded as &quot;0&quot;)</Literal>
     </AnnotationAssertion>
@@ -2948,7 +2985,7 @@ Imperial City — The central city and capital of Cyrodiil and the former Empire
         <Literal xml:lang="en">Uesp.net, &quot;Online:NPCs&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:NPCs. [Accessed: June 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#definition"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Npc</IRI>
         <Literal xml:lang="en">Any Non Playable Character in ESO</Literal>
     </AnnotationAssertion>
@@ -2958,7 +2995,7 @@ Imperial City — The central city and capital of Cyrodiil and the former Empire
         <Literal xml:lang="en">Npc</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Player</IRI>
         <Literal xml:lang="en">Represents the human player of the game</Literal>
     </AnnotationAssertion>
@@ -2983,19 +3020,24 @@ Imperial City — The central city and capital of Cyrodiil and the former Empire
         <IRI>https://images.uesp.net/0/06/ON-npc-Prince_Naemon.jpg</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Prince_Naemon</IRI>
+        <Literal xml:lang="en">A prince NPC in Vulkhel Guard</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Prince_Naemon</IRI>
         <Literal>Prince Naemon</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <IRI>#Quest</IRI>
-        <Literal xml:lang="en">Quests are sorted by where they are assigned or by which faction assigns them. Every zone has a main storyline running through it, as well as dozens of smaller side quests. You can only have 25 quests active at any one time.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Quest</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Quests&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Quests. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Quest</IRI>
+        <Literal xml:lang="en">Quests are sorted by where they are assigned or by which faction assigns them. Every zone has a main storyline running through it, as well as dozens of smaller side quests. You can only have 25 quests active at any one time.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3035,6 +3077,11 @@ A version of Razum-dar is fought alongside Captain Odreth during the Circus of C
         <IRI>https://images.uesp.net/f/f7/ON-npc-Razum-dar.jpg</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Razum-dar</IRI>
+        <Literal xml:lang="en">An NPC in Khenarthi&apos;s Roost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Razum-dar</IRI>
         <Literal>Razum-dar</Literal>
@@ -3043,81 +3090,91 @@ A version of Razum-dar is fought alongside Captain Odreth during the Circus of C
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Ruins</IRI>
         <Literal xml:lang="en">Ruins of a forgotten or comtemporary civilization
+
 Aldmeri Dominion
+
 Auridon
-ON-mapicon-Ruin.png Castle Rilis — A ruined castle in northern Auridon, north of Firsthold. (map)
-The Veiled Keep — A hidden ruin located on Errinorne Isle‎. (map)
+ Castle Rilis - A ruined castle in northern Auridon, north of Firsthold. 
+ The Veiled Keep - A hidden ruin located on Errinorne Isle. 
 Grahtwood
-ON-mapicon-Ruin.png Falinesti Winter Site — The winter location of Falinesti, in central Grahtwood, just west of Elden Root. (map)
-ON-mapicon-Ruin.png Goldfolly — A ruin in northwestern Grahtwood, south of the Redfur Trading Post. (map)
-ON-mapicon-Ruin.png Ossuary of Telacar — A graveyard in eastern Grahtwood, east of Elden Root. (map)
+ Falinesti Winter Site - The winter location of Falinesti, in central Grahtwood, just west of Elden Root. 
+ Goldfolly - A ruin in northwestern Grahtwood, south of the Redfur Trading Post. 
+ Ossuary of Telacar - A graveyard in eastern Grahtwood, east of Elden Root. 
 Greenshade
-ON-mapicon-Ruin.png Seaside Sanctuary — A large island ruin in northwestern Greenshade. (map)
-ON-mapicon-Ruin.png Shadows Crawl — A ruin in Greenshade, southwest of Marbruk and north of the Labyrinth. (map)
+ Seaside Sanctuary - A large island ruin in northwestern Greenshade. 
+ Shadows Crawl - A ruin in Greenshade, southwest of Marbruk and north of the Labyrinth. 
+
 Khenarthi&apos;s Roost
-ON-mapicon-Ruin.png Temple of the Mourning Springs — A ruined temple on the eastern side of Khenarthi&apos;s Roost. (map)
-Malabal Tor
-ON-mapicon-Ruin.png Jathsogur — A ruin in southern Malabal Tor, northeast of the Grahtwood gate. (map)
-ON-mapicon-Ruin.png Ouze — A ruin in eastern Malabal Tor, east of Silvenar. (map)
+ Temple of the Mourning Springs - A ruined temple on the eastern side of Khenarthi&apos;s Roost. 
+ Malabal Tor
+ Jathsogur - A ruin in southern Malabal Tor, northeast of the Grahtwood gate. 
+ Ouze - A ruin in eastern Malabal Tor, east of Silvenar. 
 Reaper&apos;s March
-ON-mapicon-Ruin.png Falinesti Autumn Site — The autumn location of Falinesti, in central Reaper&apos;s March, west-northwest of Rawl&apos;kha. (map)
-ON-mapicon-Ruin.png Fort Sphinxmoth — A ruin in northeastern Reaper&apos;s March, north of Dune. (map)
-ON-mapicon-Ruin.png Two Moons Path — An ancient Khajiiti Temple in the eastern section of Dune, in Reaper&apos;s March. (map)
-Daggerfall Covenant
+ Falinesti Autumn Site - The autumn location of Falinesti, in central Reaper&apos;s March, west-northwest of Rawl&apos;kha. 
+ Fort Sphinxmoth - A ruin in northeastern Reaper&apos;s March, north of Dune. 
+ Two Moons Path - An ancient Khajiiti Temple in the eastern section of Dune, in Reaper&apos;s March. 
+
+------Daggerfall Covenant------
+
 Alik&apos;r Desert
-ON-mapicon-Ruin.png Ancestor&apos;s Landing — An ancient Yokudan ruin in the northwestern Alik&apos;r Desert, west of Sentinel. (map)
-ON-mapicon-Ruin.png HoonDing&apos;s Watch — A ruin in the southeastern Alik&apos;r Desert, south of Kozanset. (map)
-ON-mapicon-Ruin.png Tu&apos;whacca&apos;s Throne — A ruined temple in the central Alik&apos;r Desert, southeast of Sentinel. (map)
+ Ancestor&apos;s Landing - An ancient Yokudan ruin in the northwestern Alik&apos;r Desert, west of Sentinel. 
+ HoonDing&apos;s Watch - A ruin in the southeastern Alik&apos;r Desert, south of Kozanset. 
+ Tu&apos;whacca&apos;s Throne - A ruined temple in the central Alik&apos;r Desert, southeast of Sentinel. 
 Bangkorai
-ON-mapicon-Ruin.png Qharroa Ruins — Located in southern Bangkorai, east of Hallin&apos;s Stand. (map)
+ Qharroa Ruins - Located in southern Bangkorai, east of Hallin&apos;s Stand. 
 Glenumbra
-ON-mapicon-Ruin.png Baelborne Rock — A ruined fort in southern Glenumbra, just northeast of Daggerfall. (map)
-ON-mapicon-Ruin.png Cambray Pass — A mountain pass and ruined fortress in the Cambray Hills of central Glenumbra. (map)
-ON-mapicon-Ruin.png Dresan Keep — A ruined tower in south-central Glenumbra, west of Aldcroft. (map)
+ Baelborne Rock - A ruined fort in southern Glenumbra, just northeast of Daggerfall. 
+ Cambray Pass - A mountain pass and ruined fortress in the Cambray Hills of central Glenumbra. 
+ Dresan Keep - A ruined tower in south-central Glenumbra, west of Aldcroft. 
 Rivenspire
-ON-mapicon-Ruin.png Lorkrata Hills — The site of a ruined fortress located in central Rivenspire, east-northeast of Shornhelm. (map)
+ Lorkrata Hills - The site of a ruined fortress located in central Rivenspire, east-northeast of Shornhelm. 
 Stormhaven
-ON-mapicon-Ruin.png Soulshriven Tower — A ruined tower on the southern shore of Stormhaven, west of Wayrest. (map)
-ON-mapicon-Ruin.png Weeping Giant — A ruined statue in eastern Stormhaven, west of the Bangkorai bridge. (map)
+ Soulshriven Tower - A ruined tower on the southern shore of Stormhaven, west of Wayrest. 
+ Weeping Giant - A ruined statue in eastern Stormhaven, west of the Bangkorai bridge. 
 Ebonheart Pact
 Bleakrock Isle
-ON-mapicon-Ruin.png Skyshroud Barrow — A Nordic ruin in eastern Bleakrock Isle. (map)
+ Skyshroud Barrow - A Nordic ruin in eastern Bleakrock Isle. 
 Deshaan
-ON-mapicon-Ruin.png Obsidian Gorge — A pass in northern Deshaan, east of Narsis and west of Mournhold, filled with old Daedric ruins. (map)
-ON-mapicon-Ruin.png Shrine of Saint Veloth — A ruin in eastern Deshaan, north of the Tal&apos;Deic Fortress. (map)
+ Obsidian Gorge - A pass in northern Deshaan, east of Narsis and west of Mournhold, filled with old Daedric ruins. 
+ Shrine of Saint Veloth - A ruin in eastern Deshaan, north of the Tal&apos;Deic Fortress. 
 Eastmarch
-ON-mapicon-Ruin.png Skuldafn — A Nordic ruin on a high mountain east of Eastmarch. (map)
+ Skuldafn - A Nordic ruin on a high mountain east of Eastmarch. 
 The Rift
-ON-mapicon-Ruin.png Honrich Tower — A ruined lakeside tower in the central Rift, southeast of Nimalten. (map)
-ON-mapicon-Ruin.png Taarengrav — A ruin in the western Rift, west of Nimalten. (map)
+ Honrich Tower - A ruined lakeside tower in the central Rift, southeast of Nimalten. 
+ Taarengrav - A ruin in the western Rift, west of Nimalten. 
 Shadowfen
-ON-mapicon-Ruin.png Bogmother — A ruin in northern Shadowfen, southeast of Stormhold. (map)
-ON-mapicon-Ruin.png Hissmir — A ruin of the great Saxhleel civilization that existed prior to Duskfall. It is located in southern Shadowfen, southwest of the Hatching Pools. (map)
-ON-mapicon-Ruin.png Sunscale Strand — A ruin in southeastern Shadowfen, southeast of Alten Corimont. (map)
+ Bogmother - A ruin in northern Shadowfen, southeast of Stormhold. 
+ Hissmir - A ruin of the great Saxhleel civilization that existed prior to Duskfall. It is located in southern Shadowfen, southwest of the Hatching Pools. 
+ Sunscale Strand - A ruin in southeastern Shadowfen, southeast of Alten Corimont. 
 Stonefalls
-ON-mapicon-Ruin.png Brothers of Strife — An enormous statue towering over a series of ruins in southern Stonefalls, south of Ebonheart. (map)
+ Brothers of Strife - An enormous statue towering over a series of ruins in southern Stonefalls, south of Ebonheart. 
 Neutral
 Craglorn
-ON-mapicon-GroupInstance.png Dragonstar Arena — A group-based arena in Upper Craglorn. (map)
-ON-mapicon-Ruin (Group).png Skyreach Pinnacle — A ruined Nedic tower located in Upper Craglorn, east of Dragonstar. (map)
-ON-mapicon-Cave (Group).png Spellscar — A giant obelisk that crashed to Tamriel, located north of Belkarth. (map)
+ Dragonstar Arena - A group-based arena in Upper Craglorn. 
+ Skyreach Pinnacle - A ruined Nedic tower located in Upper Craglorn, east of Dragonstar. 
+ Spellscar - A giant obelisk that crashed to Tamriel, located north of Belkarth. 
 Cyrodiil
-ON-mapicon-Ruin.png Coldcorn Ruin — A ruined fort in central Cyrodiil, north of Fort Ash. (map)
-ON-mapicon-Ruin.png Homestead Ruins — The remains of a fort in central Cyrodiil, northeast of Castle Roebeck. (map)
+ Coldcorn Ruin - A ruined fort in central Cyrodiil, north of Fort Ash. 
+ Homestead Ruins - The remains of a fort in central Cyrodiil, northeast of Castle Roebeck. 
 Gold Coast
-ON-mapicon-Ruin.png KnightsgraveDark Brotherhood — An Imperial ruin far northwest of Anvil, near the mouth of the Brena River. (map)
+ KnightsgraveDark Brotherhood - An Imperial ruin far northwest of Anvil, near the mouth of the Brena River. 
 Hew&apos;s Bane
-ON-mapicon-Ruin.png No Shira CitadelThieves Guild — A ruined fortress located south of Abah&apos;s Landing. (map)
+ No Shira CitadelThieves Guild - A ruined fortress located south of Abah&apos;s Landing. 
 Summerset
-ON-mapicon-Town.png RellenthilSummerset — A township found in the center of Summerset. (map)
+ RellenthilSummerset - A township found in the center of Summerset. 
 Wrothgar
-ON-mapicon-Ruin.png Exile&apos;s BarrowOrsinium — A Nordic ruin located northwest of Orsinium. (map)
-ON-mapicon-Ruin.png Paragon&apos;s RemembranceOrsinium — A ruin found just northwest of Friendship Gate. (map)</Literal>
+ Exile&apos;s BarrowOrsinium - A Nordic ruin located northwest of Orsinium. 
+ Paragon&apos;s RemembranceOrsinium - A ruin found just northwest of Friendship Gate.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="schema:image"/>
         <IRI>#Ruins</IRI>
         <IRI>https://images.uesp.net/4/4d/ON-mapicon-Ruin.png</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ruins</IRI>
+        <Literal xml:lang="en">All ruins in ESO</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3136,6 +3193,11 @@ ON-mapicon-Ruin.png Paragon&apos;s RemembranceOrsinium — A ruin found just nor
 https://en.uesp.net/wiki/Online:Sea_Vipers [Accessed:June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sea_Vipers</IRI>
+        <Literal xml:lang="en">A criminal organization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Sea_Vipers</IRI>
         <Literal>Sea Vipers</Literal>
@@ -3144,6 +3206,11 @@ https://en.uesp.net/wiki/Online:Sea_Vipers [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Silvestro</IRI>
         <Literal>Silvestro is a player of The Elder Scrolls Online</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Silvestro</IRI>
+        <Literal xml:lang="en">A player of ESO</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3166,9 +3233,19 @@ https://en.uesp.net/wiki/Online:Sea_Vipers [Accessed:June- 2022].</Literal>
         <IRI>https://images.uesp.net/1/15/ON-place-Skywatch.jpg</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Skywatch</IRI>
+        <Literal xml:lang="en">A city in Auridon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Skywatch</IRI>
         <Literal>Skywatch</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Soul_Shriven_in_Coldharbour_Questline</IRI>
+        <Literal xml:lang="en">A quest in coldharbour</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3199,6 +3276,11 @@ Escape Coldharbour.</Literal>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Soul_Shriven_in_Coldharbour__Quest</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Soul Shriven in Coldharbour&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Soul_Shriven_in_Coldharbour [Accessed: June- 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Soul_Shriven_in_Coldharbour__Quest</IRI>
+        <Literal xml:lang="en">A quest in Coldharbour</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3243,6 +3325,11 @@ Towns — Towns, villages, and other permanent settlements
 Wayshrines — Access points to the fast-travel system</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Specific_Place</IRI>
+        <Literal xml:lang="en">All the places that have an icon on the map</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Specific_Place</IRI>
         <Literal xml:lang="en">Specific Place</Literal>
@@ -3251,17 +3338,22 @@ Wayshrines — Access points to the fast-travel system</Literal>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Strongholds</IRI>
         <Literal xml:lang="en">Strongholds
-Castle of the Worm — Mannimarco&apos;s stronghold in Coldharbour.
-The Foundry of Woe — A prison stronghold in Coldharbour.
-Halls of Submission — A stronghold in Coldharbour where Molag Bal has hidden the Mortuum Vivicus.
-Halls of Torment — A prison stronghold in Coldharbour.
-Heart&apos;s Grief — Molag Bal&apos;s palace and the most feared place in all Coldharbour.
-The Wailing Prison — A sub-location of Coldharbour, Molag Bal&apos;s realm of Oblivion.</Literal>
+ Castle of the Worm - Mannimarco&apos;s stronghold in Coldharbour.
+ The Foundry of Woe - A prison stronghold in Coldharbour.
+ Halls of Submission - A stronghold in Coldharbour where Molag Bal has hidden the Mortuum Vivicus.
+ Halls of Torment - A prison stronghold in Coldharbour.
+ Heart&apos;s Grief - Molag Bal&apos;s palace and the most feared place in all Coldharbour.
+ The Wailing Prison - A sub-location of Coldharbour, Molag Bal&apos;s realm of Oblivion.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#Strongholds</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Strongholds&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:Strongholds [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Strongholds</IRI>
+        <Literal xml:lang="en">All the Strongholds in ESO</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3277,6 +3369,11 @@ The Wailing Prison — A sub-location of Coldharbour, Molag Bal&apos;s realm of 
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#The_Harborage</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:The Harborage (place)&quot;, 2022. [Online]. Available: https://en.uesp.net/wiki/Online:The_Harborage_(place) [Accessed:  June- 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Harborage</IRI>
+        <Literal xml:lang="en">A cave in Auridon</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3303,6 +3400,11 @@ The Wailing Prison — A sub-location of Coldharbour, Molag Bal&apos;s realm of 
 https://en.uesp.net/wiki/Online:The_Harborage_(quest) [Accessed: June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Harborage_Quest</IRI>
+        <Literal xml:lang="en">A quest in The Harborage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#The_Harborage_Quest</IRI>
         <Literal>The Harborage Quest</Literal>
@@ -3317,6 +3419,11 @@ https://en.uesp.net/wiki/Online:The_Harborage_(quest) [Accessed: June- 2022].</L
         <IRI>#The_Prophet</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:The Prophet&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:The_Prophet [Accessed:June- 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Prophet</IRI>
+        <Literal xml:lang="en">An important NPC in Auridon</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3343,6 +3450,11 @@ Disrupt the ritual, then make your escape!</Literal>
 https://en.uesp.net/wiki/Online:The_Tempest_Unleashed [Accessed:June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Tempest_Unleashed_Quest</IRI>
+        <Literal xml:lang="en">A quest in Khenarthi&apos;s Roost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#The_Tempest_Unleashed_Quest</IRI>
         <Literal>The Tempest Unleashed Quest</Literal>
@@ -3357,6 +3469,11 @@ https://en.uesp.net/wiki/Online:The_Tempest_Unleashed [Accessed:June- 2022].</Li
         <IRI>#The_Wailing_Prison</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:The Wailing Prison&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:The_Wailing_Prison [Accessed:June- 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Wailing_Prison</IRI>
+        <Literal xml:lang="en">A prison in Coldharbour</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3383,12 +3500,17 @@ https://en.uesp.net/wiki/Online:To_Auridon [Accessed:June- 2022].</Literal>
         <IRI>https://images.uesp.net/thumb/f/f0/ON-quest-To_Auridon.jpg/300px-ON-quest-To_Auridon.jpg</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#To_Auridon_Quest</IRI>
+        <Literal xml:lang="en">A quest in Khenarthi&apos;s Roost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#To_Auridon_Quest</IRI>
         <Literal>To Auridon Quest</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Vary</IRI>
         <Literal xml:lang="en">Vary is for NPC that can change according to the story or player&apos;s actions.</Literal>
     </AnnotationAssertion>
@@ -3407,6 +3529,11 @@ https://en.uesp.net/wiki/Online:To_Auridon [Accessed:June- 2022].</Literal>
         <IRI>#Veiled_Heritance</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Veiled Heritance&quot;, 2022. [Online]. Available: 
 https://en.uesp.net/wiki/Online:Veiled_Heritance [Accessed:June- 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Veiled_Heritance</IRI>
+        <Literal xml:lang="en">An organization led by High Kinlady Estre</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3428,6 +3555,11 @@ https://en.uesp.net/wiki/Online:Vicereeve Pelidil [Accessed:June- 2022].</Litera
         <AnnotationProperty abbreviatedIRI="schema:image"/>
         <IRI>#Vicereeve_Pelidil</IRI>
         <IRI>https://images.uesp.net/thumb/0/08/ON-npc-Vicereeve_Pelidil.jpg/300px-ON-npc-Vicereeve_Pelidil.jpg</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Vicereeve_Pelidil</IRI>
+        <Literal xml:lang="en">An NPC in Mistral</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3456,6 +3588,11 @@ If you head south from the wayshrine, you&apos;ll come across the Harborside Mar
 https://en.uesp.net/wiki/Online:Vulkhel_Guard [Accessed:June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Vulkhel_Guard</IRI>
+        <Literal xml:lang="en">A city in Auridon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Vulkhel_Guard</IRI>
         <Literal>Vulkhel Guard</Literal>
@@ -3481,6 +3618,11 @@ https://en.uesp.net/wiki/Online:Watch_Captain_Astanya [Accessed:June- 2022].</Li
         <IRI>https://images.uesp.net/3/30/ON-npc-Watch_Captain_Astanya.jpg</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Watch_Captain_Astanya</IRI>
+        <Literal xml:lang="en">An NPC in Vulkhel Guard</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Watch_Captain_Astanya</IRI>
         <Literal>Watch Captain Astanya</Literal>
@@ -3500,6 +3642,11 @@ https://en.uesp.net/wiki/Online:Watchman_Heldil [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="schema:image"/>
         <IRI>#Watchman_Heldil</IRI>
         <IRI>https://images.uesp.net/3/3d/ON-npc-Watchman_Heldil.jpg</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Watchman_Heldil</IRI>
+        <Literal xml:lang="en">An NPC in Vulkhel Guard</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3523,6 +3670,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <IRI>https://images.uesp.net/b/bc/ON-concept-Bosmer.png</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Wood_Elf_Race</IRI>
+        <Literal xml:lang="en">A Race in ESO</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Wood_Elf_Race</IRI>
         <Literal>Wood Elf Race</Literal>
@@ -3541,6 +3693,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="schema:image"/>
         <IRI>#Zaeri</IRI>
         <IRI>https://images.uesp.net/4/4e/ON-npc-Zaeri.jpg</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Zaeri</IRI>
+        <Literal xml:lang="en">An NPC in Auridon</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3578,6 +3735,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>character is attacked</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#city_ruled_by</IRI>
+        <Literal xml:lang="en">Tells by what NPC the city is ruled</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#city_ruled_by</IRI>
         <Literal>city ruled by</Literal>
@@ -3585,7 +3747,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#contains_place</IRI>
-        <Literal xml:lang="en">Tells by what NPC the city is ruled</Literal>
+        <Literal xml:lang="en">Connect a zone to a place that it contains</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -3813,7 +3975,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>is location of quest</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#npc_belongs_same_organization</IRI>
         <Literal>Used to asset that two npc are in same organization</Literal>
     </AnnotationAssertion>
@@ -3993,11 +4155,6 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>quest solo only</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <IRI>#zone</IRI>
-        <Literal xml:lang="en">Zones are playable areas of the world in Elder Scrolls Online. Unlike recent single-player entries in the series, the world is not one continuous map, and is divided into several separate regions which cross the borders of the traditional Imperial provinces.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
         <IRI>#zone</IRI>
         <Literal xml:lang="en">Uesp.net, &quot;Online:Zones&quot;, 2022. [Online]. Available:
@@ -4007,6 +4164,11 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="terms:source"/>
         <IRI>#zone</IRI>
         <Literal xml:lang="en">Online:Zone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#zone</IRI>
+        <Literal xml:lang="en">Zones are playable areas of the world in Elder Scrolls Online. Unlike recent single-player entries in the series, the world is not one continuous map, and is divided into several separate regions which cross the borders of the traditional Imperial provinces.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4069,9 +4231,19 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <IRI>https://images.uesp.net/a/ae/ON-place-Eagle%27s_Strand.jpg</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Khenarthi&apos;s_Roost</IRI>
+        <Literal xml:lang="en">A Zone near Elsweyr</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Khenarthi&apos;s_Roost</IRI>
         <Literal>Khenarthi&apos;s Roost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Khenarthi&apos;s_Roost_Questline</IRI>
+        <Literal xml:lang="en">An important questline</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
