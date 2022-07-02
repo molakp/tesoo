@@ -181,6 +181,9 @@
         <ObjectProperty IRI="#has_last_quest"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#has_less_health"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#has_more_health"/>
     </Declaration>
     <Declaration>
@@ -253,6 +256,15 @@
         <ObjectProperty IRI="#quest_located_in"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#quest_related_to_npc"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#questline_has_quest"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#race_has_member"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#zone_controlled_by"/>
     </Declaration>
     <Declaration>
@@ -310,6 +322,9 @@
         <NamedIndividual IRI="#Bewan"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Breton"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Camandar"/>
     </Declaration>
     <Declaration>
@@ -343,7 +358,13 @@
         <NamedIndividual IRI="#Hooded_Figure"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Imperial"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Khajiit_Race"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Maormer"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Prince_Naemon"/>
@@ -481,8 +502,11 @@
     <EquivalentClasses>
         <Class IRI="#Race"/>
         <ObjectOneOf>
+            <NamedIndividual IRI="#Breton"/>
             <NamedIndividual IRI="#High_Elf_Race"/>
+            <NamedIndividual IRI="#Imperial"/>
             <NamedIndividual IRI="#Khajiit_Race"/>
+            <NamedIndividual IRI="#Maormer"/>
             <NamedIndividual IRI="#Wood_Elf_Race"/>
         </ObjectOneOf>
     </EquivalentClasses>
@@ -905,6 +929,11 @@
         <NamedIndividual IRI="#Vulkhel_Guard"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#Advisor_Norion"/>
+        <NamedIndividual IRI="#High_Elf_Race"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_belongs_same_organization"/>
         <NamedIndividual IRI="#Advisor_Norion"/>
         <NamedIndividual IRI="#Advisor_Norion"/>
@@ -945,6 +974,11 @@
         <NamedIndividual IRI="#Sea_Vipers"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#Camandar"/>
+        <NamedIndividual IRI="#Maormer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_killed_to_complete_dungeon"/>
         <NamedIndividual IRI="#Camandar"/>
         <NamedIndividual IRI="#Bewan"/>
@@ -970,6 +1004,11 @@
         <NamedIndividual IRI="#Vulkhel_Guard"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#Fjallena"/>
+        <NamedIndividual IRI="#High_Elf_Race"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#zone_controlled_by"/>
         <NamedIndividual IRI="#Grahtwood"/>
         <NamedIndividual IRI="#Aldmeri_Dominion"/>
@@ -978,6 +1017,11 @@
         <ObjectProperty IRI="#belongs_to_organization"/>
         <NamedIndividual IRI="#High_Kinlady_Estre"/>
         <NamedIndividual IRI="#Veiled_Heritance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#High_Kinlady_Estre"/>
+        <NamedIndividual IRI="#High_Elf_Race"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_belongs_same_organization"/>
@@ -995,6 +1039,11 @@
         <NamedIndividual IRI="#Skywatch"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#Hooded_Figure"/>
+        <NamedIndividual IRI="#Breton"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_located_in"/>
         <NamedIndividual IRI="#Hooded_Figure"/>
         <NamedIndividual IRI="#Vulkhel_Guard"/>
@@ -1005,6 +1054,11 @@
         <NamedIndividual IRI="#Aldmeri_Dominion"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#Prince_Naemon"/>
+        <NamedIndividual IRI="#High_Elf_Race"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_is_married_with"/>
         <NamedIndividual IRI="#Prince_Naemon"/>
         <NamedIndividual IRI="#High_Kinlady_Estre"/>
@@ -1013,6 +1067,11 @@
         <ObjectProperty IRI="#npc_located_in"/>
         <NamedIndividual IRI="#Prince_Naemon"/>
         <NamedIndividual IRI="#Vulkhel_Guard"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#Razum-dar"/>
+        <NamedIndividual IRI="#Khajiit_Race"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_located_in_zone"/>
@@ -1065,6 +1124,11 @@
         <NamedIndividual IRI="#The_Harborage"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#The_Prophet"/>
+        <NamedIndividual IRI="#Imperial"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_is_quest_giver"/>
         <NamedIndividual IRI="#The_Prophet"/>
         <NamedIndividual IRI="#The_Harborage_Quest"/>
@@ -1110,6 +1174,11 @@
         <NamedIndividual IRI="#Khenarthi&apos;s_Roost"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#Vicereeve_Pelidil"/>
+        <NamedIndividual IRI="#High_Elf_Race"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_belongs_same_organization"/>
         <NamedIndividual IRI="#Vicereeve_Pelidil"/>
         <NamedIndividual IRI="#Advisor_Norion"/>
@@ -1118,6 +1187,11 @@
         <ObjectProperty IRI="#is_located"/>
         <NamedIndividual IRI="#Vulkhel_Guard"/>
         <NamedIndividual IRI="#Auridon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#Watch_Captain_Astanya"/>
+        <NamedIndividual IRI="#High_Elf_Race"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_located_in"/>
@@ -1133,6 +1207,11 @@
         <ObjectProperty IRI="#npc_related_quest"/>
         <NamedIndividual IRI="#Watch_Captain_Astanya"/>
         <NamedIndividual IRI="#Ensuring_Security_Quest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#Watchman_Heldil"/>
+        <NamedIndividual IRI="#High_Elf_Race"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_is_quest_giver"/>
@@ -1148,6 +1227,11 @@
         <ObjectProperty IRI="#npc_related_quest"/>
         <NamedIndividual IRI="#Watchman_Heldil"/>
         <NamedIndividual IRI="#A_Hostile_Situation_Quest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <NamedIndividual IRI="#Zaeri"/>
+        <NamedIndividual IRI="#Khajiit_Race"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#npc_is_quest_giver"/>
@@ -1532,6 +1616,10 @@ High Leveled Gold</Literal>
         <ObjectProperty IRI="#organization_has_member"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#belongs_to_race"/>
+        <ObjectProperty IRI="#race_has_member"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#character_is_attacked"/>
         <ObjectProperty IRI="#npc_will_attack_character"/>
     </InverseObjectProperties>
@@ -1560,6 +1648,10 @@ High Leveled Gold</Literal>
         <ObjectProperty IRI="#is_last_quest_of"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#has_less_health"/>
+        <ObjectProperty IRI="#has_more_health"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#has_next_quest"/>
         <ObjectProperty IRI="#has_prerequisite_quest"/>
     </InverseObjectProperties>
@@ -1578,6 +1670,14 @@ High Leveled Gold</Literal>
     <InverseObjectProperties>
         <ObjectProperty IRI="#npc_located_in_zone"/>
         <ObjectProperty IRI="#zone_is_location_of_npc"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#npc_related_quest"/>
+        <ObjectProperty IRI="#quest_related_to_npc"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#quest_is_in_questline"/>
+        <ObjectProperty IRI="#questline_has_quest"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#belongs_to_organization"/>
@@ -1599,6 +1699,9 @@ High Leveled Gold</Literal>
     </FunctionalObjectProperty>
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#npc_belongs_same_organization"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#npc_in_relationship_with"/>
     </SymmetricObjectProperty>
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#npc_is_married_with"/>
@@ -1680,6 +1783,13 @@ High Leveled Gold</Literal>
         <Class IRI="http://ontologydesignpatterns.org/wiki/Submissions:List#QuestLine"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_less_health"/>
+        <ObjectUnionOf>
+            <Class IRI="#Character"/>
+            <Class IRI="#Npc"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_more_health"/>
         <ObjectUnionOf>
             <Class IRI="#Character"/>
@@ -1779,6 +1889,18 @@ High Leveled Gold</Literal>
         <Class IRI="#Quest"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#quest_related_to_npc"/>
+        <Class IRI="#Quest"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#questline_has_quest"/>
+        <Class IRI="http://ontologydesignpatterns.org/wiki/Submissions:List#QuestLine"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#race_has_member"/>
+        <Class IRI="#Race"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#zone_controlled_by"/>
         <Class IRI="#zone"/>
     </ObjectPropertyDomain>
@@ -1821,6 +1943,13 @@ High Leveled Gold</Literal>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_last_quest"/>
         <Class IRI="#Quest"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_less_health"/>
+        <ObjectUnionOf>
+            <Class IRI="#Character"/>
+            <Class IRI="#Npc"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_more_health"/>
@@ -1930,6 +2059,21 @@ High Leveled Gold</Literal>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#quest_located_in"/>
         <Class IRI="http://purl.org/net/VideoGameOntology#PlayingArea"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#quest_related_to_npc"/>
+        <Class IRI="#Npc"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#questline_has_quest"/>
+        <Class IRI="#Quest"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#race_has_member"/>
+        <ObjectUnionOf>
+            <Class IRI="#Character"/>
+            <Class IRI="#Npc"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#zone_controlled_by"/>
@@ -2377,6 +2521,32 @@ https://en.uesp.net/wiki/Online:Auridon [Accessed: June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Body_of_Water</IRI>
         <Literal xml:lang="en">Body_of_water</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Breton</IRI>
+        <Literal xml:lang="en">Bretons are a race of humans that hail from High Rock. The men and women of High Rock were once ruled by High Elf overlords. Some Elven blood still runs in their veins, giving Bretons an innate grasp of magic that distinguishes them from the other human races. Passionate and flamboyant, intelligent and resourceful, the Bretons are renowned and talented craftsmen, shrewd merchants, gallant cavaliers, and inventive wizards. They can also be proud and quarrelsome. Tales of warfare between the kingdoms of High Rock account for much of their history, but most revere the Eight Divines and value prosperity over glory.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
+        <IRI>#Breton</IRI>
+        <Literal xml:lang="en">Uesp.net, &quot;Online:Breton&quot;, 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Breton. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="schema:image"/>
+        <IRI>#Breton</IRI>
+        <IRI>https://images.uesp.net/f/fc/ON-concept-Breton.png</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Breton</IRI>
+        <Literal xml:lang="en">A race in ESO</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Breton</IRI>
+        <Literal xml:lang="en">Breton Race</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -2838,6 +3008,32 @@ Initially, before starting the quest Ensuring Security, she is found inside the 
         <Literal xml:lang="en">Hostile</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Imperial</IRI>
+        <Literal xml:lang="en">Also known as Cyrodiils, Cyrodilics, Cyro-Nordics and Imperial Cyrods, the well-educated and well-spoken Imperials are the natives of the civilized, cosmopolitan province of Cyrodiil. Imperials are also known for the discipline and training of their citizen armies, and their respect for the rule of law. Though physically less imposing than the other races, the Imperials have proved to be shrewd diplomats and traders, and these traits, along with their remarkable skill and training as light infantry, have enabled them to subdue all the other nations and races and erect the monument to peace and prosperity that comprises the Glorious Empire. Their hegemony has waxed and waned throughout the eras, and most historians refer to three distinct Empires, the ends of which each mark a new epoch in Tamrielic history.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
+        <IRI>#Imperial</IRI>
+        <Literal xml:lang="en">Uesp.net, &quot;Online:Imperial&quot;, 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Imperial. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="schema:image"/>
+        <IRI>#Imperial</IRI>
+        <IRI>https://images.uesp.net/6/67/ON-prerelease-Imperial.png</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Imperial</IRI>
+        <Literal xml:lang="en">A race in ESO</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Imperial</IRI>
+        <Literal xml:lang="en">Imperial Race</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Justice_Neutral</IRI>
         <Literal xml:lang="en">Justice Neutral NPCs can be attacked and pickpocketed with consequence. They will report crimes if they witness them, and will fight back if attacked. They can also be provoked into attacking if they witness a crime being committed, but they won&apos;t always do so. If they witness a murder, they will report it, and some will attack you or flee the scene. They have yellow health bars and white nameplates and outlines.</Literal>
@@ -2887,6 +3083,32 @@ Usually many side quests are played while playing the main quest.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Main_Quest</IRI>
         <Literal xml:lang="en">Main Quest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Maormer</IRI>
+        <Literal xml:lang="en">Maormer (also called Sea Elves or derogatorily as Fish Elves), are a race of Mer that reside on the island kingdom of Pyandonea, far south of the Summerset Isles. They are often encountered in groups part of the Pyandonean Armada, such as the Sea Vipers and Storm Sharks, as well as pirate groups including the Blue Venom, Dreadsails, Keel Cutters, and Wake Walkers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
+        <IRI>#Maormer</IRI>
+        <Literal xml:lang="en">Uesp.net, &quot;Online:Maormer&quot;, 2022. [Online]. Available: 
+https://en.uesp.net/wiki/Online:Maormer. [Accessed: June 2022].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="schema:image"/>
+        <IRI>#Maormer</IRI>
+        <IRI>https://images.uesp.net/thumb/1/17/ON-npc-Iphidamas.jpg/300px-ON-npc-Iphidamas.jpg</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Maormer</IRI>
+        <Literal xml:lang="en">A race in ESO</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Maormer</IRI>
+        <Literal xml:lang="en">Maormer Race</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -3705,7 +3927,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <Literal>Zaeri</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#belongs_to_organization</IRI>
         <IRI>http://www.semanticweb.org/belongs_to_organization</IRI>
     </AnnotationAssertion>
@@ -3833,6 +4055,16 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#has_last_quest</IRI>
         <Literal>has last quest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_less_health</IRI>
+        <Literal xml:lang="en">inverse of has more health</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_less_health</IRI>
+        <Literal>has less health</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3997,7 +4229,7 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#npc_is_attacked</IRI>
-        <Literal xml:lang="en">tells that an noc is attacked by someone</Literal>
+        <Literal xml:lang="en">tells that an npc is attacked by someone</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4146,6 +4378,16 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#quest_related_to_npc</IRI>
+        <Literal xml:lang="en">Link a quest to the npc&apos;s it involves</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#quest_related_to_npc</IRI>
+        <Literal xml:lang="en">quest related to npc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#quest_solo_only</IRI>
         <Literal>true If a quest must be completed alone, false otherwise</Literal>
     </AnnotationAssertion>
@@ -4153,6 +4395,26 @@ https://en.uesp.net/wiki/Online:Wood_Elf [Accessed:June- 2022].</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#quest_solo_only</IRI>
         <Literal>quest solo only</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#questline_has_quest</IRI>
+        <Literal xml:lang="en">Used to link a questline to its quests</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#questline_has_quest</IRI>
+        <Literal xml:lang="en">questline has quest</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#race_has_member</IRI>
+        <Literal xml:lang="en">Link a race to its individuals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#race_has_member</IRI>
+        <Literal xml:lang="en">race has member</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="terms:bibliographicCitation"/>
