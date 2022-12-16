@@ -7,4 +7,4 @@ This work couldn't be possible without the amazing community that's behind:
 -  https://elderscrollsonline.wiki.fextralife.com/Elder+Scrolls+Online+Wiki
 - https://elderscrolls.fandom.com/wiki/Portal:Online
 
-and of course every rigth 
+and of course every right belongs to the respective owner! 
