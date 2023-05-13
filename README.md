@@ -1,6 +1,8 @@
 # TESOO: The Elder Scrolls Online Ontology
 
 TESOO is an ontology built using the Web Ontology Language (OWL) to represent the knowledge and concepts related to The Elder Scrolls Online (ESO) game. The ontology was developed as part of the Semantic Web course 2021/2022.
+It is possible to query the ontology using SPARQL, semantic query language for databases.
+
 
 ## Background
 The Elder Scrolls Online is a massively multiplayer online role-playing game (MMORPG) set in the world of Tamriel. The game has a vast amount of lore and knowledge that is scattered across various sources, including books, quests, and in-game items. TESOO aims to consolidate this knowledge into a single ontology that can be used to power various applications, including chatbots, question-answering systems, and recommendation engines.
