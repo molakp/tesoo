@@ -1,10 +1,11 @@
 # tesoo
 TESOO: The Elder Scrolls Online Ontology
 
-I'm building an ontology to represent some concepts in ESO for the  Semantic Web course 2021/2022.
-This work couldn't be possible without the amazing community that's behind:
-- Uesp.net https://en.uesp.net/wiki/Main_Page
--  https://elderscrollsonline.wiki.fextralife.com/Elder+Scrolls+Online+Wiki
-- https://elderscrolls.fandom.com/wiki/Portal:Online
+I am building an ontology to represent some concepts in Elder Scrolls Online (ESO) for the Semantic Web course 2021/2022. This work would not be possible without the amazing community behind it, including:
 
-and of course every right belongs to the respective owner! 
+- Uesp.net (https://en.uesp.net/wiki/Main_Page)
+- Elder Scrolls Online Wiki (https://elderscrollsonline.wiki.fextralife.com/Elder+Scrolls+Online+Wiki)
+- Elder Scrolls Fandom (https://elderscrolls.fandom.com/wiki/Portal:Online)
+
+
+All rights belong to their respective owners.
